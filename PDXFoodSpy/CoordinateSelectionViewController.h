@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CoordinateSelectionViewController.h
 //  PDXFoodSpy
 //
 //  Created by James Childress on 11/3/18.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface CoordinateSelectionViewController : UIViewController
 
 @end
 
+NS_ASSUME_NONNULL_END

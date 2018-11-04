@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B70591FD218EBCF9000A5535 /* MainNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B70591FC218EBCF9000A5535 /* MainNavigationViewController.m */; };
+		B7059203218EC041000A5535 /* CoordinateSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7059202218EC041000A5535 /* CoordinateSelectionViewController.m */; };
 		B72B0BAC218E619600A79C59 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B72B0BAB218E619600A79C59 /* AppDelegate.m */; };
-		B72B0BAF218E619600A79C59 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B72B0BAE218E619600A79C59 /* ViewController.m */; };
 		B72B0BB2218E619600A79C59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B72B0BB0218E619600A79C59 /* Main.storyboard */; };
 		B72B0BB4218E619700A79C59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B72B0BB3218E619700A79C59 /* Assets.xcassets */; };
 		B72B0BB7218E619700A79C59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B72B0BB5218E619700A79C59 /* LaunchScreen.storyboard */; };
@@ -16,11 +17,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B70591FB218EBCF9000A5535 /* MainNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainNavigationViewController.h; sourceTree = "<group>"; };
+		B70591FC218EBCF9000A5535 /* MainNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainNavigationViewController.m; sourceTree = "<group>"; };
+		B7059201218EC041000A5535 /* CoordinateSelectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoordinateSelectionViewController.h; sourceTree = "<group>"; };
+		B7059202218EC041000A5535 /* CoordinateSelectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoordinateSelectionViewController.m; sourceTree = "<group>"; };
 		B72B0BA7218E619600A79C59 /* PDXFoodSpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDXFoodSpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B72B0BAA218E619600A79C59 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B72B0BAB218E619600A79C59 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B72B0BAD218E619600A79C59 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B72B0BAE218E619600A79C59 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B72B0BB1218E619600A79C59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B72B0BB3218E619700A79C59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B72B0BB6218E619700A79C59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,13 +63,15 @@
 			children = (
 				B72B0BAA218E619600A79C59 /* AppDelegate.h */,
 				B72B0BAB218E619600A79C59 /* AppDelegate.m */,
-				B72B0BAD218E619600A79C59 /* ViewController.h */,
-				B72B0BAE218E619600A79C59 /* ViewController.m */,
 				B72B0BB0218E619600A79C59 /* Main.storyboard */,
 				B72B0BB3218E619700A79C59 /* Assets.xcassets */,
 				B72B0BB5218E619700A79C59 /* LaunchScreen.storyboard */,
 				B72B0BB8218E619700A79C59 /* Info.plist */,
 				B72B0BB9218E619700A79C59 /* main.m */,
+				B70591FB218EBCF9000A5535 /* MainNavigationViewController.h */,
+				B70591FC218EBCF9000A5535 /* MainNavigationViewController.m */,
+				B7059201218EC041000A5535 /* CoordinateSelectionViewController.h */,
+				B7059202218EC041000A5535 /* CoordinateSelectionViewController.m */,
 			);
 			path = PDXFoodSpy;
 			sourceTree = "<group>";
@@ -141,9 +146,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B72B0BAF218E619600A79C59 /* ViewController.m in Sources */,
 				B72B0BBA218E619700A79C59 /* main.m in Sources */,
 				B72B0BAC218E619600A79C59 /* AppDelegate.m in Sources */,
+				B70591FD218EBCF9000A5535 /* MainNavigationViewController.m in Sources */,
+				B7059203218EC041000A5535 /* CoordinateSelectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
