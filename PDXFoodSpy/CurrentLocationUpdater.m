@@ -31,13 +31,19 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
     CLLocation *location = [locations lastObject];
-    NSLog(@"CURRENT LOCATION: %f, %f,", location.coordinate.latitude, location.coordinate.longitude);
+    if (self.delegate) {
+        [self.delegate currentLocationUpdater:self didUpdateLocation:location];
+    }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     if (shouldRequestLocation && status == kCLAuthorizationStatusAuthorizedWhenInUse) {
         [manager startUpdatingLocation];
     }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    NSLog(@"%@ %@", [error localizedFailureReason], [error localizedDescription]);
 }
 
 @end

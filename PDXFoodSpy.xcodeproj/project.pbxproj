@@ -34,6 +34,7 @@
 		B78BEC5B218F7A9F005F8EFC /* CurrentLocationUpdater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentLocationUpdater.h; sourceTree = "<group>"; };
 		B78BEC5C218F7A9F005F8EFC /* CurrentLocationUpdater.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentLocationUpdater.m; sourceTree = "<group>"; };
 		B78BEC5F218F7B2E005F8EFC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B78BEC61218F8046005F8EFC /* CurrentLocationUpdaterDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentLocationUpdaterDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +82,7 @@
 				B7059205218ED37E000A5535 /* SelectLocationViewController.m */,
 				B78BEC5B218F7A9F005F8EFC /* CurrentLocationUpdater.h */,
 				B78BEC5C218F7A9F005F8EFC /* CurrentLocationUpdater.m */,
+				B78BEC61218F8046005F8EFC /* CurrentLocationUpdaterDelegate.h */,
 			);
 			path = PDXFoodSpy;
 			sourceTree = "<group>";

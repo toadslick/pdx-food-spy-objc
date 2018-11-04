@@ -7,6 +7,7 @@
 
 @implementation SelectLocationViewController {
     CurrentLocationUpdater *clu;
+    CLLocation *currentLocation;
 }
 
 - (void)viewDidLoad {
@@ -17,11 +18,14 @@
     
     // Begin detecting the current location.
     clu = [CurrentLocationUpdater new];
+    clu.delegate = self;
     [clu start];
 }
 
 - (IBAction)currentLocationButtonTapped:(id)sender {
-    NSLog(@"button tapped!");
+    if (currentLocation) {
+        NSLog(@"CURRENT LOCATION: %f, %f", currentLocation.coordinate.latitude, currentLocation.coordinate.longitude);
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -30,6 +34,11 @@
     
     // Stop updating the current location.
     [clu stop];
+}
+
+- (void)currentLocationUpdater:(CurrentLocationUpdater *)updater didUpdateLocation:(CLLocation *)location {
+    self.currentLocationButton.enabled = true;
+    currentLocation = location;
 }
 
 @end
