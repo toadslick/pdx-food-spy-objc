@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B70591FD218EBCF9000A5535 /* MainNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B70591FC218EBCF9000A5535 /* MainNavigationViewController.m */; };
-		B7059203218EC041000A5535 /* CoordinateSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7059202218EC041000A5535 /* CoordinateSelectionViewController.m */; };
+		B7059206218ED37E000A5535 /* SelectLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7059205218ED37E000A5535 /* SelectLocationViewController.m */; };
 		B72B0BAC218E619600A79C59 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B72B0BAB218E619600A79C59 /* AppDelegate.m */; };
 		B72B0BB2218E619600A79C59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B72B0BB0218E619600A79C59 /* Main.storyboard */; };
 		B72B0BB4218E619700A79C59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B72B0BB3218E619700A79C59 /* Assets.xcassets */; };
@@ -19,8 +19,8 @@
 /* Begin PBXFileReference section */
 		B70591FB218EBCF9000A5535 /* MainNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainNavigationViewController.h; sourceTree = "<group>"; };
 		B70591FC218EBCF9000A5535 /* MainNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainNavigationViewController.m; sourceTree = "<group>"; };
-		B7059201218EC041000A5535 /* CoordinateSelectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoordinateSelectionViewController.h; sourceTree = "<group>"; };
-		B7059202218EC041000A5535 /* CoordinateSelectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoordinateSelectionViewController.m; sourceTree = "<group>"; };
+		B7059204218ED37E000A5535 /* SelectLocationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectLocationViewController.h; sourceTree = "<group>"; };
+		B7059205218ED37E000A5535 /* SelectLocationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectLocationViewController.m; sourceTree = "<group>"; };
 		B72B0BA7218E619600A79C59 /* PDXFoodSpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDXFoodSpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B72B0BAA218E619600A79C59 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B72B0BAB218E619600A79C59 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -70,8 +70,8 @@
 				B72B0BB9218E619700A79C59 /* main.m */,
 				B70591FB218EBCF9000A5535 /* MainNavigationViewController.h */,
 				B70591FC218EBCF9000A5535 /* MainNavigationViewController.m */,
-				B7059201218EC041000A5535 /* CoordinateSelectionViewController.h */,
-				B7059202218EC041000A5535 /* CoordinateSelectionViewController.m */,
+				B7059204218ED37E000A5535 /* SelectLocationViewController.h */,
+				B7059205218ED37E000A5535 /* SelectLocationViewController.m */,
 			);
 			path = PDXFoodSpy;
 			sourceTree = "<group>";
@@ -147,9 +147,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B72B0BBA218E619700A79C59 /* main.m in Sources */,
+				B7059206218ED37E000A5535 /* SelectLocationViewController.m in Sources */,
 				B72B0BAC218E619600A79C59 /* AppDelegate.m in Sources */,
 				B70591FD218EBCF9000A5535 /* MainNavigationViewController.m in Sources */,
-				B7059203218EC041000A5535 /* CoordinateSelectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

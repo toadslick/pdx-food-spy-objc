@@ -1,19 +1,19 @@
 //
-//  CoordinateSelectionViewController.m
+//  SelectLocationViewController.m
 //  PDXFoodSpy
 //
-//  Created by James Childress on 11/3/18.
+//  Created by James Childress on 11/4/18.
 //  Copyright © 2018 James Childress. All rights reserved.
 //
 
-#import "CoordinateSelectionViewController.h"
+#import "SelectLocationViewController.h"
 
-@interface CoordinateSelectionViewController ()
+@interface SelectLocationViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *CurrentLocationButton;
 
 @end
 
-@implementation CoordinateSelectionViewController
+@implementation SelectLocationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
