@@ -1,11 +1,3 @@
-//
-//  MainNavigationViewController.m
-//  PDXFoodSpy
-//
-//  Created by James Childress on 11/3/18.
-//  Copyright © 2018 James Childress. All rights reserved.
-//
-
 #import "MainNavigationViewController.h"
 
 @interface MainNavigationViewController ()

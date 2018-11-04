@@ -14,6 +14,8 @@
 		B72B0BB4218E619700A79C59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B72B0BB3218E619700A79C59 /* Assets.xcassets */; };
 		B72B0BB7218E619700A79C59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B72B0BB5218E619700A79C59 /* LaunchScreen.storyboard */; };
 		B72B0BBA218E619700A79C59 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B72B0BB9218E619700A79C59 /* main.m */; };
+		B78BEC5D218F7A9F005F8EFC /* CurrentLocationUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = B78BEC5C218F7A9F005F8EFC /* CurrentLocationUpdater.m */; };
+		B78BEC60218F7B2E005F8EFC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B78BEC5F218F7B2E005F8EFC /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,9 @@
 		B72B0BB6218E619700A79C59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B72B0BB8218E619700A79C59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B72B0BB9218E619700A79C59 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B78BEC5B218F7A9F005F8EFC /* CurrentLocationUpdater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentLocationUpdater.h; sourceTree = "<group>"; };
+		B78BEC5C218F7A9F005F8EFC /* CurrentLocationUpdater.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentLocationUpdater.m; sourceTree = "<group>"; };
+		B78BEC5F218F7B2E005F8EFC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B78BEC60218F7B2E005F8EFC /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +53,7 @@
 			children = (
 				B72B0BA9218E619600A79C59 /* PDXFoodSpy */,
 				B72B0BA8218E619600A79C59 /* Products */,
+				B78BEC5E218F7B2D005F8EFC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,8 +79,18 @@
 				B70591FC218EBCF9000A5535 /* MainNavigationViewController.m */,
 				B7059204218ED37E000A5535 /* SelectLocationViewController.h */,
 				B7059205218ED37E000A5535 /* SelectLocationViewController.m */,
+				B78BEC5B218F7A9F005F8EFC /* CurrentLocationUpdater.h */,
+				B78BEC5C218F7A9F005F8EFC /* CurrentLocationUpdater.m */,
 			);
 			path = PDXFoodSpy;
+			sourceTree = "<group>";
+		};
+		B78BEC5E218F7B2D005F8EFC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B78BEC5F218F7B2E005F8EFC /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +165,7 @@
 			files = (
 				B72B0BBA218E619700A79C59 /* main.m in Sources */,
 				B7059206218ED37E000A5535 /* SelectLocationViewController.m in Sources */,
+				B78BEC5D218F7A9F005F8EFC /* CurrentLocationUpdater.m in Sources */,
 				B72B0BAC218E619600A79C59 /* AppDelegate.m in Sources */,
 				B70591FD218EBCF9000A5535 /* MainNavigationViewController.m in Sources */,
 			);

@@ -1,36 +1,35 @@
-//
-//  SelectLocationViewController.m
-//  PDXFoodSpy
-//
-//  Created by James Childress on 11/4/18.
-//  Copyright © 2018 James Childress. All rights reserved.
-//
-
 #import "SelectLocationViewController.h"
+#import "CurrentLocationUpdater.h"
 
 @interface SelectLocationViewController ()
-
+@property (weak, nonatomic) IBOutlet UIButton *currentLocationButton;
 @end
 
-@implementation SelectLocationViewController
+@implementation SelectLocationViewController {
+    CurrentLocationUpdater *clu;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    // Disable this button until the curent location is detected.
+    self.currentLocationButton.enabled = false;
+    
+    // Begin detecting the current location.
+    clu = [CurrentLocationUpdater new];
+    [clu start];
 }
 
 - (IBAction)currentLocationButtonTapped:(id)sender {
     NSLog(@"button tapped!");
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    // Stop updating the current location.
+    [clu stop];
 }
-*/
 
 @end

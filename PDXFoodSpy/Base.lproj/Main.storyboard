@@ -57,6 +57,9 @@
                     <navigationItem key="navigationItem" title="PDX Food Spy" id="ATA-IM-rid">
                         <barButtonItem key="backBarButtonItem" title="Select Location" id="Est-n5-FDf"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="currentLocationButton" destination="4UF-sq-Hvk" id="kET-AO-gop"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLz-2k-be2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
