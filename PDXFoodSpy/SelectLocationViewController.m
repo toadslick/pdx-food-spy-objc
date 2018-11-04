@@ -9,7 +9,6 @@
 #import "SelectLocationViewController.h"
 
 @interface SelectLocationViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *CurrentLocationButton;
 
 @end
 
@@ -18,6 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+- (IBAction)currentLocationButtonTapped:(id)sender {
+    NSLog(@"button tapped!");
 }
 
 /*

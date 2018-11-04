@@ -43,7 +43,7 @@
                                 <rect key="frame" x="130" y="286.5" width="115" height="30"/>
                                 <state key="normal" title="Current Location"/>
                                 <connections>
-                                    <segue destination="FeW-cl-1dp" kind="show" id="ZJF-Ta-Cjg"/>
+                                    <action selector="currentLocationButtonTapped:" destination="jMs-EQ-8Lb" eventType="primaryActionTriggered" id="OJJ-Zm-D9D"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -57,9 +57,6 @@
                     <navigationItem key="navigationItem" title="PDX Food Spy" id="ATA-IM-rid">
                         <barButtonItem key="backBarButtonItem" title="Select Location" id="Est-n5-FDf"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="CurrentLocationButton" destination="4UF-sq-Hvk" id="Ddc-iE-dkM"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLz-2k-be2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -70,7 +67,7 @@
             <objects>
                 <viewController id="IFV-kn-df5" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7h9-kW-Inj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="QzD-Qe-pfX"/>
@@ -86,7 +83,7 @@
             <objects>
                 <viewController id="J0K-5E-rgA" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mNr-lz-qi2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ews-Fz-lpb"/>
