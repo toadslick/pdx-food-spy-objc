@@ -69,6 +69,8 @@
 		B72B0BA9218E619600A79C59 /* PDXFoodSpy */ = {
 			isa = PBXGroup;
 			children = (
+				B7EE52FE219085A1001BF3DD /* UI */,
+				B7EE52FD21908561001BF3DD /* Location Utilities */,
 				B72B0BAA218E619600A79C59 /* AppDelegate.h */,
 				B72B0BAB218E619600A79C59 /* AppDelegate.m */,
 				B72B0BB0218E619600A79C59 /* Main.storyboard */,
@@ -76,13 +78,6 @@
 				B72B0BB5218E619700A79C59 /* LaunchScreen.storyboard */,
 				B72B0BB8218E619700A79C59 /* Info.plist */,
 				B72B0BB9218E619700A79C59 /* main.m */,
-				B70591FB218EBCF9000A5535 /* MainNavigationViewController.h */,
-				B70591FC218EBCF9000A5535 /* MainNavigationViewController.m */,
-				B7059204218ED37E000A5535 /* SelectLocationViewController.h */,
-				B7059205218ED37E000A5535 /* SelectLocationViewController.m */,
-				B78BEC5B218F7A9F005F8EFC /* CurrentLocationUpdater.h */,
-				B78BEC5C218F7A9F005F8EFC /* CurrentLocationUpdater.m */,
-				B78BEC61218F8046005F8EFC /* CurrentLocationUpdaterDelegate.h */,
 			);
 			path = PDXFoodSpy;
 			sourceTree = "<group>";
@@ -93,6 +88,27 @@
 				B78BEC5F218F7B2E005F8EFC /* CoreLocation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B7EE52FD21908561001BF3DD /* Location Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B78BEC5B218F7A9F005F8EFC /* CurrentLocationUpdater.h */,
+				B78BEC5C218F7A9F005F8EFC /* CurrentLocationUpdater.m */,
+				B78BEC61218F8046005F8EFC /* CurrentLocationUpdaterDelegate.h */,
+			);
+			path = "Location Utilities";
+			sourceTree = "<group>";
+		};
+		B7EE52FE219085A1001BF3DD /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B70591FB218EBCF9000A5535 /* MainNavigationViewController.h */,
+				B70591FC218EBCF9000A5535 /* MainNavigationViewController.m */,
+				B7059204218ED37E000A5535 /* SelectLocationViewController.h */,
+				B7059205218ED37E000A5535 /* SelectLocationViewController.m */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
