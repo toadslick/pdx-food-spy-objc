@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5Rx-j6-zdB">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -17,7 +17,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="e3f-M7-FCE">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hfP-vg-ZS9">
@@ -36,21 +36,37 @@
             <objects>
                 <viewController id="jMs-EQ-8Lb" customClass="SelectLocationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GOZ-EO-fBD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="410"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4UF-sq-Hvk">
-                                <rect key="frame" x="130" y="286.5" width="115" height="30"/>
-                                <state key="normal" title="Current Location"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4UF-sq-Hvk">
+                                <rect key="frame" x="0.0" y="50" width="320" height="30"/>
+                                <state key="normal" title="Search Near Current Location"/>
                                 <connections>
                                     <action selector="currentLocationButtonTapped:" destination="jMs-EQ-8Lb" eventType="primaryActionTriggered" id="OJJ-Zm-D9D"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Near a Street Address..." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rmW-K3-EDX">
+                                <rect key="frame" x="0.0" y="130" width="320" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="search" textContentType="address-line1"/>
+                                <connections>
+                                    <action selector="addressTextFieldSubmitted:" destination="jMs-EQ-8Lb" eventType="primaryActionTriggered" id="sr1-SK-hM9"/>
+                                </connections>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4UF-sq-Hvk" firstAttribute="centerY" secondItem="i6F-5S-ptF" secondAttribute="centerY" id="CBG-Wz-rHZ"/>
-                            <constraint firstItem="4UF-sq-Hvk" firstAttribute="centerX" secondItem="i6F-5S-ptF" secondAttribute="centerX" id="v8x-sv-raB"/>
+                            <constraint firstItem="rmW-K3-EDX" firstAttribute="leading" secondItem="i6F-5S-ptF" secondAttribute="leading" id="3lS-Pc-2zV"/>
+                            <constraint firstItem="4UF-sq-Hvk" firstAttribute="centerX" secondItem="i6F-5S-ptF" secondAttribute="centerX" id="CcU-tc-bPF"/>
+                            <constraint firstItem="i6F-5S-ptF" firstAttribute="trailing" secondItem="rmW-K3-EDX" secondAttribute="trailing" id="HcA-3e-CTP"/>
+                            <constraint firstItem="i6F-5S-ptF" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="rmW-K3-EDX" secondAttribute="bottom" constant="50" id="KGb-db-axx"/>
+                            <constraint firstItem="4UF-sq-Hvk" firstAttribute="leading" secondItem="i6F-5S-ptF" secondAttribute="leading" id="O62-da-cTJ"/>
+                            <constraint firstItem="i6F-5S-ptF" firstAttribute="trailing" secondItem="4UF-sq-Hvk" secondAttribute="trailing" id="OFu-cl-n84"/>
+                            <constraint firstItem="4UF-sq-Hvk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="i6F-5S-ptF" secondAttribute="top" constant="50" id="eL4-ld-QRK"/>
+                            <constraint firstItem="rmW-K3-EDX" firstAttribute="centerX" secondItem="i6F-5S-ptF" secondAttribute="centerX" id="eUq-1l-8Mp"/>
+                            <constraint firstItem="rmW-K3-EDX" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4UF-sq-Hvk" secondAttribute="bottom" constant="50" id="wcc-q9-wS2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="i6F-5S-ptF"/>
                     </view>
@@ -58,6 +74,7 @@
                         <barButtonItem key="backBarButtonItem" title="Select Location" id="Est-n5-FDf"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="addressTextField" destination="rmW-K3-EDX" id="waK-bU-oZm"/>
                         <outlet property="currentLocationButton" destination="4UF-sq-Hvk" id="kET-AO-gop"/>
                     </connections>
                 </viewController>
@@ -70,7 +87,7 @@
             <objects>
                 <viewController id="IFV-kn-df5" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7h9-kW-Inj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="QzD-Qe-pfX"/>
@@ -86,7 +103,7 @@
             <objects>
                 <viewController id="J0K-5E-rgA" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mNr-lz-qi2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ews-Fz-lpb"/>

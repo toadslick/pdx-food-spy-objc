@@ -3,6 +3,7 @@
 
 @interface SelectLocationViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *currentLocationButton;
+@property (weak, nonatomic) IBOutlet UITextField *addressTextField;
 @end
 
 @implementation SelectLocationViewController {
@@ -26,6 +27,9 @@
     if (currentLocation) {
         NSLog(@"CURRENT LOCATION: %f, %f", currentLocation.coordinate.latitude, currentLocation.coordinate.longitude);
     }
+}
+- (IBAction)addressTextFieldSubmitted:(id)sender {
+    NSLog(@"ADDRESS ENTERED: %@", self.addressTextField.text);
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
