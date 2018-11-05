@@ -32,7 +32,7 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
     CLLocation *location = [locations lastObject];
     if (self.delegate) {
-        [self.delegate currentLocationUpdater:self didUpdateLocation:location];
+        [self.delegate currentLocationUpdater:self didUpdateCoordinate:location.coordinate];
     }
 }
 
@@ -43,7 +43,9 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
-    NSLog(@"%@ %@", [error localizedFailureReason], [error localizedDescription]);
+    if (self.delegate) {
+        [self.delegate currentLocationUpdater:self didFailWithError:error];
+    }
 }
 
 @end

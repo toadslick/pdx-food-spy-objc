@@ -16,6 +16,7 @@
 		B72B0BBA218E619700A79C59 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B72B0BB9218E619700A79C59 /* main.m */; };
 		B78BEC5D218F7A9F005F8EFC /* CurrentLocationUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = B78BEC5C218F7A9F005F8EFC /* CurrentLocationUpdater.m */; };
 		B78BEC60218F7B2E005F8EFC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B78BEC5F218F7B2E005F8EFC /* CoreLocation.framework */; };
+		B7EE5304219086B5001BF3DD /* AddressGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = B7EE5303219086B5001BF3DD /* AddressGeocoder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,9 @@
 		B78BEC5C218F7A9F005F8EFC /* CurrentLocationUpdater.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentLocationUpdater.m; sourceTree = "<group>"; };
 		B78BEC5F218F7B2E005F8EFC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B78BEC61218F8046005F8EFC /* CurrentLocationUpdaterDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentLocationUpdaterDelegate.h; sourceTree = "<group>"; };
+		B7EE5302219086B5001BF3DD /* AddressGeocoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressGeocoder.h; sourceTree = "<group>"; };
+		B7EE5303219086B5001BF3DD /* AddressGeocoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressGeocoder.m; sourceTree = "<group>"; };
+		B7EE5305219087AB001BF3DD /* AddressGeocoderDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressGeocoderDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,9 @@
 				B78BEC5B218F7A9F005F8EFC /* CurrentLocationUpdater.h */,
 				B78BEC5C218F7A9F005F8EFC /* CurrentLocationUpdater.m */,
 				B78BEC61218F8046005F8EFC /* CurrentLocationUpdaterDelegate.h */,
+				B7EE5302219086B5001BF3DD /* AddressGeocoder.h */,
+				B7EE5303219086B5001BF3DD /* AddressGeocoder.m */,
+				B7EE5305219087AB001BF3DD /* AddressGeocoderDelegate.h */,
 			);
 			path = "Location Utilities";
 			sourceTree = "<group>";
@@ -184,6 +191,7 @@
 				B72B0BBA218E619700A79C59 /* main.m in Sources */,
 				B7059206218ED37E000A5535 /* SelectLocationViewController.m in Sources */,
 				B78BEC5D218F7A9F005F8EFC /* CurrentLocationUpdater.m in Sources */,
+				B7EE5304219086B5001BF3DD /* AddressGeocoder.m in Sources */,
 				B72B0BAC218E619600A79C59 /* AppDelegate.m in Sources */,
 				B70591FD218EBCF9000A5535 /* MainNavigationViewController.m in Sources */,
 			);

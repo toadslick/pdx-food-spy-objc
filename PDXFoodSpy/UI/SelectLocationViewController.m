@@ -8,7 +8,7 @@
 
 @implementation SelectLocationViewController {
     CurrentLocationUpdater *clu;
-    CLLocation *currentLocation;
+    CLLocationCoordinate2D currentCoordinate;
 }
 
 - (void)viewDidLoad {
@@ -24,9 +24,7 @@
 }
 
 - (IBAction)currentLocationButtonTapped:(id)sender {
-    if (currentLocation) {
-        NSLog(@"CURRENT LOCATION: %f, %f", currentLocation.coordinate.latitude, currentLocation.coordinate.longitude);
-    }
+    NSLog(@"CURRENT LOCATION: %f, %f", currentCoordinate.latitude, currentCoordinate.longitude);
 }
 - (IBAction)addressTextFieldSubmitted:(id)sender {
     NSLog(@"ADDRESS ENTERED: %@", self.addressTextField.text);
@@ -40,9 +38,13 @@
     [clu stop];
 }
 
-- (void)currentLocationUpdater:(CurrentLocationUpdater *)updater didUpdateLocation:(CLLocation *)location {
+- (void)currentLocationUpdater:(CurrentLocationUpdater *)updater didUpdateCoordinate:(CLLocationCoordinate2D)coordinate {
     self.currentLocationButton.enabled = true;
-    currentLocation = location;
+    currentCoordinate = coordinate;
+}
+
+- (void)currentLocationUpdater:(CurrentLocationUpdater *)updater didFailWithError:(NSError *)error {
+    NSLog(@"CURRENT LOCATION ERROR: %@, %@", [error localizedFailureReason], [error localizedDescription]);
 }
 
 @end

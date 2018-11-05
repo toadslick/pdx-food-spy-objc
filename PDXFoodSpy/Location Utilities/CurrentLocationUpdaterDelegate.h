@@ -7,7 +7,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol CurrentLocationUpdaterDelegate <NSObject>
 
-- (void)currentLocationUpdater:(CurrentLocationUpdater *)updater didUpdateLocation:(CLLocation *)location;
+- (void)currentLocationUpdater:(CurrentLocationUpdater *)updater didUpdateCoordinate:(CLLocationCoordinate2D)coordinate;
+
+- (void)currentLocationUpdater:(CurrentLocationUpdater *)updater didFailWithError:(NSError *)error;
 
 @end
 
