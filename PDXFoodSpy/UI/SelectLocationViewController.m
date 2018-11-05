@@ -8,6 +8,7 @@
 
 @implementation SelectLocationViewController {
     CurrentLocationUpdater *clu;
+    AddressGeocoder *geocoder;
     CLLocationCoordinate2D currentCoordinate;
 }
 
@@ -21,13 +22,21 @@
     clu = [CurrentLocationUpdater new];
     clu.delegate = self;
     [clu start];
+    
+    // Initialize the address geocoder.
+    geocoder = [AddressGeocoder new];
+    geocoder.delegate = self;
 }
 
 - (IBAction)currentLocationButtonTapped:(id)sender {
     NSLog(@"CURRENT LOCATION: %f, %f", currentCoordinate.latitude, currentCoordinate.longitude);
 }
+
 - (IBAction)addressTextFieldSubmitted:(id)sender {
-    NSLog(@"ADDRESS ENTERED: %@", self.addressTextField.text);
+    NSString *address = self.addressTextField.text;
+    if (address) {
+        [geocoder geocode:address];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -45,6 +54,14 @@
 
 - (void)currentLocationUpdater:(CurrentLocationUpdater *)updater didFailWithError:(NSError *)error {
     NSLog(@"CURRENT LOCATION ERROR: %@, %@", [error localizedFailureReason], [error localizedDescription]);
+}
+
+- (void)addressGeocoder:(AddressGeocoder *)geocoder foundCoordinate:(CLLocationCoordinate2D)coordinate forAddress:(NSString *)address {
+    NSLog(@"GEOCODER SUCCESS: %f, %f", coordinate.latitude, coordinate.longitude);
+}
+
+- (void)addressGeocoder:(AddressGeocoder *)geocoder didFailWithError:(NSError *)error forAddress:(NSString *)address {
+    NSLog(@"GEOCODER ERROR: %@, %@", [error localizedFailureReason], [error localizedDescription]);
 }
 
 @end
