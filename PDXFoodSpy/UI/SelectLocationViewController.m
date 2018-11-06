@@ -1,5 +1,6 @@
 #import "SelectLocationViewController.h"
 #import "CurrentLocationUpdater.h"
+#import "RestaurantsNearLocation.h"
 
 @interface SelectLocationViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *currentLocationButton;
@@ -10,6 +11,7 @@
     CurrentLocationUpdater *clu;
     AddressGeocoder *geocoder;
     CLLocationCoordinate2D currentCoordinate;
+    RestaurantsNearLocation *rnl;
 }
 
 - (void)viewDidLoad {
@@ -26,10 +28,14 @@
     // Initialize the address geocoder.
     geocoder = [AddressGeocoder new];
     geocoder.delegate = self;
+    
+    // Thing to fetch and parse API data.
+    rnl = [RestaurantsNearLocation new];
 }
 
 - (IBAction)currentLocationButtonTapped:(id)sender {
     NSLog(@"CURRENT LOCATION: %f, %f", currentCoordinate.latitude, currentCoordinate.longitude);
+    [rnl fetch:currentCoordinate];
 }
 
 - (IBAction)addressTextFieldSubmitted:(id)sender {
@@ -58,6 +64,7 @@
 
 - (void)addressGeocoder:(AddressGeocoder *)geocoder foundCoordinate:(CLLocationCoordinate2D)coordinate forAddress:(NSString *)address {
     NSLog(@"GEOCODER SUCCESS: %f, %f", coordinate.latitude, coordinate.longitude);
+    [rnl fetch:coordinate];
 }
 
 - (void)addressGeocoder:(AddressGeocoder *)geocoder didFailWithError:(NSError *)error forAddress:(NSString *)address {
