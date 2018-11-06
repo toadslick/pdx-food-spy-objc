@@ -8,7 +8,7 @@
 - (id)init {
     self = [super init];
     geocoder = [CLGeocoder new];
-    region = [[CLCircularRegion new] initWithCenter:CLLocationCoordinate2DMake(45.51223, -122.65871) radius:16000 identifier:@"Portland"];
+    region = [[CLCircularRegion alloc] initWithCenter:CLLocationCoordinate2DMake(45.51223, -122.65871) radius:16000 identifier:@"Portland"];
     return self;
 }
 
