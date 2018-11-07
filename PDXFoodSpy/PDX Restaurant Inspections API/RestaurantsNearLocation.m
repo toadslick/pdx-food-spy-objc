@@ -1,31 +1,30 @@
 #import "RestaurantsNearLocation.h"
 
 @implementation RestaurantsNearLocation {
-    DataFetcher *dataFetcher;
+    JSONFetcher *jsonFetcher;
 }
 
 - (id)init {
     self = [super init];
-    dataFetcher = [DataFetcher new];
-    dataFetcher.delegate = self;
+    jsonFetcher = [JSONFetcher new];
+    jsonFetcher.delegate = self;
     return self;
 }
 
 - (void)fetch:(CLLocationCoordinate2D)coordinate {
-    [dataFetcher fetch:[self buildURLString:coordinate]];
+    [jsonFetcher fetch:[self buildURLString:coordinate]];
 }
 
 - (NSString *)buildURLString:(CLLocationCoordinate2D)coordinate {
     NSString *formatString = @"http://api.civicapps.org/restaurant-inspections/near/%f,%f";
-    return [[NSString alloc] initWithFormat:formatString, coordinate.latitude, coordinate.longitude];
+    return [[NSString alloc] initWithFormat:formatString, coordinate.longitude, coordinate.latitude];
 }
 
-
-- (void)dataFetcher:(DataFetcher *)fetcher didReceiveData:(NSData *)data {
-    NSLog(@"RESTAURANT SEARCH SUCCESS: %@", data);
+- (void)jsonFetcher:(JSONFetcher *)fetcher didReceiveJSON:(NSDictionary *)json {
+    NSLog(@"RESTAURANT SEARCH SUCCESS: %@", json);
 }
 
-- (void)dataFetcher:(DataFetcher *)fetcher didFailWithError:(NSError *)error {
+- (void)jsonFetcher:(JSONFetcher *)fetcher didFailWithError:(NSError *)error {
     NSLog(@"RESTAURANT SEARCH ERROR: %@, %@", [error localizedFailureReason], [error localizedDescription]);
 }
 

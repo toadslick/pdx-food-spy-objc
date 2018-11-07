@@ -1,10 +1,10 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
-#import "DataFetcher.h"
+#import "JSONFetcher.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RestaurantsNearLocation : NSObject <DataFetcherDelegate>
+@interface RestaurantsNearLocation : NSObject <JSONFetcherDelegate>
 
 - (void) fetch:(CLLocationCoordinate2D)coordinate;
 
