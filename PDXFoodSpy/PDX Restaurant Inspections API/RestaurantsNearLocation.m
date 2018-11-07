@@ -12,13 +12,27 @@
 }
 
 - (void)fetch:(CLLocationCoordinate2D)coordinate {
-    [jsonFetcher fetch:[self buildURLString:coordinate]];
+    NSString *url = [self buildURLString:coordinate];
+    [jsonFetcher fetch:url];
 }
 
 - (NSString *)buildURLString:(CLLocationCoordinate2D)coordinate {
-    NSString *formatString = @"http://api.civicapps.org/restaurant-inspections/near/%f,%f";
-    return [[NSString alloc] initWithFormat:formatString, coordinate.longitude, coordinate.latitude];
+    NSString *format = @"http://api.civicapps.org/restaurant-inspections/near/%f,%f?since=%@";
+    return [[NSString alloc] initWithFormat:format, coordinate.longitude, coordinate.latitude, [self buildEarliestDateString]];
 }
+
+- (NSString *)buildEarliestDateString {
+    NSTimeInterval timeAgo = -4 * 365 * 24 * 60 * 60; // four years ago
+    NSDate *date = [NSDate dateWithTimeIntervalSinceNow:timeAgo];
+    return [self formatDate:date];
+}
+
+- (NSString *)formatDate:(NSDate *)date {
+    NSDateFormatter *formatter = [NSDateFormatter new];
+    formatter.dateFormat = @"yyyy-MM-dd";
+    return [formatter stringFromDate:date];
+}
+
 
 - (void)jsonFetcher:(JSONFetcher *)fetcher didReceiveJSON:(NSDictionary *)json {
     NSLog(@"RESTAURANT SEARCH SUCCESS: %@", json);
