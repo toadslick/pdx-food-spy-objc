@@ -18,6 +18,7 @@
 }
 
 - (void)parseJSON:(NSData *)data {
+    // TODO: move to dispatch queue
     NSError *error = nil;
     id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
     if (error) {

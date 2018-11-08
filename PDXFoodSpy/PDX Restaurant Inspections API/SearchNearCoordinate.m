@@ -1,6 +1,7 @@
-#import "RestaurantsNearLocation.h"
+#import "SearchNearCoordinate.h"
+#import "SearchResult.h"
 
-@implementation RestaurantsNearLocation {
+@implementation SearchNearCoordinate {
     JSONFetcher *jsonFetcher;
 }
 
@@ -13,12 +14,13 @@
 
 - (void)fetch:(CLLocationCoordinate2D)coordinate {
     NSString *url = [self buildURLString:coordinate];
+    NSLog(@"URL: %@", url);
     [jsonFetcher fetch:url];
 }
 
 - (NSString *)buildURLString:(CLLocationCoordinate2D)coordinate {
-    NSString *format = @"http://api.civicapps.org/restaurant-inspections/near/%f,%f?since=%@";
-    return [[NSString alloc] initWithFormat:format, coordinate.longitude, coordinate.latitude, [self buildEarliestDateString]];
+    NSString *format = @"http://api.civicapps.org/restaurant-inspections/near/%f,%f?since=%@&limit=%i";
+    return [[NSString alloc] initWithFormat:format, coordinate.longitude, coordinate.latitude, [self buildEarliestDateString], 100];
 }
 
 - (NSString *)buildEarliestDateString {
@@ -41,6 +43,25 @@
 - (void)jsonFetcher:(JSONFetcher *)fetcher didFailWithError:(NSError *)error {
     NSLog(@"RESTAURANT SEARCH ERROR: %@, %@", [error localizedFailureReason], [error localizedDescription]);
 }
+
+- (NSArray<SearchResult *> *)buildSearchResults:(NSDictionary *)json {
+    NSArray<NSDictionary *> *dicts = [json objectForKey:@"results"];
+    NSArray<SearchResult *> *results = @[];
+    
+    // The "results" object will be nil if the JSON response returned with zero results found.
+    if (dicts) {
+        [dicts enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull dict, NSUInteger idx, BOOL * _Nonnull stop) {
+            // Only keep results for which the type is "FoodSvcSemi".
+            NSString *type = [dict objectForKey:@"type"];
+            if ([type isEqualToString:@"FoodSvcSemi"]) {
+                SearchResult *result = [SearchResult initFromJSONDictionary:dict];
+            }
+        }];
+    }
+    return results;
+}
+
+
 
 
 @end

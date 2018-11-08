@@ -4,7 +4,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RestaurantsNearLocation : NSObject <JSONFetcherDelegate>
+@interface SearchNearCoordinate : NSObject <JSONFetcherDelegate>
 
 - (void) fetch:(CLLocationCoordinate2D)coordinate;
 

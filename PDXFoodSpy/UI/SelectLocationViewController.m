@@ -1,6 +1,6 @@
 #import "SelectLocationViewController.h"
 #import "CurrentLocationUpdater.h"
-#import "RestaurantsNearLocation.h"
+#import "SearchNearCoordinate.h"
 
 @interface SelectLocationViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *currentLocationButton;
@@ -11,7 +11,7 @@
     CurrentLocationUpdater *clu;
     AddressGeocoder *geocoder;
     CLLocationCoordinate2D currentCoordinate;
-    RestaurantsNearLocation *rnl;
+    SearchNearCoordinate *rnl;
 }
 
 - (void)viewDidLoad {
@@ -30,7 +30,7 @@
     geocoder.delegate = self;
     
     // Thing to fetch and parse API data.
-    rnl = [RestaurantsNearLocation new];
+    rnl = [SearchNearCoordinate new];
 }
 
 - (IBAction)currentLocationButtonTapped:(id)sender {
