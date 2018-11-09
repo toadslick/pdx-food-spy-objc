@@ -18,17 +18,22 @@
 }
 
 - (void)parseJSON:(NSData *)data {
-    NSError *error = nil;
-    id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-    if (error) {
-        [self.delegate jsonFetcher:self didFailWithError:error];
-    } else {
-        if ([json isKindOfClass:[NSDictionary class]]) {
-            [self.delegate jsonFetcher:self didReceiveDictionary:json];
-        } else if ([json isKindOfClass:[NSArray class]]) {
-            [self.delegate jsonFetcher:self didReceiveArray:json];
-        }
-    }
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSError *error = nil;
+        id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (error) {
+                [self.delegate jsonFetcher:self didFailWithError:error];
+            } else {
+                if ([json isKindOfClass:[NSDictionary class]]) {
+                    [self.delegate jsonFetcher:self didReceiveDictionary:json];
+                } else if ([json isKindOfClass:[NSArray class]]) {
+                    [self.delegate jsonFetcher:self didReceiveArray:json];
+                }
+            }
+        });
+    });
 }
 
 @end

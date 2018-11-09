@@ -11,7 +11,7 @@
     CurrentLocationUpdater *clu;
     AddressGeocoder *geocoder;
     CLLocationCoordinate2D currentCoordinate;
-    SearchNearCoordinate *rnl;
+    SearchNearCoordinate *search;
 }
 
 - (void)viewDidLoad {
@@ -29,12 +29,13 @@
     geocoder = [AddressGeocoder new];
     geocoder.delegate = self;
     
-    // Thing to fetch and parse API data.
-    rnl = [SearchNearCoordinate new];
+    // Search and parse API data.
+    search = [SearchNearCoordinate new];
+    search.delegate = self;
 }
 
 - (IBAction)currentLocationButtonTapped:(id)sender {
-    [rnl fetch:currentCoordinate];
+    [search fetch:currentCoordinate];
 }
 
 - (IBAction)addressTextFieldSubmitted:(id)sender {
@@ -62,10 +63,22 @@
 }
 
 - (void)addressGeocoder:(AddressGeocoder *)geocoder foundCoordinate:(CLLocationCoordinate2D)coordinate forAddress:(NSString *)address {
-    [rnl fetch:coordinate];
+    [search fetch:coordinate];
 }
 
 - (void)addressGeocoder:(AddressGeocoder *)geocoder didFailWithError:(NSError *)error forAddress:(NSString *)address {
+    NSLog(@"ERROR: %@", [error localizedDescription]);
+}
+
+- (void)searchDidSucceedWithResults:(NSArray<SearchResult *> *)results {
+    NSLog(@"RESULTS: %@", results);
+}
+
+- (void)searchDidSucceedWithEmptyResults {
+    NSLog(@"RESULTS: EMPTY");
+}
+
+- (void)searchDidFailWithError:(NSError *)error {
     NSLog(@"ERROR: %@", [error localizedDescription]);
 }
 

@@ -14,30 +14,44 @@
 
 - (void)fetch:(CLLocationCoordinate2D)coordinate {
     NSString *url = [self buildURLString:coordinate];
-    NSLog(@"URL: %@", url);
+    NSLog(@"REQUEST: %@", url);
     [jsonFetcher fetch:url];
 }
 
 - (NSString *)buildURLString:(CLLocationCoordinate2D)coordinate {
     NSString *format = @"http://api.civicapps.org/restaurant-inspections/near/%f,%f?since=%@&limit=%i&distance=%f";
-    return [[NSString alloc] initWithFormat:format, coordinate.longitude, coordinate.latitude, @"2014-01-01", 50, 0.5];
+    NSString *date = [self buildDateString];
+    return [[NSString alloc] initWithFormat:format, coordinate.longitude, coordinate.latitude, date, 50, 0.5];
+}
+
+// Originally, this method was used to limit results to inspections that occurred within the last year.
+// However, the API dataset stopped being updated in early 2015.
+// So now this method is used to limit search results to the last year-or-so for which data was published.
+- (NSString *)buildDateString {
+    return @"2014-01-01";
 }
 
 - (void)jsonFetcher:(JSONFetcher *)fetcher didReceiveDictionary:(NSDictionary *)json {
-    NSArray<SearchResult *> *results = [self buildSearchResults:json];
-    NSLog(@"RESULTS: %@", results);
+    if (self.delegate) {
+        NSArray<SearchResult *> *results = [self deserializeSearchResults:json];
+        [self.delegate searchDidSucceedWithResults:results];
+    }
 }
 
 // The Restaurant Inspection API returns an array as the top-level JSON object only when it returns zero results. 
 - (void)jsonFetcher:(JSONFetcher *)fetcher didReceiveArray:(NSArray *)json {
-    NSLog(@"RESULTS: EMPTY");
+    if (self.delegate) {
+        [self.delegate searchDidSucceedWithEmptyResults];
+    }
 }
 
 - (void)jsonFetcher:(JSONFetcher *)fetcher didFailWithError:(NSError *)error {
-    NSLog(@"ERROR: %@", [error localizedDescription]);
+    if (self.delegate) {
+        [self.delegate searchDidFailWithError:error];
+    }
 }
 
-- (NSArray<SearchResult *> *)buildSearchResults:(NSDictionary *)json {
+- (NSArray<SearchResult *> *)deserializeSearchResults:(NSDictionary *)json {
     NSArray<NSDictionary *> *dicts = [json objectForKey:@"results"];
     NSMutableDictionary<NSString *, SearchResult *> *latestResults = [NSMutableDictionary new];
     [dicts enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull dict, NSUInteger idx, BOOL * _Nonnull stop) {

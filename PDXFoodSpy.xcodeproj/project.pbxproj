@@ -47,6 +47,7 @@
 		D32152A92190C4B90043C5FF /* JSONFetcherDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONFetcherDelegate.h; sourceTree = "<group>"; };
 		D38CF70B219394320071D9F5 /* SearchResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResult.h; sourceTree = "<group>"; };
 		D38CF70C219394320071D9F5 /* SearchResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResult.m; sourceTree = "<group>"; };
+		D3CDB0EA2195F6670048F0C7 /* SearchDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchDelegate.h; sourceTree = "<group>"; };
 		D3F0A3832191EA4F00DD4E39 /* SearchNearCoordinate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchNearCoordinate.h; sourceTree = "<group>"; };
 		D3F0A3842191EA4F00DD4E39 /* SearchNearCoordinate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchNearCoordinate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,6 +148,7 @@
 				D3F0A3842191EA4F00DD4E39 /* SearchNearCoordinate.m */,
 				D38CF70B219394320071D9F5 /* SearchResult.h */,
 				D38CF70C219394320071D9F5 /* SearchResult.m */,
+				D3CDB0EA2195F6670048F0C7 /* SearchDelegate.h */,
 			);
 			path = "PDX Restaurant Inspections API";
 			sourceTree = "<group>";
