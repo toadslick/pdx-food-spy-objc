@@ -96,7 +96,9 @@
     viewIsBusy = isBusy;
     self.currentLocationButton.enabled = !isBusy;
     self.addressTextField.enabled = !isBusy;
-    
+
+    // "Hides when stopped" property is set on the spinner in the storyboard,
+    // so there is no need to show and hide the spinner from the code.
     if (isBusy) {
         [self.busySpinner startAnimating];
     } else {
