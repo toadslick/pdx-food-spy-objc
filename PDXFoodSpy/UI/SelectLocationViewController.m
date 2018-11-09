@@ -5,6 +5,7 @@
 @interface SelectLocationViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *currentLocationButton;
 @property (weak, nonatomic) IBOutlet UITextField *addressTextField;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *busySpinner;
 @end
 
 @implementation SelectLocationViewController {
@@ -12,6 +13,7 @@
     AddressGeocoder *geocoder;
     CLLocationCoordinate2D currentCoordinate;
     SearchNearCoordinate *search;
+    Boolean viewIsBusy;
 }
 
 - (void)viewDidLoad {
@@ -19,6 +21,9 @@
     
     // Disable this button until the curent location is detected.
     self.currentLocationButton.enabled = false;
+    
+    // Disable the busy spinner.
+    self.busySpinner.hidden = YES;
     
     // Begin detecting the current location.
     clu = [CurrentLocationUpdater new];
@@ -35,10 +40,12 @@
 }
 
 - (IBAction)currentLocationButtonTapped:(id)sender {
+    [self setBusyState:YES];
     [search fetch:currentCoordinate];
 }
 
 - (IBAction)addressTextFieldSubmitted:(id)sender {
+    [self setBusyState:YES];
     NSString *address = self.addressTextField.text;
     if (address) {
         [geocoder geocode:address];
@@ -71,15 +78,30 @@
 }
 
 - (void)searchDidSucceedWithResults:(NSArray<SearchResult *> *)results {
+    [self setBusyState:NO];
     NSLog(@"RESULTS: %@", results);
 }
 
 - (void)searchDidSucceedWithEmptyResults {
+    [self setBusyState:NO];
     NSLog(@"RESULTS: EMPTY");
 }
 
 - (void)searchDidFailWithError:(NSError *)error {
+    [self setBusyState:NO];
     NSLog(@"ERROR: %@", [error localizedDescription]);
+}
+
+- (void)setBusyState:(Boolean)isBusy {
+    viewIsBusy = isBusy;
+    self.currentLocationButton.enabled = !isBusy;
+    self.addressTextField.enabled = !isBusy;
+    
+    if (isBusy) {
+        [self.busySpinner startAnimating];
+    } else {
+        [self.busySpinner stopAnimating];
+    }
 }
 
 @end

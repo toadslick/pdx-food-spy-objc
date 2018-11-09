@@ -35,18 +35,18 @@
         <scene sceneID="9K7-zq-toM">
             <objects>
                 <viewController id="jMs-EQ-8Lb" customClass="SelectLocationViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="GOZ-EO-fBD">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="410"/>
+                    <view key="view" contentMode="scaleToFill" id="GOZ-EO-fBD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L0L-tc-3FS">
                                 <rect key="frame" x="0.0" y="137.5" width="320" height="141"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Near a Street Address..." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rmW-K3-EDX">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search a Street Address..." textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rmW-K3-EDX">
                                         <rect key="frame" x="20" y="55.5" width="280" height="30"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="search" textContentType="address-line1"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search" textContentType="address-line1"/>
                                         <connections>
                                             <action selector="addressTextFieldSubmitted:" destination="jMs-EQ-8Lb" eventType="primaryActionTriggered" id="sr1-SK-hM9"/>
                                         </connections>
@@ -63,8 +63,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="141.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4UF-sq-Hvk">
-                                        <rect key="frame" x="20" y="55.5" width="280" height="30"/>
-                                        <state key="normal" title="Search Near Current Location"/>
+                                        <rect key="frame" x="20" y="54" width="280" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <state key="normal" title="Search Current Location"/>
                                         <connections>
                                             <action selector="currentLocationButtonTapped:" destination="jMs-EQ-8Lb" eventType="primaryActionTriggered" id="OJJ-Zm-D9D"/>
                                         </connections>
@@ -80,7 +81,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V8l-vA-Zmf">
                                 <rect key="frame" x="0.0" y="274.5" width="320" height="141.5"/>
                                 <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ByD-TQ-1dK">
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ByD-TQ-1dK">
                                         <rect key="frame" x="150" y="61" width="20" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </activityIndicatorView>
@@ -109,6 +110,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addressTextField" destination="rmW-K3-EDX" id="waK-bU-oZm"/>
+                        <outlet property="busySpinner" destination="ByD-TQ-1dK" id="4JH-zz-UKp"/>
                         <outlet property="currentLocationButton" destination="4UF-sq-Hvk" id="kET-AO-gop"/>
                     </connections>
                 </viewController>
