@@ -79,7 +79,7 @@
 
 - (void)searchDidSucceedWithResults:(NSArray<SearchResult *> *)results {
     [self setBusyState:NO];
-    NSLog(@"RESULTS: %@", results);
+    [self performSegueWithIdentifier:@"searchSuccessSegue" sender:results];
 }
 
 - (void)searchDidSucceedWithEmptyResults {

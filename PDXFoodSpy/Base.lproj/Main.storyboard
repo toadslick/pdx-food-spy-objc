@@ -17,7 +17,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="e3f-M7-FCE">
-                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hfP-vg-ZS9">
@@ -112,6 +112,7 @@
                         <outlet property="addressTextField" destination="rmW-K3-EDX" id="waK-bU-oZm"/>
                         <outlet property="busySpinner" destination="ByD-TQ-1dK" id="4JH-zz-UKp"/>
                         <outlet property="currentLocationButton" destination="4UF-sq-Hvk" id="kET-AO-gop"/>
+                        <segue destination="FeW-cl-1dp" kind="show" identifier="searchSuccessSegue" id="goU-fN-PHv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLz-2k-be2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -123,7 +124,7 @@
             <objects>
                 <viewController id="IFV-kn-df5" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7h9-kW-Inj">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="QzD-Qe-pfX"/>
@@ -139,7 +140,7 @@
             <objects>
                 <viewController id="J0K-5E-rgA" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mNr-lz-qi2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ews-Fz-lpb"/>
