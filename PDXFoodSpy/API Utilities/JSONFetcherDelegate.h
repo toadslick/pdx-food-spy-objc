@@ -7,7 +7,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol JSONFetcherDelegate <NSObject>
 
-- (void)jsonFetcher:(JSONFetcher *)fetcher didReceiveJSON:(NSDictionary *)json;
+- (void)jsonFetcher:(JSONFetcher *)fetcher didReceiveDictionary:(NSDictionary *)json;
+
+- (void)jsonFetcher:(JSONFetcher *)fetcher didReceiveArray:(NSArray *)json;
 
 - (void)jsonFetcher:(JSONFetcher *)fetcher didFailWithError:(NSError *)error;
 

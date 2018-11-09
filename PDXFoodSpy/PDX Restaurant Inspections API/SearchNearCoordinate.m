@@ -19,66 +19,52 @@
 }
 
 - (NSString *)buildURLString:(CLLocationCoordinate2D)coordinate {
-    NSString *format = @"http://api.civicapps.org/restaurant-inspections/near/%f,%f?since=%@&limit=%i";
-    return [[NSString alloc] initWithFormat:format, coordinate.longitude, coordinate.latitude, [self buildEarliestDateString], 100];
+    NSString *format = @"http://api.civicapps.org/restaurant-inspections/near/%f,%f?since=%@&limit=%i&distance=%f";
+    return [[NSString alloc] initWithFormat:format, coordinate.longitude, coordinate.latitude, @"2014-01-01", 50, 0.5];
 }
 
-- (NSString *)buildEarliestDateString {
-    NSTimeInterval timeAgo = -4 * 365 * 24 * 60 * 60; // four years ago
-    NSDate *date = [NSDate dateWithTimeIntervalSinceNow:timeAgo];
-    return [self formatDate:date];
-}
-
-- (NSString *)formatDate:(NSDate *)date {
-    NSDateFormatter *formatter = [NSDateFormatter new];
-    formatter.dateFormat = @"yyyy-MM-dd";
-    return [formatter stringFromDate:date];
-}
-
-
-- (void)jsonFetcher:(JSONFetcher *)fetcher didReceiveJSON:(NSDictionary *)json {
+- (void)jsonFetcher:(JSONFetcher *)fetcher didReceiveDictionary:(NSDictionary *)json {
     NSArray<SearchResult *> *results = [self buildSearchResults:json];
-    NSLog(@"RESTAURANT SEARCH SUCCESS: %@", results);
+    NSLog(@"RESULTS: %@", results);
+}
+
+// The Restaurant Inspection API returns an array as the top-level JSON object only when it returns zero results. 
+- (void)jsonFetcher:(JSONFetcher *)fetcher didReceiveArray:(NSArray *)json {
+    NSLog(@"RESULTS: EMPTY");
 }
 
 - (void)jsonFetcher:(JSONFetcher *)fetcher didFailWithError:(NSError *)error {
-    NSLog(@"RESTAURANT SEARCH ERROR: %@, %@", [error localizedFailureReason], [error localizedDescription]);
+    NSLog(@"ERROR: %@", [error localizedDescription]);
 }
 
 - (NSArray<SearchResult *> *)buildSearchResults:(NSDictionary *)json {
     NSArray<NSDictionary *> *dicts = [json objectForKey:@"results"];
-    NSDictionary<NSString *, SearchResult *> *latestResults = @{};
-    
-    // The "results" object will be nil if the JSON response returned with zero results found.
-    if (dicts) {
-        [dicts enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull dict, NSUInteger idx, BOOL * _Nonnull stop) {
-            
-            // Only keep results for which the type is "FoodSvcSemi".
-            NSString *type = [dict objectForKey:@"type"];
-            if ([type isEqualToString:@"FoodSvcSemi"]) {
-                SearchResult *result = [SearchResult initFromJSONDictionary:dict];
-                
-                // Only keep the latest result for each restaurant.
-                // Store each result in a dictionary according to the restaurant ID.
-                SearchResult *previousResult = [latestResults objectForKey:result.restaurantID];
-                
-                // Use this result if it has a later inspection date than the previous result.
-                if (previousResult) {
-                    if ([[result.date laterDate:previousResult.date] isEqualToDate:result.date]) {
-                        [dict setValue:result forKey:result.restaurantID];
-                    }
-
-                // If a result doesn't exist for the restaurant ID, use this result.
-                } else {
-                    [dict setValue:result forKey:result.restaurantID];
-                }
-            }
-        }];
+    NSMutableDictionary<NSString *, SearchResult *> *latestResults = [NSMutableDictionary new];
+    [dicts enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull dict, NSUInteger idx, BOOL * _Nonnull stop) {
         
-        return [latestResults allValues];
-    } else {
-        return @[];
-    }
+        // Only keep results for which the type is "FoodSvcSemi".
+        NSString *type = [dict objectForKey:@"type"];
+        if ([type isEqualToString:@"FoodSvcSemi"]) {
+            SearchResult *result = [SearchResult initFromJSONDictionary:dict];
+            
+            // Only keep the latest result for each restaurant.
+            // Store each result in a dictionary according to the restaurant ID.
+            SearchResult *previousResult = [latestResults objectForKey:result.restaurantID];
+            
+            // Use this result if it has a later inspection date than the previous result.
+            if (previousResult) {
+                if ([[result.date laterDate:previousResult.date] isEqualToDate:result.date]) {
+                    [latestResults setObject:result forKey:result.restaurantID];
+                }
+
+            // If a result doesn't exist for the restaurant ID, use this result.
+            } else {
+                [latestResults setObject:result forKey:result.restaurantID];
+            }
+        }
+    }];
+    
+    return [latestResults allValues];
 }
 
 

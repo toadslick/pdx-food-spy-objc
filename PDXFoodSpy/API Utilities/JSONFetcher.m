@@ -18,13 +18,16 @@
 }
 
 - (void)parseJSON:(NSData *)data {
-    // TODO: move to dispatch queue
     NSError *error = nil;
     id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
     if (error) {
         [self.delegate jsonFetcher:self didFailWithError:error];
     } else {
-        [self.delegate jsonFetcher:self didReceiveJSON:json];
+        if ([json isKindOfClass:[NSDictionary class]]) {
+            [self.delegate jsonFetcher:self didReceiveDictionary:json];
+        } else if ([json isKindOfClass:[NSArray class]]) {
+            [self.delegate jsonFetcher:self didReceiveArray:json];
+        }
     }
 }
 

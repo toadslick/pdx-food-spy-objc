@@ -34,7 +34,6 @@
 }
 
 - (IBAction)currentLocationButtonTapped:(id)sender {
-    NSLog(@"CURRENT LOCATION: %f, %f", currentCoordinate.latitude, currentCoordinate.longitude);
     [rnl fetch:currentCoordinate];
 }
 
@@ -59,16 +58,15 @@
 }
 
 - (void)currentLocationUpdater:(CurrentLocationUpdater *)updater didFailWithError:(NSError *)error {
-    NSLog(@"CURRENT LOCATION ERROR: %@, %@", [error localizedFailureReason], [error localizedDescription]);
+    NSLog(@"ERROR: %@", [error localizedDescription]);
 }
 
 - (void)addressGeocoder:(AddressGeocoder *)geocoder foundCoordinate:(CLLocationCoordinate2D)coordinate forAddress:(NSString *)address {
-    NSLog(@"GEOCODER SUCCESS: %f, %f", coordinate.latitude, coordinate.longitude);
     [rnl fetch:coordinate];
 }
 
 - (void)addressGeocoder:(AddressGeocoder *)geocoder didFailWithError:(NSError *)error forAddress:(NSString *)address {
-    NSLog(@"GEOCODER ERROR: %@, %@", [error localizedFailureReason], [error localizedDescription]);
+    NSLog(@"ERROR: %@", [error localizedDescription]);
 }
 
 @end
