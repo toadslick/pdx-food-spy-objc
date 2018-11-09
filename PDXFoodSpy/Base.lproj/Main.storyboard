@@ -31,46 +31,80 @@
             </objects>
             <point key="canvasLocation" x="-1425" y="-6"/>
         </scene>
-        <!--PDX Food Spy-->
+        <!--PDX Restaurant Inspections-->
         <scene sceneID="9K7-zq-toM">
             <objects>
                 <viewController id="jMs-EQ-8Lb" customClass="SelectLocationViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GOZ-EO-fBD">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="GOZ-EO-fBD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="410"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4UF-sq-Hvk">
-                                <rect key="frame" x="0.0" y="50" width="320" height="30"/>
-                                <state key="normal" title="Search Near Current Location"/>
-                                <connections>
-                                    <action selector="currentLocationButtonTapped:" destination="jMs-EQ-8Lb" eventType="primaryActionTriggered" id="OJJ-Zm-D9D"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Near a Street Address..." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rmW-K3-EDX">
-                                <rect key="frame" x="0.0" y="130" width="320" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="search" textContentType="address-line1"/>
-                                <connections>
-                                    <action selector="addressTextFieldSubmitted:" destination="jMs-EQ-8Lb" eventType="primaryActionTriggered" id="sr1-SK-hM9"/>
-                                </connections>
-                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L0L-tc-3FS">
+                                <rect key="frame" x="0.0" y="137.5" width="320" height="141"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Near a Street Address..." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rmW-K3-EDX">
+                                        <rect key="frame" x="20" y="55.5" width="280" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="search" textContentType="address-line1"/>
+                                        <connections>
+                                            <action selector="addressTextFieldSubmitted:" destination="jMs-EQ-8Lb" eventType="primaryActionTriggered" id="sr1-SK-hM9"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="rmW-K3-EDX" secondAttribute="trailing" constant="20" id="CJ8-BD-9du"/>
+                                    <constraint firstItem="rmW-K3-EDX" firstAttribute="leading" secondItem="L0L-tc-3FS" secondAttribute="leading" constant="20" id="Egb-Y6-SCn"/>
+                                    <constraint firstItem="rmW-K3-EDX" firstAttribute="centerY" secondItem="L0L-tc-3FS" secondAttribute="centerY" id="Hmy-ad-iMv"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C4q-Ev-L5U">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="141.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4UF-sq-Hvk">
+                                        <rect key="frame" x="20" y="55.5" width="280" height="30"/>
+                                        <state key="normal" title="Search Near Current Location"/>
+                                        <connections>
+                                            <action selector="currentLocationButtonTapped:" destination="jMs-EQ-8Lb" eventType="primaryActionTriggered" id="OJJ-Zm-D9D"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="4UF-sq-Hvk" firstAttribute="centerY" secondItem="C4q-Ev-L5U" secondAttribute="centerY" id="HVk-67-jQK"/>
+                                    <constraint firstAttribute="trailing" secondItem="4UF-sq-Hvk" secondAttribute="trailing" constant="20" id="RQX-oz-IxW"/>
+                                    <constraint firstItem="4UF-sq-Hvk" firstAttribute="leading" secondItem="C4q-Ev-L5U" secondAttribute="leading" constant="20" id="gAW-ji-gss"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V8l-vA-Zmf">
+                                <rect key="frame" x="0.0" y="274.5" width="320" height="141.5"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ByD-TQ-1dK">
+                                        <rect key="frame" x="150" y="61" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="rmW-K3-EDX" firstAttribute="leading" secondItem="i6F-5S-ptF" secondAttribute="leading" id="3lS-Pc-2zV"/>
-                            <constraint firstItem="4UF-sq-Hvk" firstAttribute="centerX" secondItem="i6F-5S-ptF" secondAttribute="centerX" id="CcU-tc-bPF"/>
-                            <constraint firstItem="i6F-5S-ptF" firstAttribute="trailing" secondItem="rmW-K3-EDX" secondAttribute="trailing" id="HcA-3e-CTP"/>
-                            <constraint firstItem="i6F-5S-ptF" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="rmW-K3-EDX" secondAttribute="bottom" constant="50" id="KGb-db-axx"/>
-                            <constraint firstItem="4UF-sq-Hvk" firstAttribute="leading" secondItem="i6F-5S-ptF" secondAttribute="leading" id="O62-da-cTJ"/>
-                            <constraint firstItem="i6F-5S-ptF" firstAttribute="trailing" secondItem="4UF-sq-Hvk" secondAttribute="trailing" id="OFu-cl-n84"/>
-                            <constraint firstItem="4UF-sq-Hvk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="i6F-5S-ptF" secondAttribute="top" constant="50" id="eL4-ld-QRK"/>
-                            <constraint firstItem="rmW-K3-EDX" firstAttribute="centerX" secondItem="i6F-5S-ptF" secondAttribute="centerX" id="eUq-1l-8Mp"/>
-                            <constraint firstItem="rmW-K3-EDX" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4UF-sq-Hvk" secondAttribute="bottom" constant="50" id="wcc-q9-wS2"/>
+                            <constraint firstItem="C4q-Ev-L5U" firstAttribute="leading" secondItem="i6F-5S-ptF" secondAttribute="leading" id="370-oz-gNf"/>
+                            <constraint firstItem="i6F-5S-ptF" firstAttribute="trailing" secondItem="C4q-Ev-L5U" secondAttribute="trailing" id="CGx-2V-Hzk"/>
+                            <constraint firstItem="L0L-tc-3FS" firstAttribute="centerY" secondItem="i6F-5S-ptF" secondAttribute="centerY" id="FCj-ZW-qD5"/>
+                            <constraint firstItem="i6F-5S-ptF" firstAttribute="trailing" secondItem="V8l-vA-Zmf" secondAttribute="trailing" id="RjF-z0-IeN"/>
+                            <constraint firstItem="L0L-tc-3FS" firstAttribute="leading" secondItem="i6F-5S-ptF" secondAttribute="leading" id="amI-ED-q40"/>
+                            <constraint firstItem="i6F-5S-ptF" firstAttribute="trailing" secondItem="L0L-tc-3FS" secondAttribute="trailing" id="bId-yP-npZ"/>
+                            <constraint firstItem="C4q-Ev-L5U" firstAttribute="top" secondItem="i6F-5S-ptF" secondAttribute="top" id="edJ-j7-ztv"/>
+                            <constraint firstItem="i6F-5S-ptF" firstAttribute="bottom" secondItem="V8l-vA-Zmf" secondAttribute="bottom" id="keD-nQ-aC5"/>
+                            <constraint firstItem="V8l-vA-Zmf" firstAttribute="height" secondItem="i6F-5S-ptF" secondAttribute="height" multiplier="0.34" id="m28-vH-Ret"/>
+                            <constraint firstItem="C4q-Ev-L5U" firstAttribute="height" secondItem="i6F-5S-ptF" secondAttribute="height" multiplier="0.34" id="o9d-l6-glT"/>
+                            <constraint firstItem="L0L-tc-3FS" firstAttribute="height" secondItem="i6F-5S-ptF" secondAttribute="height" multiplier="0.34" id="sSH-mP-EZv"/>
+                            <constraint firstItem="i6F-5S-ptF" firstAttribute="leading" secondItem="V8l-vA-Zmf" secondAttribute="leading" id="yx5-G9-hbx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="i6F-5S-ptF"/>
                     </view>
-                    <navigationItem key="navigationItem" title="PDX Food Spy" id="ATA-IM-rid">
+                    <navigationItem key="navigationItem" title="PDX Restaurant Inspections" id="ATA-IM-rid">
                         <barButtonItem key="backBarButtonItem" title="Select Location" id="Est-n5-FDf"/>
                     </navigationItem>
                     <connections>
@@ -80,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLz-2k-be2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-649" y="-7"/>
+            <point key="canvasLocation" x="-650.625" y="-7.5"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="s90-AX-ycy">
