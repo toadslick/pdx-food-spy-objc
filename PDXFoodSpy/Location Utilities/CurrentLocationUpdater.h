@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
-#import <CoreLocation/CoreLocation.h>
+#import <CoreLocation/CLLocation.h>
+#import <CoreLocation/CLLocationManager.h>
+#import <CoreLocation/CLLocationManagerDelegate.h>
 #import "CurrentLocationUpdaterDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN

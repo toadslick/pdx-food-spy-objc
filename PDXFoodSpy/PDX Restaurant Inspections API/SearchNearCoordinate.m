@@ -1,5 +1,4 @@
 #import "SearchNearCoordinate.h"
-#import "SearchResult.h"
 
 @implementation SearchNearCoordinate {
     JSONFetcher *jsonFetcher;

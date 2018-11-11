@@ -1,6 +1,4 @@
 #import "SelectLocationViewController.h"
-#import "CurrentLocationUpdater.h"
-#import "SearchNearCoordinate.h"
 
 @interface SelectLocationViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *currentLocationButton;
@@ -53,9 +51,11 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    
+
+    // Pass the search results to the next view.
+    SearchResultsTabBarController *destination = [segue destinationViewController];
+    destination.results = (NSArray<SearchResult *> *)sender;
+
     // Stop updating the current location.
     [clu stop];
 }

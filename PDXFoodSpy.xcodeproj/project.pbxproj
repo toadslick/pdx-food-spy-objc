@@ -14,6 +14,11 @@
 		B72B0BB4218E619700A79C59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B72B0BB3218E619700A79C59 /* Assets.xcassets */; };
 		B72B0BB7218E619700A79C59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B72B0BB5218E619700A79C59 /* LaunchScreen.storyboard */; };
 		B72B0BBA218E619700A79C59 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B72B0BB9218E619700A79C59 /* main.m */; };
+		B7384C0F2198955600A278DD /* SearchResultsTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7384C0E2198955600A278DD /* SearchResultsTabBarController.m */; };
+		B7384C122198958F00A278DD /* SearchResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7384C112198958F00A278DD /* SearchResultsTableViewController.m */; };
+		B7384C15219895E000A278DD /* SearchResultsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7384C14219895E000A278DD /* SearchResultsMapViewController.m */; };
+		B7384C172198987400A278DD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7384C162198987400A278DD /* MapKit.framework */; };
+		B7384C1A2198A26C00A278DD /* SearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7384C192198A26C00A278DD /* SearchResultCell.m */; };
 		B78BEC5D218F7A9F005F8EFC /* CurrentLocationUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = B78BEC5C218F7A9F005F8EFC /* CurrentLocationUpdater.m */; };
 		B78BEC60218F7B2E005F8EFC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B78BEC5F218F7B2E005F8EFC /* CoreLocation.framework */; };
 		B7EE5304219086B5001BF3DD /* AddressGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = B7EE5303219086B5001BF3DD /* AddressGeocoder.m */; };
@@ -35,6 +40,15 @@
 		B72B0BB6218E619700A79C59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B72B0BB8218E619700A79C59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B72B0BB9218E619700A79C59 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B7384C0D2198955600A278DD /* SearchResultsTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultsTabBarController.h; sourceTree = "<group>"; };
+		B7384C0E2198955600A278DD /* SearchResultsTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultsTabBarController.m; sourceTree = "<group>"; };
+		B7384C102198958F00A278DD /* SearchResultsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultsTableViewController.h; sourceTree = "<group>"; };
+		B7384C112198958F00A278DD /* SearchResultsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultsTableViewController.m; sourceTree = "<group>"; };
+		B7384C13219895E000A278DD /* SearchResultsMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultsMapViewController.h; sourceTree = "<group>"; };
+		B7384C14219895E000A278DD /* SearchResultsMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultsMapViewController.m; sourceTree = "<group>"; };
+		B7384C162198987400A278DD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B7384C182198A26C00A278DD /* SearchResultCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultCell.h; sourceTree = "<group>"; };
+		B7384C192198A26C00A278DD /* SearchResultCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultCell.m; sourceTree = "<group>"; };
 		B78BEC5B218F7A9F005F8EFC /* CurrentLocationUpdater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentLocationUpdater.h; sourceTree = "<group>"; };
 		B78BEC5C218F7A9F005F8EFC /* CurrentLocationUpdater.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentLocationUpdater.m; sourceTree = "<group>"; };
 		B78BEC5F218F7B2E005F8EFC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -57,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7384C172198987400A278DD /* MapKit.framework in Frameworks */,
 				B78BEC60218F7B2E005F8EFC /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,6 +117,7 @@
 		B78BEC5E218F7B2D005F8EFC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B7384C162198987400A278DD /* MapKit.framework */,
 				B78BEC5F218F7B2E005F8EFC /* CoreLocation.framework */,
 			);
 			name = Frameworks;
@@ -127,6 +143,14 @@
 				B70591FC218EBCF9000A5535 /* MainNavigationViewController.m */,
 				B7059204218ED37E000A5535 /* SelectLocationViewController.h */,
 				B7059205218ED37E000A5535 /* SelectLocationViewController.m */,
+				B7384C0D2198955600A278DD /* SearchResultsTabBarController.h */,
+				B7384C0E2198955600A278DD /* SearchResultsTabBarController.m */,
+				B7384C102198958F00A278DD /* SearchResultsTableViewController.h */,
+				B7384C112198958F00A278DD /* SearchResultsTableViewController.m */,
+				B7384C13219895E000A278DD /* SearchResultsMapViewController.h */,
+				B7384C14219895E000A278DD /* SearchResultsMapViewController.m */,
+				B7384C182198A26C00A278DD /* SearchResultCell.h */,
+				B7384C192198A26C00A278DD /* SearchResultCell.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -225,10 +249,14 @@
 			files = (
 				D38CF70D219394320071D9F5 /* SearchResult.m in Sources */,
 				B72B0BBA218E619700A79C59 /* main.m in Sources */,
+				B7384C0F2198955600A278DD /* SearchResultsTabBarController.m in Sources */,
 				B7059206218ED37E000A5535 /* SelectLocationViewController.m in Sources */,
+				B7384C15219895E000A278DD /* SearchResultsMapViewController.m in Sources */,
 				D3F0A3852191EA4F00DD4E39 /* SearchNearCoordinate.m in Sources */,
 				B78BEC5D218F7A9F005F8EFC /* CurrentLocationUpdater.m in Sources */,
+				B7384C1A2198A26C00A278DD /* SearchResultCell.m in Sources */,
 				B7EE5304219086B5001BF3DD /* AddressGeocoder.m in Sources */,
+				B7384C122198958F00A278DD /* SearchResultsTableViewController.m in Sources */,
 				D32152A82190BC740043C5FF /* JSONFetcher.m in Sources */,
 				B72B0BAC218E619600A79C59 /* AppDelegate.m in Sources */,
 				B70591FD218EBCF9000A5535 /* MainNavigationViewController.m in Sources */,

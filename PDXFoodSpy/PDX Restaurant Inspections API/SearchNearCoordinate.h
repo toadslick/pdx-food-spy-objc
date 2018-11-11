@@ -2,6 +2,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "JSONFetcher.h"
 #import "SearchDelegate.h"
+#import "SearchResult.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

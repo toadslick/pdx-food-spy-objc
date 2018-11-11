@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
-#import <CoreLocation/CoreLocation.h>
+#import <CoreLocation/CLCircularRegion.h>
+#import <CoreLocation/CLPlacemark.h>
+#import <CoreLocation/CLGeocoder.h>
 #import "AddressGeocoderDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
