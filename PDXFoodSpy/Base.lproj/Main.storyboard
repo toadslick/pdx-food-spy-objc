@@ -37,74 +37,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L0L-tc-3FS">
-                                <rect key="frame" x="0.0" y="201" width="320" height="186"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search a Street Address..." textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rmW-K3-EDX">
-                                        <rect key="frame" x="20" y="78" width="280" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search" textContentType="address-line1"/>
-                                        <connections>
-                                            <action selector="addressTextFieldSubmitted:" destination="jMs-EQ-8Lb" eventType="primaryActionTriggered" id="sr1-SK-hM9"/>
-                                        </connections>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="rmW-K3-EDX" secondAttribute="trailing" constant="20" id="CJ8-BD-9du"/>
-                                    <constraint firstItem="rmW-K3-EDX" firstAttribute="leading" secondItem="L0L-tc-3FS" secondAttribute="leading" constant="20" id="Egb-Y6-SCn"/>
-                                    <constraint firstItem="rmW-K3-EDX" firstAttribute="centerY" secondItem="L0L-tc-3FS" secondAttribute="centerY" id="Hmy-ad-iMv"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C4q-Ev-L5U">
-                                <rect key="frame" x="0.0" y="20" width="320" height="186.5"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4UF-sq-Hvk">
-                                        <rect key="frame" x="20" y="76.5" width="280" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                        <state key="normal" title="Search Current Location"/>
-                                        <connections>
-                                            <action selector="currentLocationButtonTapped:" destination="jMs-EQ-8Lb" eventType="primaryActionTriggered" id="OJJ-Zm-D9D"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="4UF-sq-Hvk" firstAttribute="centerY" secondItem="C4q-Ev-L5U" secondAttribute="centerY" id="HVk-67-jQK"/>
-                                    <constraint firstAttribute="trailing" secondItem="4UF-sq-Hvk" secondAttribute="trailing" constant="20" id="RQX-oz-IxW"/>
-                                    <constraint firstItem="4UF-sq-Hvk" firstAttribute="leading" secondItem="C4q-Ev-L5U" secondAttribute="leading" constant="20" id="gAW-ji-gss"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V8l-vA-Zmf">
-                                <rect key="frame" x="0.0" y="381.5" width="320" height="186.5"/>
-                                <subviews>
-                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ByD-TQ-1dK">
-                                        <rect key="frame" x="141.5" y="75" width="37" height="37"/>
-                                        <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </activityIndicatorView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="ByD-TQ-1dK" firstAttribute="centerY" secondItem="V8l-vA-Zmf" secondAttribute="centerY" id="4bj-3g-umP"/>
-                                    <constraint firstItem="ByD-TQ-1dK" firstAttribute="centerX" secondItem="V8l-vA-Zmf" secondAttribute="centerX" id="xtg-BN-bq2"/>
-                                </constraints>
-                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4UF-sq-Hvk">
+                                <rect key="frame" x="10" y="96" width="300" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <inset key="contentEdgeInsets" minX="7" minY="10" maxX="0.0" maxY="10"/>
+                                <state key="normal" title="Search Current Location"/>
+                                <connections>
+                                    <action selector="currentLocationButtonTapped:" destination="jMs-EQ-8Lb" eventType="primaryActionTriggered" id="OJJ-Zm-D9D"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ByD-TQ-1dK">
+                                <rect key="frame" x="141.5" y="158" width="37" height="37"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                            <searchBar contentMode="redraw" placeholder="Search a Street Address" translatesAutoresizingMaskIntoConstraints="NO" id="rT3-ZW-zNZ">
+                                <rect key="frame" x="0.0" y="20" width="320" height="56"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search" textContentType="address-line1"/>
+                            </searchBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="C4q-Ev-L5U" firstAttribute="leading" secondItem="i6F-5S-ptF" secondAttribute="leading" id="370-oz-gNf"/>
-                            <constraint firstItem="i6F-5S-ptF" firstAttribute="trailing" secondItem="C4q-Ev-L5U" secondAttribute="trailing" id="CGx-2V-Hzk"/>
-                            <constraint firstItem="L0L-tc-3FS" firstAttribute="centerY" secondItem="i6F-5S-ptF" secondAttribute="centerY" id="FCj-ZW-qD5"/>
-                            <constraint firstItem="i6F-5S-ptF" firstAttribute="trailing" secondItem="V8l-vA-Zmf" secondAttribute="trailing" id="RjF-z0-IeN"/>
-                            <constraint firstItem="L0L-tc-3FS" firstAttribute="leading" secondItem="i6F-5S-ptF" secondAttribute="leading" id="amI-ED-q40"/>
-                            <constraint firstItem="i6F-5S-ptF" firstAttribute="trailing" secondItem="L0L-tc-3FS" secondAttribute="trailing" id="bId-yP-npZ"/>
-                            <constraint firstItem="C4q-Ev-L5U" firstAttribute="top" secondItem="i6F-5S-ptF" secondAttribute="top" id="edJ-j7-ztv"/>
-                            <constraint firstItem="i6F-5S-ptF" firstAttribute="bottom" secondItem="V8l-vA-Zmf" secondAttribute="bottom" id="keD-nQ-aC5"/>
-                            <constraint firstItem="V8l-vA-Zmf" firstAttribute="height" secondItem="i6F-5S-ptF" secondAttribute="height" multiplier="0.34" id="m28-vH-Ret"/>
-                            <constraint firstItem="C4q-Ev-L5U" firstAttribute="height" secondItem="i6F-5S-ptF" secondAttribute="height" multiplier="0.34" id="o9d-l6-glT"/>
-                            <constraint firstItem="L0L-tc-3FS" firstAttribute="height" secondItem="i6F-5S-ptF" secondAttribute="height" multiplier="0.34" id="sSH-mP-EZv"/>
-                            <constraint firstItem="i6F-5S-ptF" firstAttribute="leading" secondItem="V8l-vA-Zmf" secondAttribute="leading" id="yx5-G9-hbx"/>
+                            <constraint firstItem="rT3-ZW-zNZ" firstAttribute="leading" secondItem="i6F-5S-ptF" secondAttribute="leading" id="6as-Om-buv"/>
+                            <constraint firstItem="4UF-sq-Hvk" firstAttribute="leading" secondItem="i6F-5S-ptF" secondAttribute="leading" constant="10" id="7jf-am-Dut"/>
+                            <constraint firstItem="4UF-sq-Hvk" firstAttribute="top" secondItem="rT3-ZW-zNZ" secondAttribute="bottom" constant="20" id="FzH-VU-n9b"/>
+                            <constraint firstItem="ByD-TQ-1dK" firstAttribute="top" secondItem="4UF-sq-Hvk" secondAttribute="bottom" constant="20" id="LBP-b9-Qy5"/>
+                            <constraint firstItem="rT3-ZW-zNZ" firstAttribute="top" secondItem="i6F-5S-ptF" secondAttribute="top" id="Wo2-Jq-rrO"/>
+                            <constraint firstItem="i6F-5S-ptF" firstAttribute="trailing" secondItem="rT3-ZW-zNZ" secondAttribute="trailing" id="fUi-cg-tNv"/>
+                            <constraint firstItem="i6F-5S-ptF" firstAttribute="trailing" secondItem="4UF-sq-Hvk" secondAttribute="trailing" constant="10" id="ugk-C1-LNf"/>
+                            <constraint firstItem="ByD-TQ-1dK" firstAttribute="centerX" secondItem="i6F-5S-ptF" secondAttribute="centerX" id="v94-qe-C3q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="i6F-5S-ptF"/>
                     </view>
@@ -113,7 +73,7 @@
                     </navigationItem>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="addressTextField" destination="rmW-K3-EDX" id="waK-bU-oZm"/>
+                        <outlet property="addressSearchField" destination="rT3-ZW-zNZ" id="ssu-jk-o8m"/>
                         <outlet property="busySpinner" destination="ByD-TQ-1dK" id="4JH-zz-UKp"/>
                         <outlet property="currentLocationButton" destination="4UF-sq-Hvk" id="kET-AO-gop"/>
                         <segue destination="FeW-cl-1dp" kind="show" identifier="searchSuccessSegue" id="goU-fN-PHv"/>
@@ -121,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLz-2k-be2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-650.625" y="-7.5"/>
+            <point key="canvasLocation" x="-650.625" y="-8.4507042253521121"/>
         </scene>
         <!--Search Results Tab Bar Controller-->
         <scene sceneID="Qnd-VV-4dw">

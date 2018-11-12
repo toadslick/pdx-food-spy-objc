@@ -2,7 +2,7 @@
 
 @interface SelectLocationViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *currentLocationButton;
-@property (weak, nonatomic) IBOutlet UITextField *addressTextField;
+@property (weak, nonatomic) IBOutlet UISearchBar *addressSearchField;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *busySpinner;
 @end
 
@@ -28,13 +28,15 @@
     clu.delegate = self;
     [clu start];
     
-    // Initialize the address geocoder.
+    // Initialize the address search classes and their delegates.
     geocoder = [AddressGeocoder new];
     geocoder.delegate = self;
-    
-    // Search and parse API data.
     search = [SearchNearCoordinate new];
     search.delegate = self;
+    self.addressSearchField.delegate = self;
+    
+    // Style the current location button.
+    self.currentLocationButton.layer.cornerRadius = self.currentLocationButton.layer.frame.size.height / 3;
 }
 
 - (IBAction)currentLocationButtonTapped:(id)sender {
@@ -42,11 +44,15 @@
     [search fetch:currentCoordinate];
 }
 
-- (IBAction)addressTextFieldSubmitted:(id)sender {
-    [self setBusyState:YES];
-    NSString *address = self.addressTextField.text;
-    if (address) {
-        [geocoder geocode:address];
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    if (viewIsBusy) {
+        return;
+    } else {
+        [self setBusyState:YES];
+        NSString *address = searchBar.text;
+        if (address) {
+            [geocoder geocode:address];
+        }
     }
 }
 
@@ -95,8 +101,7 @@
 - (void)setBusyState:(Boolean)isBusy {
     viewIsBusy = isBusy;
     self.currentLocationButton.enabled = !isBusy;
-    self.addressTextField.enabled = !isBusy;
-
+ 
     // "Hides when stopped" property is set on the spinner in the storyboard,
     // so there is no need to show and hide the spinner from the code.
     if (isBusy) {
