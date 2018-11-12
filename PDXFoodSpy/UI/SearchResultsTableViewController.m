@@ -26,10 +26,9 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"searchResultCell" forIndexPath:indexPath];
+    SearchResultTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"searchResultCell"];
     SearchResult *result = [results objectAtIndex:[indexPath row]];
-    [cell textLabel].text = result.name;
-    [cell detailTextLabel].text = result.address;
+    cell.searchResult = result;
     return cell;
 }
 

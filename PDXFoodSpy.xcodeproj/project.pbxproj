@@ -18,9 +18,9 @@
 		B7384C122198958F00A278DD /* SearchResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7384C112198958F00A278DD /* SearchResultsTableViewController.m */; };
 		B7384C15219895E000A278DD /* SearchResultsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7384C14219895E000A278DD /* SearchResultsMapViewController.m */; };
 		B7384C172198987400A278DD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7384C162198987400A278DD /* MapKit.framework */; };
-		B7384C1A2198A26C00A278DD /* SearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7384C192198A26C00A278DD /* SearchResultCell.m */; };
 		B78BEC5D218F7A9F005F8EFC /* CurrentLocationUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = B78BEC5C218F7A9F005F8EFC /* CurrentLocationUpdater.m */; };
 		B78BEC60218F7B2E005F8EFC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B78BEC5F218F7B2E005F8EFC /* CoreLocation.framework */; };
+		B7D2BF4A21991D140040C529 /* SearchResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7D2BF4921991D140040C529 /* SearchResultTableViewCell.m */; };
 		B7EE5304219086B5001BF3DD /* AddressGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = B7EE5303219086B5001BF3DD /* AddressGeocoder.m */; };
 		D32152A82190BC740043C5FF /* JSONFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D32152A72190BC740043C5FF /* JSONFetcher.m */; };
 		D38CF70D219394320071D9F5 /* SearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D38CF70C219394320071D9F5 /* SearchResult.m */; };
@@ -47,12 +47,12 @@
 		B7384C13219895E000A278DD /* SearchResultsMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultsMapViewController.h; sourceTree = "<group>"; };
 		B7384C14219895E000A278DD /* SearchResultsMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultsMapViewController.m; sourceTree = "<group>"; };
 		B7384C162198987400A278DD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		B7384C182198A26C00A278DD /* SearchResultCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultCell.h; sourceTree = "<group>"; };
-		B7384C192198A26C00A278DD /* SearchResultCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultCell.m; sourceTree = "<group>"; };
 		B78BEC5B218F7A9F005F8EFC /* CurrentLocationUpdater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentLocationUpdater.h; sourceTree = "<group>"; };
 		B78BEC5C218F7A9F005F8EFC /* CurrentLocationUpdater.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentLocationUpdater.m; sourceTree = "<group>"; };
 		B78BEC5F218F7B2E005F8EFC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B78BEC61218F8046005F8EFC /* CurrentLocationUpdaterDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentLocationUpdaterDelegate.h; sourceTree = "<group>"; };
+		B7D2BF4821991D140040C529 /* SearchResultTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultTableViewCell.h; sourceTree = "<group>"; };
+		B7D2BF4921991D140040C529 /* SearchResultTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultTableViewCell.m; sourceTree = "<group>"; };
 		B7EE5302219086B5001BF3DD /* AddressGeocoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressGeocoder.h; sourceTree = "<group>"; };
 		B7EE5303219086B5001BF3DD /* AddressGeocoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressGeocoder.m; sourceTree = "<group>"; };
 		B7EE5305219087AB001BF3DD /* AddressGeocoderDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressGeocoderDelegate.h; sourceTree = "<group>"; };
@@ -149,8 +149,8 @@
 				B7384C112198958F00A278DD /* SearchResultsTableViewController.m */,
 				B7384C13219895E000A278DD /* SearchResultsMapViewController.h */,
 				B7384C14219895E000A278DD /* SearchResultsMapViewController.m */,
-				B7384C182198A26C00A278DD /* SearchResultCell.h */,
-				B7384C192198A26C00A278DD /* SearchResultCell.m */,
+				B7D2BF4821991D140040C529 /* SearchResultTableViewCell.h */,
+				B7D2BF4921991D140040C529 /* SearchResultTableViewCell.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -254,10 +254,10 @@
 				B7384C15219895E000A278DD /* SearchResultsMapViewController.m in Sources */,
 				D3F0A3852191EA4F00DD4E39 /* SearchNearCoordinate.m in Sources */,
 				B78BEC5D218F7A9F005F8EFC /* CurrentLocationUpdater.m in Sources */,
-				B7384C1A2198A26C00A278DD /* SearchResultCell.m in Sources */,
 				B7EE5304219086B5001BF3DD /* AddressGeocoder.m in Sources */,
 				B7384C122198958F00A278DD /* SearchResultsTableViewController.m in Sources */,
 				D32152A82190BC740043C5FF /* JSONFetcher.m in Sources */,
+				B7D2BF4A21991D140040C529 /* SearchResultTableViewCell.m in Sources */,
 				B72B0BAC218E619600A79C59 /* AppDelegate.m in Sources */,
 				B70591FD218EBCF9000A5535 /* MainNavigationViewController.m in Sources */,
 			);
