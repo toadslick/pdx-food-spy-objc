@@ -28,7 +28,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (readonly, copy) NSString *title;
 @property (readonly, copy) NSString *subtitle;
-@property (readonly) NSString *reuseIdentifier;
 
 @end
 

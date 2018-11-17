@@ -25,12 +25,13 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
     SearchResult *result = (SearchResult *)annotation;
-    MKAnnotationView *reuseMarker = [mapView dequeueReusableAnnotationViewWithIdentifier:result.reuseIdentifier];
+    MKAnnotationView *reuseMarker = [mapView dequeueReusableAnnotationViewWithIdentifier:[result scoreString]];
     if (reuseMarker) {
         return reuseMarker;
     } else {
-         MKMarkerAnnotationView *marker = [[MKMarkerAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:result.reuseIdentifier];
+        MKMarkerAnnotationView *marker = [[MKMarkerAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:[result scoreString]];
         marker.markerTintColor = [result scoreColor];
+        marker.glyphText = [result scoreString];
         return marker;
     }
 }

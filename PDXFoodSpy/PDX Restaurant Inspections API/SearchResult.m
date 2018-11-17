@@ -35,14 +35,18 @@
 }
 
 - (UIColor *)scoreColor {
-    if (self.score > 99) {
-        return [UIColor greenColor];
-    } else if (self.score > 89) {
-        return [UIColor yellowColor];
-    } else if (self.score > 79) {
-        return [UIColor orangeColor];
+    if (self.score > 95) {
+        return [[UIColor alloc] initWithRed:0.24 green:0.51 blue:0.02 alpha:1];
+    } else if (self.score > 90) {
+        return [[UIColor alloc] initWithRed:0.36 green:0.68 blue:0.05 alpha:1];
+    } else if (self.score > 85) {
+        return [[UIColor alloc] initWithRed:0.67 green:0.84 blue:0.12 alpha:1];
+    } else if (self.score > 80) {
+        return [[UIColor alloc] initWithRed:0.98 green:0.80 blue:0.20 alpha:1];
+    } else if (self.score > 75) {
+        return [[UIColor alloc] initWithRed:0.94 green:0.45 blue:0.19 alpha:1];
     } else {
-        return [UIColor redColor];
+        return [[UIColor alloc] initWithRed:0.93 green:0.27 blue:0.18 alpha:1];
     }
 }
 
@@ -53,19 +57,7 @@
 }
 
 - (NSString *)subtitle {
-    return [self scoreString];
-}
-
-- (NSString *)reuseIdentifier {
-    if (self.score > 99) {
-        return @"green";
-    } else if (self.score > 89) {
-        return @"yellow";
-    } else if (self.score > 79) {
-        return @"orange";
-    } else {
-        return @"red";
-    }
+    return self.address;
 }
 
 @end
