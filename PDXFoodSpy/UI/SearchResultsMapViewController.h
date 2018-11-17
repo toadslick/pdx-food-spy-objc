@@ -5,7 +5,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SearchResultsMapViewController : UIViewController
+@interface SearchResultsMapViewController : UIViewController <MKMapViewDelegate>
 
 @end
 

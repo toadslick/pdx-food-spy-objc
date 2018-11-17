@@ -80,6 +80,7 @@
 }
 
 - (void)addressGeocoder:(AddressGeocoder *)geocoder didFailWithError:(NSError *)error forAddress:(NSString *)address {
+    [self setBusyState:NO];
     NSLog(@"ERROR: %@", [error localizedDescription]);
 }
 
