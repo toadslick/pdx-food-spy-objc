@@ -39,7 +39,8 @@
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-    
+    SearchResultsTabBarController *parent = (SearchResultsTabBarController *)[self parentViewController];
+    [parent fetchRestaurantHistory:(SearchResult *)view.annotation];
 }
 
 @end

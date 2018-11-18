@@ -7,6 +7,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property NSArray<SearchResult *> *results;
 
+- (void)fetchRestaurantHistory:(SearchResult *)result;
+
 @end
 
 NS_ASSUME_NONNULL_END

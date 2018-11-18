@@ -9,6 +9,9 @@
     [super viewDidLoad];
 }
 
+- (void)fetchRestaurantHistory:(SearchResult *)result {
+    NSLog(@"RESTAURANT NAME:%@, ID: %@", result.name, result.restaurantID);
+}
 
 
 @end

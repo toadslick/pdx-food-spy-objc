@@ -32,4 +32,10 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    SearchResultsTabBarController *parent = (SearchResultsTabBarController *)[self parentViewController];
+    SearchResult *result = [results objectAtIndex:[indexPath row]];
+    [parent fetchRestaurantHistory:result];
+}
+
 @end
