@@ -3,7 +3,7 @@
 #import "CurrentLocationUpdaterDelegate.h"
 #import "AddressGeocoderDelegate.h"
 #import "SearchDelegate.h"
-#import "SearchNearCoordinate.h"
+#import "SearchCoordinateRequest.h"
 #import "SearchResultsTabBarController.h"
 
 NS_ASSUME_NONNULL_BEGIN

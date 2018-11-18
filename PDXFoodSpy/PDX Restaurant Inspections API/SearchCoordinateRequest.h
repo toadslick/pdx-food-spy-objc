@@ -6,7 +6,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SearchNearCoordinate : NSObject <JSONFetcherDelegate>
+@interface SearchCoordinateRequest : NSObject <JSONFetcherDelegate>
 
 @property (weak) id <SearchDelegate> delegate;
 

@@ -24,7 +24,7 @@
 		B7EE5304219086B5001BF3DD /* AddressGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = B7EE5303219086B5001BF3DD /* AddressGeocoder.m */; };
 		D32152A82190BC740043C5FF /* JSONFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D32152A72190BC740043C5FF /* JSONFetcher.m */; };
 		D38CF70D219394320071D9F5 /* SearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D38CF70C219394320071D9F5 /* SearchResult.m */; };
-		D3F0A3852191EA4F00DD4E39 /* SearchNearCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F0A3842191EA4F00DD4E39 /* SearchNearCoordinate.m */; };
+		D3F0A3852191EA4F00DD4E39 /* SearchCoordinateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F0A3842191EA4F00DD4E39 /* SearchCoordinateRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,8 +62,8 @@
 		D38CF70B219394320071D9F5 /* SearchResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResult.h; sourceTree = "<group>"; };
 		D38CF70C219394320071D9F5 /* SearchResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResult.m; sourceTree = "<group>"; };
 		D3CDB0EA2195F6670048F0C7 /* SearchDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchDelegate.h; sourceTree = "<group>"; };
-		D3F0A3832191EA4F00DD4E39 /* SearchNearCoordinate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchNearCoordinate.h; sourceTree = "<group>"; };
-		D3F0A3842191EA4F00DD4E39 /* SearchNearCoordinate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchNearCoordinate.m; sourceTree = "<group>"; };
+		D3F0A3832191EA4F00DD4E39 /* SearchCoordinateRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchCoordinateRequest.h; sourceTree = "<group>"; };
+		D3F0A3842191EA4F00DD4E39 /* SearchCoordinateRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchCoordinateRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,8 +168,8 @@
 		D3F0A3822191E85D00DD4E39 /* PDX Restaurant Inspections API */ = {
 			isa = PBXGroup;
 			children = (
-				D3F0A3832191EA4F00DD4E39 /* SearchNearCoordinate.h */,
-				D3F0A3842191EA4F00DD4E39 /* SearchNearCoordinate.m */,
+				D3F0A3832191EA4F00DD4E39 /* SearchCoordinateRequest.h */,
+				D3F0A3842191EA4F00DD4E39 /* SearchCoordinateRequest.m */,
 				D38CF70B219394320071D9F5 /* SearchResult.h */,
 				D38CF70C219394320071D9F5 /* SearchResult.m */,
 				D3CDB0EA2195F6670048F0C7 /* SearchDelegate.h */,
@@ -252,7 +252,7 @@
 				B7384C0F2198955600A278DD /* SearchResultsTabBarController.m in Sources */,
 				B7059206218ED37E000A5535 /* SelectLocationViewController.m in Sources */,
 				B7384C15219895E000A278DD /* SearchResultsMapViewController.m in Sources */,
-				D3F0A3852191EA4F00DD4E39 /* SearchNearCoordinate.m in Sources */,
+				D3F0A3852191EA4F00DD4E39 /* SearchCoordinateRequest.m in Sources */,
 				B78BEC5D218F7A9F005F8EFC /* CurrentLocationUpdater.m in Sources */,
 				B7EE5304219086B5001BF3DD /* AddressGeocoder.m in Sources */,
 				B7384C122198958F00A278DD /* SearchResultsTableViewController.m in Sources */,

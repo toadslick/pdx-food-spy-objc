@@ -10,7 +10,7 @@
     CurrentLocationUpdater *clu;
     AddressGeocoder *geocoder;
     CLLocationCoordinate2D currentCoordinate;
-    SearchNearCoordinate *search;
+    SearchCoordinateRequest *search;
 }
 
 - (void)viewDidLoad {
@@ -27,7 +27,7 @@
     // Initialize the address search classes and their delegates.
     geocoder = [AddressGeocoder new];
     geocoder.delegate = self;
-    search = [SearchNearCoordinate new];
+    search = [SearchCoordinateRequest new];
     search.delegate = self;
     self.addressSearchField.delegate = self;
     
