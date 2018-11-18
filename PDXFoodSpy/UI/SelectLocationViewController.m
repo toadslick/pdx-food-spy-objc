@@ -11,7 +11,6 @@
     AddressGeocoder *geocoder;
     CLLocationCoordinate2D currentCoordinate;
     SearchNearCoordinate *search;
-    Boolean viewIsBusy;
 }
 
 - (void)viewDidLoad {
@@ -19,9 +18,6 @@
     
     // Disable this button until the curent location is detected.
     self.currentLocationButton.enabled = false;
-    
-    // Disable the busy spinner.
-    self.busySpinner.hidden = YES;
     
     // Begin detecting the current location.
     clu = [CurrentLocationUpdater new];
@@ -40,15 +36,15 @@
 }
 
 - (IBAction)currentLocationButtonTapped:(id)sender {
-    [self setBusyState:YES];
+    self.isBusy = YES;
     [search fetch:currentCoordinate];
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    if (viewIsBusy) {
+    if (self.isBusy) {
         return;
     } else {
-        [self setBusyState:YES];
+        self.isBusy = YES;
         NSString *address = searchBar.text;
         if (address) {
             [geocoder geocode:address];
@@ -80,27 +76,27 @@
 }
 
 - (void)addressGeocoder:(AddressGeocoder *)geocoder didFailWithError:(NSError *)error forAddress:(NSString *)address {
-    [self setBusyState:NO];
+    self.isBusy = NO;
     NSLog(@"ERROR: %@", [error localizedDescription]);
 }
 
 - (void)searchDidSucceedWithResults:(NSArray<SearchResult *> *)results {
-    [self setBusyState:NO];
+    self.isBusy = NO;
     [self performSegueWithIdentifier:@"searchSuccessSegue" sender:results];
 }
 
 - (void)searchDidSucceedWithEmptyResults {
-    [self setBusyState:NO];
+    self.isBusy = NO;
     NSLog(@"RESULTS: EMPTY");
 }
 
 - (void)searchDidFailWithError:(NSError *)error {
-    [self setBusyState:NO];
+    self.isBusy = NO;
     NSLog(@"ERROR: %@", [error localizedDescription]);
 }
 
-- (void)setBusyState:(Boolean)isBusy {
-    viewIsBusy = isBusy;
+- (void)setIsBusy:(Boolean)isBusy {
+    _isBusy = isBusy;
     self.currentLocationButton.enabled = !isBusy;
  
     // "Hides when stopped" property is set on the spinner in the storyboard,

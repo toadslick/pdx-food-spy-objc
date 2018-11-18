@@ -10,6 +10,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SelectLocationViewController : UIViewController <CurrentLocationUpdaterDelegate, AddressGeocoderDelegate, SearchDelegate, UISearchBarDelegate>
 
+@property (nonatomic) Boolean isBusy;
+
 @end
 
 NS_ASSUME_NONNULL_END
