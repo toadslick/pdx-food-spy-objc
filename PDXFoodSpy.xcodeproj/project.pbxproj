@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B70591FD218EBCF9000A5535 /* MainNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B70591FC218EBCF9000A5535 /* MainNavigationViewController.m */; };
 		B7059206218ED37E000A5535 /* SelectLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7059205218ED37E000A5535 /* SelectLocationViewController.m */; };
+		B71657C021A19FA200BE23CD /* RestaurantHistoryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B71657BF21A19FA200BE23CD /* RestaurantHistoryRequest.m */; };
 		B72B0BAC218E619600A79C59 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B72B0BAB218E619600A79C59 /* AppDelegate.m */; };
 		B72B0BB2218E619600A79C59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B72B0BB0218E619600A79C59 /* Main.storyboard */; };
 		B72B0BB4218E619700A79C59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B72B0BB3218E619700A79C59 /* Assets.xcassets */; };
@@ -32,6 +33,9 @@
 		B70591FC218EBCF9000A5535 /* MainNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainNavigationViewController.m; sourceTree = "<group>"; };
 		B7059204218ED37E000A5535 /* SelectLocationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectLocationViewController.h; sourceTree = "<group>"; };
 		B7059205218ED37E000A5535 /* SelectLocationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectLocationViewController.m; sourceTree = "<group>"; };
+		B71657BE21A19FA200BE23CD /* RestaurantHistoryRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RestaurantHistoryRequest.h; sourceTree = "<group>"; };
+		B71657BF21A19FA200BE23CD /* RestaurantHistoryRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestaurantHistoryRequest.m; sourceTree = "<group>"; };
+		B71657C121A1A0DE00BE23CD /* RestaurantHistoryRequestDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RestaurantHistoryRequestDelegate.h; sourceTree = "<group>"; };
 		B72B0BA7218E619600A79C59 /* PDXFoodSpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDXFoodSpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B72B0BAA218E619600A79C59 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B72B0BAB218E619600A79C59 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -61,7 +65,7 @@
 		D32152A92190C4B90043C5FF /* JSONFetcherDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONFetcherDelegate.h; sourceTree = "<group>"; };
 		D38CF70B219394320071D9F5 /* SearchResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResult.h; sourceTree = "<group>"; };
 		D38CF70C219394320071D9F5 /* SearchResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResult.m; sourceTree = "<group>"; };
-		D3CDB0EA2195F6670048F0C7 /* SearchDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchDelegate.h; sourceTree = "<group>"; };
+		D3CDB0EA2195F6670048F0C7 /* SearchCoordinateRequestDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchCoordinateRequestDelegate.h; sourceTree = "<group>"; };
 		D3F0A3832191EA4F00DD4E39 /* SearchCoordinateRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchCoordinateRequest.h; sourceTree = "<group>"; };
 		D3F0A3842191EA4F00DD4E39 /* SearchCoordinateRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchCoordinateRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,18 +143,18 @@
 		B7EE52FE219085A1001BF3DD /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				B7384C13219895E000A278DD /* SearchResultsMapViewController.h */,
+				B7384C14219895E000A278DD /* SearchResultsMapViewController.m */,
+				B7384C102198958F00A278DD /* SearchResultsTableViewController.h */,
+				B7384C112198958F00A278DD /* SearchResultsTableViewController.m */,
+				B7D2BF4821991D140040C529 /* SearchResultTableViewCell.h */,
+				B7D2BF4921991D140040C529 /* SearchResultTableViewCell.m */,
 				B70591FB218EBCF9000A5535 /* MainNavigationViewController.h */,
 				B70591FC218EBCF9000A5535 /* MainNavigationViewController.m */,
 				B7059204218ED37E000A5535 /* SelectLocationViewController.h */,
 				B7059205218ED37E000A5535 /* SelectLocationViewController.m */,
 				B7384C0D2198955600A278DD /* SearchResultsTabBarController.h */,
 				B7384C0E2198955600A278DD /* SearchResultsTabBarController.m */,
-				B7384C102198958F00A278DD /* SearchResultsTableViewController.h */,
-				B7384C112198958F00A278DD /* SearchResultsTableViewController.m */,
-				B7384C13219895E000A278DD /* SearchResultsMapViewController.h */,
-				B7384C14219895E000A278DD /* SearchResultsMapViewController.m */,
-				B7D2BF4821991D140040C529 /* SearchResultTableViewCell.h */,
-				B7D2BF4921991D140040C529 /* SearchResultTableViewCell.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -170,9 +174,12 @@
 			children = (
 				D3F0A3832191EA4F00DD4E39 /* SearchCoordinateRequest.h */,
 				D3F0A3842191EA4F00DD4E39 /* SearchCoordinateRequest.m */,
+				D3CDB0EA2195F6670048F0C7 /* SearchCoordinateRequestDelegate.h */,
 				D38CF70B219394320071D9F5 /* SearchResult.h */,
 				D38CF70C219394320071D9F5 /* SearchResult.m */,
-				D3CDB0EA2195F6670048F0C7 /* SearchDelegate.h */,
+				B71657BE21A19FA200BE23CD /* RestaurantHistoryRequest.h */,
+				B71657BF21A19FA200BE23CD /* RestaurantHistoryRequest.m */,
+				B71657C121A1A0DE00BE23CD /* RestaurantHistoryRequestDelegate.h */,
 			);
 			path = "PDX Restaurant Inspections API";
 			sourceTree = "<group>";
@@ -258,6 +265,7 @@
 				B7384C122198958F00A278DD /* SearchResultsTableViewController.m in Sources */,
 				D32152A82190BC740043C5FF /* JSONFetcher.m in Sources */,
 				B7D2BF4A21991D140040C529 /* SearchResultTableViewCell.m in Sources */,
+				B71657C021A19FA200BE23CD /* RestaurantHistoryRequest.m in Sources */,
 				B72B0BAC218E619600A79C59 /* AppDelegate.m in Sources */,
 				B70591FD218EBCF9000A5535 /* MainNavigationViewController.m in Sources */,
 			);

@@ -3,7 +3,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol SearchDelegate <NSObject>
+@protocol SearchCoordinateRequestDelegate <NSObject>
 
 - (void)searchDidFailWithError:(NSError *)error;
 
