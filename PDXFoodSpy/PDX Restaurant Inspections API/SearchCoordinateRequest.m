@@ -12,15 +12,10 @@
 }
 
 - (void)fetch:(CLLocationCoordinate2D)coordinate {
-    NSString *url = [self buildURLString:coordinate];
-    NSLog(@"REQUEST: %@", url);
-    [jsonFetcher fetch:url];
-}
-
-- (NSString *)buildURLString:(CLLocationCoordinate2D)coordinate {
     NSString *format = @"http://api.civicapps.org/restaurant-inspections/near/%f,%f?since=%@&limit=%i&distance=%f";
     NSString *date = [self buildDateString];
-    return [[NSString alloc] initWithFormat:format, coordinate.longitude, coordinate.latitude, date, 50, 0.5];
+    NSString *url = [[NSString alloc] initWithFormat:format, coordinate.longitude, coordinate.latitude, date, 50, 0.5];
+    [jsonFetcher fetch:url];
 }
 
 // Originally, this method was used to limit results to inspections that occurred within the last year.

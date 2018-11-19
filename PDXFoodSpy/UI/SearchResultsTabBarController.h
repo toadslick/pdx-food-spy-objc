@@ -1,9 +1,11 @@
 #import <UIKit/UIKit.h>
 #import "SearchResult.h"
+#import "RestaurantHistoryRequest.h"
+#import "RestaurantHistoryRequestDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SearchResultsTabBarController : UITabBarController
+@interface SearchResultsTabBarController : UITabBarController <RestaurantHistoryRequestDelegate>
 
 @property NSArray<SearchResult *> *results;
 

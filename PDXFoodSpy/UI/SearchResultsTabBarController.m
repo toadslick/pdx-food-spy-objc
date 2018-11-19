@@ -3,14 +3,27 @@
 @interface SearchResultsTabBarController ()
 @end
 
-@implementation SearchResultsTabBarController
+@implementation SearchResultsTabBarController {
+    RestaurantHistoryRequest *request;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    request = [RestaurantHistoryRequest new];
+    request.delegate = self;
 }
 
 - (void)fetchRestaurantHistory:(SearchResult *)result {
-    NSLog(@"RESTAURANT NAME:%@, ID: %@", result.name, result.restaurantID);
+    [request fetch:result.inspectionID];
+}
+
+- (void)requestDidSucceedWithResults {
+    // TODO
+}
+
+- (void)requestDidFailWithError:(NSError *)error {
+    NSLog(@"ERROR: %@", [error localizedDescription]);
 }
 
 

@@ -1,10 +1,15 @@
 #import <Foundation/Foundation.h>
+#import "RestaurantHistoryRequestDelegate.h"
+#import "JSONFetcher.h"
+#import "SearchResult.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RestaurantHistoryRequest : NSObject
+@interface RestaurantHistoryRequest : NSObject <JSONFetcherDelegate>
 
-- (void)fetch:(NSString *)restaurantID;
+@property (weak) id <RestaurantHistoryRequestDelegate> delegate;
+
+- (void)fetch:(NSString *)inspectionID;
 
 @end
 
