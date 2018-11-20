@@ -14,7 +14,6 @@
 - (void)fetch:(NSString *)restaurantID {
     NSString *format = @"http://api.civicapps.org/restaurant-inspections?restaurant_id=%@";
     NSString *url = [[NSString alloc] initWithFormat:format, restaurantID];
-    NSLog(@"REQUEST: %@", url);
     [jsonFetcher fetch:url];
 }
 

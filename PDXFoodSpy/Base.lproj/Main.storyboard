@@ -98,7 +98,7 @@
                     <connections>
                         <segue destination="smk-cT-ZU2" kind="relationship" relationship="viewControllers" id="w20-JC-v1o"/>
                         <segue destination="h9b-EI-tLv" kind="relationship" relationship="viewControllers" id="C4d-er-FmA"/>
-                        <segue destination="6Ig-OP-nW8" kind="show" id="T2P-Df-W8T"/>
+                        <segue destination="6Ig-OP-nW8" kind="show" identifier="historySegue" id="T2P-Df-W8T"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pwP-H9-IoK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -167,33 +167,41 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQH-uc-yqA">
-                                            <rect key="frame" x="16" y="5.5" width="220" height="21"/>
+                                            <rect key="frame" x="16" y="5.5" width="132.5" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="18" id="0oI-gl-Oci"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feu-XN-nDu">
-                                            <rect key="frame" x="246" y="7.5" width="40" height="29"/>
+                                            <rect key="frame" x="246" y="7" width="40" height="29"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cel-UI-mmy">
-                                            <rect key="frame" x="16" y="23.5" width="220" height="14.5"/>
+                                            <rect key="frame" x="16" y="24.5" width="111" height="12"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="12" id="f49-6u-Sxs"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="pQH-uc-yqA" firstAttribute="top" secondItem="WVI-Ag-YNW" secondAttribute="top" constant="5.5" id="0Sk-V0-7qK"/>
                                         <constraint firstItem="pQH-uc-yqA" firstAttribute="leading" secondItem="WVI-Ag-YNW" secondAttribute="leadingMargin" id="15F-57-xdp"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Cel-UI-mmy" secondAttribute="trailingMargin" constant="50" id="5zZ-u9-Vqp"/>
-                                        <constraint firstItem="Cel-UI-mmy" firstAttribute="centerY" secondItem="WVI-Ag-YNW" secondAttribute="centerY" constant="9" id="IfL-dx-5ja"/>
+                                        <constraint firstItem="feu-XN-nDu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pQH-uc-yqA" secondAttribute="trailing" constant="10" id="8cf-D9-zkf"/>
+                                        <constraint firstAttribute="bottom" secondItem="feu-XN-nDu" secondAttribute="bottom" constant="7" id="8se-cd-j2n"/>
+                                        <constraint firstItem="feu-XN-nDu" firstAttribute="top" secondItem="WVI-Ag-YNW" secondAttribute="top" constant="7" id="BuR-sG-byp"/>
                                         <constraint firstItem="Cel-UI-mmy" firstAttribute="leading" secondItem="WVI-Ag-YNW" secondAttribute="leadingMargin" id="OZN-cA-s7K"/>
-                                        <constraint firstItem="pQH-uc-yqA" firstAttribute="centerY" secondItem="WVI-Ag-YNW" secondAttribute="centerY" constant="-6" id="PHc-SU-h5q"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="pQH-uc-yqA" secondAttribute="trailingMargin" constant="50" id="UyT-am-czJ"/>
+                                        <constraint firstAttribute="bottom" secondItem="Cel-UI-mmy" secondAttribute="bottom" constant="5.5" id="WPt-4e-h8s"/>
+                                        <constraint firstItem="Cel-UI-mmy" firstAttribute="top" secondItem="pQH-uc-yqA" secondAttribute="bottom" constant="1" id="XNF-dm-QHF"/>
                                         <constraint firstAttribute="trailing" secondItem="feu-XN-nDu" secondAttribute="trailing" id="bWK-Zo-ybW"/>
-                                        <constraint firstItem="feu-XN-nDu" firstAttribute="centerY" secondItem="WVI-Ag-YNW" secondAttribute="centerY" id="zZd-Lb-MeE"/>
+                                        <constraint firstItem="feu-XN-nDu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Cel-UI-mmy" secondAttribute="trailing" constant="10" id="dIX-7r-vcv"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
