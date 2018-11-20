@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)scoreString;
 - (UIColor *)scoreColor;
 - (NSString *)dateString;
+- (float)scorePercent;
 
 // MKAnnotation methods
 

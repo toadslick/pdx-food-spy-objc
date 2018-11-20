@@ -58,6 +58,13 @@
     return [df stringFromDate:self.date];
 }
 
+// Almost all scores don't go below 70, which is the minimum passing score.
+// However, treat the minimum score as 50 to catch the rare cases where restaurants fail an inspection.
+- (float)scorePercent {
+    float minimumScore = 50;
+    return ((float)(self.score - minimumScore)) / minimumScore;
+}
+
 // MKAnnotation methods
 
 - (NSString *)title {
