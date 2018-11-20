@@ -18,6 +18,8 @@
 		B7384C122198958F00A278DD /* SearchResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7384C112198958F00A278DD /* SearchResultsTableViewController.m */; };
 		B7384C15219895E000A278DD /* SearchResultsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7384C14219895E000A278DD /* SearchResultsMapViewController.m */; };
 		B7384C172198987400A278DD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7384C162198987400A278DD /* MapKit.framework */; };
+		B777E47221A43B0700EF79F3 /* InspectionHistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B777E47121A43B0700EF79F3 /* InspectionHistoryTableViewController.m */; };
+		B777E47521A43B7B00EF79F3 /* InspectionHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B777E47421A43B7B00EF79F3 /* InspectionHistoryTableViewCell.m */; };
 		B78BEC5D218F7A9F005F8EFC /* CurrentLocationUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = B78BEC5C218F7A9F005F8EFC /* CurrentLocationUpdater.m */; };
 		B78BEC60218F7B2E005F8EFC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B78BEC5F218F7B2E005F8EFC /* CoreLocation.framework */; };
 		B7A01D7D21A4144200FEE944 /* RestaurantHistoryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A01D7C21A4144200FEE944 /* RestaurantHistoryRequest.m */; };
@@ -50,6 +52,10 @@
 		B7384C13219895E000A278DD /* SearchResultsMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultsMapViewController.h; sourceTree = "<group>"; };
 		B7384C14219895E000A278DD /* SearchResultsMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultsMapViewController.m; sourceTree = "<group>"; };
 		B7384C162198987400A278DD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B777E47021A43B0700EF79F3 /* InspectionHistoryTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InspectionHistoryTableViewController.h; sourceTree = "<group>"; };
+		B777E47121A43B0700EF79F3 /* InspectionHistoryTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InspectionHistoryTableViewController.m; sourceTree = "<group>"; };
+		B777E47321A43B7B00EF79F3 /* InspectionHistoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InspectionHistoryTableViewCell.h; sourceTree = "<group>"; };
+		B777E47421A43B7B00EF79F3 /* InspectionHistoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InspectionHistoryTableViewCell.m; sourceTree = "<group>"; };
 		B78BEC5B218F7A9F005F8EFC /* CurrentLocationUpdater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentLocationUpdater.h; sourceTree = "<group>"; };
 		B78BEC5C218F7A9F005F8EFC /* CurrentLocationUpdater.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentLocationUpdater.m; sourceTree = "<group>"; };
 		B78BEC5F218F7B2E005F8EFC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -161,6 +167,10 @@
 				B7059205218ED37E000A5535 /* SelectLocationViewController.m */,
 				B7384C0D2198955600A278DD /* SearchResultsTabBarController.h */,
 				B7384C0E2198955600A278DD /* SearchResultsTabBarController.m */,
+				B777E47021A43B0700EF79F3 /* InspectionHistoryTableViewController.h */,
+				B777E47121A43B0700EF79F3 /* InspectionHistoryTableViewController.m */,
+				B777E47321A43B7B00EF79F3 /* InspectionHistoryTableViewCell.h */,
+				B777E47421A43B7B00EF79F3 /* InspectionHistoryTableViewCell.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -271,8 +281,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D38CF70D219394320071D9F5 /* SearchResult.m in Sources */,
+				B777E47221A43B0700EF79F3 /* InspectionHistoryTableViewController.m in Sources */,
 				B72B0BBA218E619700A79C59 /* main.m in Sources */,
 				B7384C0F2198955600A278DD /* SearchResultsTabBarController.m in Sources */,
+				B777E47521A43B7B00EF79F3 /* InspectionHistoryTableViewCell.m in Sources */,
 				B7D45DD021A3C0B6002BCD7A /* InspectionDetailRequest.m in Sources */,
 				B7059206218ED37E000A5535 /* SelectLocationViewController.m in Sources */,
 				B7384C15219895E000A278DD /* SearchResultsMapViewController.m in Sources */,

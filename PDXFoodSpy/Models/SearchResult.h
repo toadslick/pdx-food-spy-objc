@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString *)scoreString;
 - (UIColor *)scoreColor;
+- (NSString *)dateString;
 
 // MKAnnotation methods
 

@@ -50,6 +50,14 @@
     }
 }
 
+- (NSString *)dateString {
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    df.dateStyle = NSDateFormatterLongStyle;
+    df.timeStyle = NSDateFormatterNoStyle;
+    df.locale = [NSLocale currentLocale];
+    return [df stringFromDate:self.date];
+}
+
 // MKAnnotation methods
 
 - (NSString *)title {
