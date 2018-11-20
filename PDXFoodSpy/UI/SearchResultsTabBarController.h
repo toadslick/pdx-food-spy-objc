@@ -1,11 +1,11 @@
 #import <UIKit/UIKit.h>
 #import "SearchResult.h"
 #import "InspectionDetailRequest.h"
-#import "InspectionDetailRequestDelegate.h"
+#import "RequestDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SearchResultsTabBarController : UITabBarController <InspectionDetailRequestDelegate>
+@interface SearchResultsTabBarController : UITabBarController <RequestDelegate>
 
 @property NSArray<SearchResult *> *results;
 

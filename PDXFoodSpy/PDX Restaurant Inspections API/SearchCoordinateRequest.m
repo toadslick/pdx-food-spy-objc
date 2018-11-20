@@ -28,20 +28,20 @@
 - (void)jsonFetcher:(JSONFetcher *)fetcher didReceiveDictionary:(NSDictionary *)json {
     if (self.delegate) {
         NSArray<SearchResult *> *results = [self deserializeSearchResults:json];
-        [self.delegate searchDidSucceedWithResults:results];
+        [self.delegate requestDidSucceedWithResults:results];
     }
 }
 
 // The Restaurant Inspection API returns an array as the top-level JSON object only when it returns zero results. 
 - (void)jsonFetcher:(JSONFetcher *)fetcher didReceiveArray:(NSArray *)json {
     if (self.delegate) {
-        [self.delegate searchDidSucceedWithEmptyResults];
+        [self.delegate requestDidSucceedWithEmptyResults];
     }
 }
 
 - (void)jsonFetcher:(JSONFetcher *)fetcher didFailWithError:(NSError *)error {
     if (self.delegate) {
-        [self.delegate searchDidFailWithError:error];
+        [self.delegate requestDidFailWithError:error];
     }
 }
 

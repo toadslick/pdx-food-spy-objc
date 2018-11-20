@@ -21,6 +21,10 @@
     NSLog(@"VIOLATIONS: %@", violations);
 }
 
+- (void)requestDidSucceedWithEmptyResults {
+    
+}
+
 - (void)requestDidFailWithError:(NSError *)error {
     NSLog(@"ERROR: %@", [error localizedDescription]);
 }

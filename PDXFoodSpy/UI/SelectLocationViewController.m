@@ -80,17 +80,17 @@
     NSLog(@"ERROR: %@", [error localizedDescription]);
 }
 
-- (void)searchDidSucceedWithResults:(NSArray<SearchResult *> *)results {
+- (void)requestDidSucceedWithResults:(NSArray<SearchResult *> *)results {
     self.isBusy = NO;
     [self performSegueWithIdentifier:@"searchSuccessSegue" sender:results];
 }
 
-- (void)searchDidSucceedWithEmptyResults {
+- (void)requestDidSucceedWithEmptyResults {
     self.isBusy = NO;
     NSLog(@"RESULTS: EMPTY");
 }
 
-- (void)searchDidFailWithError:(NSError *)error {
+- (void)requestDidFailWithError:(NSError *)error {
     self.isBusy = NO;
     NSLog(@"ERROR: %@", [error localizedDescription]);
 }
