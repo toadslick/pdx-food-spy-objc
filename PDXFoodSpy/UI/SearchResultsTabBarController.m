@@ -4,25 +4,25 @@
 @end
 
 @implementation SearchResultsTabBarController {
-    InspectionDetailRequest *request;
+    RestaurantHistoryRequest *request;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    request = [InspectionDetailRequest new];
+    request = [RestaurantHistoryRequest new];
     request.delegate = self;
 }
 
 - (void)fetchRestaurantHistory:(SearchResult *)result {
-    [request fetch:result.inspectionID];
+    [request fetch:result.restaurantID];
 }
 
-- (void)requestDidSucceedWithResults:(NSArray<InspectionViolation *> *)violations {
-    NSLog(@"VIOLATIONS: %@", violations);
+- (void)requestDidSucceedWithResults:(NSArray<SearchResult *> *)results {
+    NSLog(@"RESULTS: %@", results);
 }
 
 - (void)requestDidSucceedWithEmptyResults {
-    
+    NSLog(@"RESULTS: EMPTY");
 }
 
 - (void)requestDidFailWithError:(NSError *)error {

@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 #import "SearchResult.h"
-#import "InspectionDetailRequest.h"
+#import "RestaurantHistoryRequest.h"
 #import "RequestDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
