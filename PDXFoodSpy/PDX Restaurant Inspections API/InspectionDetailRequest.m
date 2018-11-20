@@ -1,6 +1,6 @@
-#import "RestaurantHistoryRequest.h"
+#import "InspectionDetailRequest.h"
 
-@implementation RestaurantHistoryRequest {
+@implementation InspectionDetailRequest {
     JSONFetcher *jsonFetcher;
 }
 

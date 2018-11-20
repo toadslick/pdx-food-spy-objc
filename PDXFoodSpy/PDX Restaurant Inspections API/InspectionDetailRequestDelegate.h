@@ -3,7 +3,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol RestaurantHistoryRequestDelegate <NSObject>
+@protocol InspectionDetailRequestDelegate <NSObject>
 
 - (void)requestDidFailWithError:(NSError *)error;
 

@@ -4,12 +4,12 @@
 @end
 
 @implementation SearchResultsTabBarController {
-    RestaurantHistoryRequest *request;
+    InspectionDetailRequest *request;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    request = [RestaurantHistoryRequest new];
+    request = [InspectionDetailRequest new];
     request.delegate = self;
 }
 

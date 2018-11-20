@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B70591FD218EBCF9000A5535 /* MainNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B70591FC218EBCF9000A5535 /* MainNavigationViewController.m */; };
 		B7059206218ED37E000A5535 /* SelectLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7059205218ED37E000A5535 /* SelectLocationViewController.m */; };
-		B71657C021A19FA200BE23CD /* RestaurantHistoryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B71657BF21A19FA200BE23CD /* RestaurantHistoryRequest.m */; };
 		B72B0BAC218E619600A79C59 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B72B0BAB218E619600A79C59 /* AppDelegate.m */; };
 		B72B0BB2218E619600A79C59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B72B0BB0218E619600A79C59 /* Main.storyboard */; };
 		B72B0BB4218E619700A79C59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B72B0BB3218E619700A79C59 /* Assets.xcassets */; };
@@ -22,6 +21,7 @@
 		B78BEC5D218F7A9F005F8EFC /* CurrentLocationUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = B78BEC5C218F7A9F005F8EFC /* CurrentLocationUpdater.m */; };
 		B78BEC60218F7B2E005F8EFC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B78BEC5F218F7B2E005F8EFC /* CoreLocation.framework */; };
 		B7D2BF4A21991D140040C529 /* SearchResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7D2BF4921991D140040C529 /* SearchResultTableViewCell.m */; };
+		B7D45DD021A3C0B6002BCD7A /* InspectionDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B7D45DCE21A3C0B6002BCD7A /* InspectionDetailRequest.m */; };
 		B7EE5304219086B5001BF3DD /* AddressGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = B7EE5303219086B5001BF3DD /* AddressGeocoder.m */; };
 		D32152A82190BC740043C5FF /* JSONFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D32152A72190BC740043C5FF /* JSONFetcher.m */; };
 		D349155421A3142300662214 /* InspectionViolation.m in Sources */ = {isa = PBXBuildFile; fileRef = D349155321A3142300662214 /* InspectionViolation.m */; };
@@ -34,9 +34,6 @@
 		B70591FC218EBCF9000A5535 /* MainNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainNavigationViewController.m; sourceTree = "<group>"; };
 		B7059204218ED37E000A5535 /* SelectLocationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectLocationViewController.h; sourceTree = "<group>"; };
 		B7059205218ED37E000A5535 /* SelectLocationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectLocationViewController.m; sourceTree = "<group>"; };
-		B71657BE21A19FA200BE23CD /* RestaurantHistoryRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RestaurantHistoryRequest.h; sourceTree = "<group>"; };
-		B71657BF21A19FA200BE23CD /* RestaurantHistoryRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestaurantHistoryRequest.m; sourceTree = "<group>"; };
-		B71657C121A1A0DE00BE23CD /* RestaurantHistoryRequestDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RestaurantHistoryRequestDelegate.h; sourceTree = "<group>"; };
 		B72B0BA7218E619600A79C59 /* PDXFoodSpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDXFoodSpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B72B0BAA218E619600A79C59 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B72B0BAB218E619600A79C59 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -58,6 +55,9 @@
 		B78BEC61218F8046005F8EFC /* CurrentLocationUpdaterDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentLocationUpdaterDelegate.h; sourceTree = "<group>"; };
 		B7D2BF4821991D140040C529 /* SearchResultTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultTableViewCell.h; sourceTree = "<group>"; };
 		B7D2BF4921991D140040C529 /* SearchResultTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultTableViewCell.m; sourceTree = "<group>"; };
+		B7D45DCD21A3C0B6002BCD7A /* InspectionDetailRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectionDetailRequestDelegate.h; sourceTree = "<group>"; };
+		B7D45DCE21A3C0B6002BCD7A /* InspectionDetailRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectionDetailRequest.m; sourceTree = "<group>"; };
+		B7D45DCF21A3C0B6002BCD7A /* InspectionDetailRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectionDetailRequest.h; sourceTree = "<group>"; };
 		B7EE5302219086B5001BF3DD /* AddressGeocoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressGeocoder.h; sourceTree = "<group>"; };
 		B7EE5303219086B5001BF3DD /* AddressGeocoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressGeocoder.m; sourceTree = "<group>"; };
 		B7EE5305219087AB001BF3DD /* AddressGeocoderDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressGeocoderDelegate.h; sourceTree = "<group>"; };
@@ -187,12 +187,12 @@
 		D3F0A3822191E85D00DD4E39 /* PDX Restaurant Inspections API */ = {
 			isa = PBXGroup;
 			children = (
+				B7D45DCF21A3C0B6002BCD7A /* InspectionDetailRequest.h */,
+				B7D45DCE21A3C0B6002BCD7A /* InspectionDetailRequest.m */,
+				B7D45DCD21A3C0B6002BCD7A /* InspectionDetailRequestDelegate.h */,
 				D3F0A3832191EA4F00DD4E39 /* SearchCoordinateRequest.h */,
 				D3F0A3842191EA4F00DD4E39 /* SearchCoordinateRequest.m */,
 				D3CDB0EA2195F6670048F0C7 /* SearchCoordinateRequestDelegate.h */,
-				B71657BE21A19FA200BE23CD /* RestaurantHistoryRequest.h */,
-				B71657BF21A19FA200BE23CD /* RestaurantHistoryRequest.m */,
-				B71657C121A1A0DE00BE23CD /* RestaurantHistoryRequestDelegate.h */,
 			);
 			path = "PDX Restaurant Inspections API";
 			sourceTree = "<group>";
@@ -270,6 +270,7 @@
 				D38CF70D219394320071D9F5 /* SearchResult.m in Sources */,
 				B72B0BBA218E619700A79C59 /* main.m in Sources */,
 				B7384C0F2198955600A278DD /* SearchResultsTabBarController.m in Sources */,
+				B7D45DD021A3C0B6002BCD7A /* InspectionDetailRequest.m in Sources */,
 				B7059206218ED37E000A5535 /* SelectLocationViewController.m in Sources */,
 				B7384C15219895E000A278DD /* SearchResultsMapViewController.m in Sources */,
 				D3F0A3852191EA4F00DD4E39 /* SearchCoordinateRequest.m in Sources */,
@@ -279,7 +280,6 @@
 				D32152A82190BC740043C5FF /* JSONFetcher.m in Sources */,
 				D349155421A3142300662214 /* InspectionViolation.m in Sources */,
 				B7D2BF4A21991D140040C529 /* SearchResultTableViewCell.m in Sources */,
-				B71657C021A19FA200BE23CD /* RestaurantHistoryRequest.m in Sources */,
 				B72B0BAC218E619600A79C59 /* AppDelegate.m in Sources */,
 				B70591FD218EBCF9000A5535 /* MainNavigationViewController.m in Sources */,
 			);

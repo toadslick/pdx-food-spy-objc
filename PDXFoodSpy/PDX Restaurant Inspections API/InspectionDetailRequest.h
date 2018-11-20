@@ -1,13 +1,13 @@
 #import <Foundation/Foundation.h>
-#import "RestaurantHistoryRequestDelegate.h"
+#import "InspectionDetailRequestDelegate.h"
 #import "JSONFetcher.h"
 #import "SearchResult.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RestaurantHistoryRequest : NSObject <JSONFetcherDelegate>
+@interface InspectionDetailRequest : NSObject <JSONFetcherDelegate>
 
-@property (weak) id <RestaurantHistoryRequestDelegate> delegate;
+@property (weak) id <InspectionDetailRequestDelegate> delegate;
 
 - (void)fetch:(NSString *)inspectionID;
 
