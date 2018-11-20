@@ -24,6 +24,7 @@
 		B7D2BF4A21991D140040C529 /* SearchResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7D2BF4921991D140040C529 /* SearchResultTableViewCell.m */; };
 		B7EE5304219086B5001BF3DD /* AddressGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = B7EE5303219086B5001BF3DD /* AddressGeocoder.m */; };
 		D32152A82190BC740043C5FF /* JSONFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D32152A72190BC740043C5FF /* JSONFetcher.m */; };
+		D349155421A3142300662214 /* InspectionViolation.m in Sources */ = {isa = PBXBuildFile; fileRef = D349155321A3142300662214 /* InspectionViolation.m */; };
 		D38CF70D219394320071D9F5 /* SearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D38CF70C219394320071D9F5 /* SearchResult.m */; };
 		D3F0A3852191EA4F00DD4E39 /* SearchCoordinateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F0A3842191EA4F00DD4E39 /* SearchCoordinateRequest.m */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,8 @@
 		D32152A62190BC740043C5FF /* JSONFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONFetcher.h; sourceTree = "<group>"; };
 		D32152A72190BC740043C5FF /* JSONFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSONFetcher.m; sourceTree = "<group>"; };
 		D32152A92190C4B90043C5FF /* JSONFetcherDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONFetcherDelegate.h; sourceTree = "<group>"; };
+		D349155221A3142300662214 /* InspectionViolation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InspectionViolation.h; sourceTree = "<group>"; };
+		D349155321A3142300662214 /* InspectionViolation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InspectionViolation.m; sourceTree = "<group>"; };
 		D38CF70B219394320071D9F5 /* SearchResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResult.h; sourceTree = "<group>"; };
 		D38CF70C219394320071D9F5 /* SearchResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResult.m; sourceTree = "<group>"; };
 		D3CDB0EA2195F6670048F0C7 /* SearchCoordinateRequestDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchCoordinateRequestDelegate.h; sourceTree = "<group>"; };
@@ -103,6 +106,7 @@
 		B72B0BA9218E619600A79C59 /* PDXFoodSpy */ = {
 			isa = PBXGroup;
 			children = (
+				D349154E21A3117200662214 /* Models */,
 				D3F0A3822191E85D00DD4E39 /* PDX Restaurant Inspections API */,
 				D32152A52190BB9F0043C5FF /* API Utilities */,
 				B7EE52FD21908561001BF3DD /* Location Utilities */,
@@ -169,14 +173,23 @@
 			path = "API Utilities";
 			sourceTree = "<group>";
 		};
+		D349154E21A3117200662214 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D38CF70B219394320071D9F5 /* SearchResult.h */,
+				D38CF70C219394320071D9F5 /* SearchResult.m */,
+				D349155221A3142300662214 /* InspectionViolation.h */,
+				D349155321A3142300662214 /* InspectionViolation.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		D3F0A3822191E85D00DD4E39 /* PDX Restaurant Inspections API */ = {
 			isa = PBXGroup;
 			children = (
 				D3F0A3832191EA4F00DD4E39 /* SearchCoordinateRequest.h */,
 				D3F0A3842191EA4F00DD4E39 /* SearchCoordinateRequest.m */,
 				D3CDB0EA2195F6670048F0C7 /* SearchCoordinateRequestDelegate.h */,
-				D38CF70B219394320071D9F5 /* SearchResult.h */,
-				D38CF70C219394320071D9F5 /* SearchResult.m */,
 				B71657BE21A19FA200BE23CD /* RestaurantHistoryRequest.h */,
 				B71657BF21A19FA200BE23CD /* RestaurantHistoryRequest.m */,
 				B71657C121A1A0DE00BE23CD /* RestaurantHistoryRequestDelegate.h */,
@@ -264,6 +277,7 @@
 				B7EE5304219086B5001BF3DD /* AddressGeocoder.m in Sources */,
 				B7384C122198958F00A278DD /* SearchResultsTableViewController.m in Sources */,
 				D32152A82190BC740043C5FF /* JSONFetcher.m in Sources */,
+				D349155421A3142300662214 /* InspectionViolation.m in Sources */,
 				B7D2BF4A21991D140040C529 /* SearchResultTableViewCell.m in Sources */,
 				B71657C021A19FA200BE23CD /* RestaurantHistoryRequest.m in Sources */,
 				B72B0BAC218E619600A79C59 /* AppDelegate.m in Sources */,

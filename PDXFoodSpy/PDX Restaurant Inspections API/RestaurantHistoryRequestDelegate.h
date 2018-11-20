@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import "InspectionViolation.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -6,7 +7,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)requestDidFailWithError:(NSError *)error;
 
-- (void)requestDidSucceedWithResults;
+- (void)requestDidSucceedWithResults:(NSArray<InspectionViolation *> *)violations;
 
 @end
 

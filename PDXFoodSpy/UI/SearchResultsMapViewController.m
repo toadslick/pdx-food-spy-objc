@@ -1,5 +1,4 @@
 #import "SearchResultsMapViewController.h"
-#import "SearchResultTableViewCell.h"
 
 @interface SearchResultsMapViewController ()
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;

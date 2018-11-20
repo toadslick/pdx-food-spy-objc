@@ -9,7 +9,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     request = [RestaurantHistoryRequest new];
     request.delegate = self;
 }
@@ -18,8 +17,8 @@
     [request fetch:result.inspectionID];
 }
 
-- (void)requestDidSucceedWithResults {
-    // TODO
+- (void)requestDidSucceedWithResults:(NSArray<InspectionViolation *> *)violations {
+    NSLog(@"VIOLATIONS: %@", violations);
 }
 
 - (void)requestDidFailWithError:(NSError *)error {

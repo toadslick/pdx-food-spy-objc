@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import <CoreLocation/CoreLocation.h>
+#import <CoreLocation/CLLocation.h>
 #import <UIKit/UIColor.h>
 #import <MapKit/MKAnnotation.h>
 
