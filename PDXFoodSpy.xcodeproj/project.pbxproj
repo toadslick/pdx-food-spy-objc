@@ -21,6 +21,8 @@
 		B777E47221A43B0700EF79F3 /* InspectionHistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B777E47121A43B0700EF79F3 /* InspectionHistoryTableViewController.m */; };
 		B777E47521A43B7B00EF79F3 /* InspectionHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B777E47421A43B7B00EF79F3 /* InspectionHistoryTableViewCell.m */; };
 		B777E47821A590B700EF79F3 /* InspectionHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B777E47721A590B700EF79F3 /* InspectionHistoryViewController.m */; };
+		B777E47B21A5A18800EF79F3 /* InspectionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B777E47A21A5A18800EF79F3 /* InspectionDetailViewController.m */; };
+		B777E47E21A5A1BA00EF79F3 /* InspectionDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B777E47D21A5A1BA00EF79F3 /* InspectionDetailTableViewController.m */; };
 		B78BEC5D218F7A9F005F8EFC /* CurrentLocationUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = B78BEC5C218F7A9F005F8EFC /* CurrentLocationUpdater.m */; };
 		B78BEC60218F7B2E005F8EFC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B78BEC5F218F7B2E005F8EFC /* CoreLocation.framework */; };
 		B7A01D7D21A4144200FEE944 /* RestaurantHistoryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A01D7C21A4144200FEE944 /* RestaurantHistoryRequest.m */; };
@@ -59,6 +61,10 @@
 		B777E47421A43B7B00EF79F3 /* InspectionHistoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InspectionHistoryTableViewCell.m; sourceTree = "<group>"; };
 		B777E47621A590B700EF79F3 /* InspectionHistoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InspectionHistoryViewController.h; sourceTree = "<group>"; };
 		B777E47721A590B700EF79F3 /* InspectionHistoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InspectionHistoryViewController.m; sourceTree = "<group>"; };
+		B777E47921A5A18800EF79F3 /* InspectionDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InspectionDetailViewController.h; sourceTree = "<group>"; };
+		B777E47A21A5A18800EF79F3 /* InspectionDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InspectionDetailViewController.m; sourceTree = "<group>"; };
+		B777E47C21A5A1BA00EF79F3 /* InspectionDetailTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InspectionDetailTableViewController.h; sourceTree = "<group>"; };
+		B777E47D21A5A1BA00EF79F3 /* InspectionDetailTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InspectionDetailTableViewController.m; sourceTree = "<group>"; };
 		B78BEC5B218F7A9F005F8EFC /* CurrentLocationUpdater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentLocationUpdater.h; sourceTree = "<group>"; };
 		B78BEC5C218F7A9F005F8EFC /* CurrentLocationUpdater.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentLocationUpdater.m; sourceTree = "<group>"; };
 		B78BEC5F218F7B2E005F8EFC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -178,6 +184,10 @@
 				B777E47121A43B0700EF79F3 /* InspectionHistoryTableViewController.m */,
 				B777E47321A43B7B00EF79F3 /* InspectionHistoryTableViewCell.h */,
 				B777E47421A43B7B00EF79F3 /* InspectionHistoryTableViewCell.m */,
+				B777E47921A5A18800EF79F3 /* InspectionDetailViewController.h */,
+				B777E47A21A5A18800EF79F3 /* InspectionDetailViewController.m */,
+				B777E47C21A5A1BA00EF79F3 /* InspectionDetailTableViewController.h */,
+				B777E47D21A5A1BA00EF79F3 /* InspectionDetailTableViewController.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -287,6 +297,8 @@
 				B7384C15219895E000A278DD /* SearchResultsMapViewController.m in Sources */,
 				D3F0A3852191EA4F00DD4E39 /* SearchCoordinateRequest.m in Sources */,
 				B777E47821A590B700EF79F3 /* InspectionHistoryViewController.m in Sources */,
+				B777E47E21A5A1BA00EF79F3 /* InspectionDetailTableViewController.m in Sources */,
+				B777E47B21A5A18800EF79F3 /* InspectionDetailViewController.m in Sources */,
 				B78BEC5D218F7A9F005F8EFC /* CurrentLocationUpdater.m in Sources */,
 				B7EE5304219086B5001BF3DD /* AddressGeocoder.m in Sources */,
 				B7A01D7D21A4144200FEE944 /* RestaurantHistoryRequest.m in Sources */,
