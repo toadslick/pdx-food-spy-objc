@@ -20,6 +20,7 @@
 		B7384C172198987400A278DD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7384C162198987400A278DD /* MapKit.framework */; };
 		B777E47221A43B0700EF79F3 /* InspectionHistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B777E47121A43B0700EF79F3 /* InspectionHistoryTableViewController.m */; };
 		B777E47521A43B7B00EF79F3 /* InspectionHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B777E47421A43B7B00EF79F3 /* InspectionHistoryTableViewCell.m */; };
+		B777E47821A590B700EF79F3 /* InspectionHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B777E47721A590B700EF79F3 /* InspectionHistoryViewController.m */; };
 		B78BEC5D218F7A9F005F8EFC /* CurrentLocationUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = B78BEC5C218F7A9F005F8EFC /* CurrentLocationUpdater.m */; };
 		B78BEC60218F7B2E005F8EFC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B78BEC5F218F7B2E005F8EFC /* CoreLocation.framework */; };
 		B7A01D7D21A4144200FEE944 /* RestaurantHistoryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A01D7C21A4144200FEE944 /* RestaurantHistoryRequest.m */; };
@@ -56,6 +57,8 @@
 		B777E47121A43B0700EF79F3 /* InspectionHistoryTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InspectionHistoryTableViewController.m; sourceTree = "<group>"; };
 		B777E47321A43B7B00EF79F3 /* InspectionHistoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InspectionHistoryTableViewCell.h; sourceTree = "<group>"; };
 		B777E47421A43B7B00EF79F3 /* InspectionHistoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InspectionHistoryTableViewCell.m; sourceTree = "<group>"; };
+		B777E47621A590B700EF79F3 /* InspectionHistoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InspectionHistoryViewController.h; sourceTree = "<group>"; };
+		B777E47721A590B700EF79F3 /* InspectionHistoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InspectionHistoryViewController.m; sourceTree = "<group>"; };
 		B78BEC5B218F7A9F005F8EFC /* CurrentLocationUpdater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentLocationUpdater.h; sourceTree = "<group>"; };
 		B78BEC5C218F7A9F005F8EFC /* CurrentLocationUpdater.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentLocationUpdater.m; sourceTree = "<group>"; };
 		B78BEC5F218F7B2E005F8EFC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -116,8 +119,7 @@
 			children = (
 				D349154E21A3117200662214 /* Models */,
 				D3F0A3822191E85D00DD4E39 /* PDX Restaurant Inspections API */,
-				D32152A52190BB9F0043C5FF /* API Utilities */,
-				B7EE52FD21908561001BF3DD /* Location Utilities */,
+				B7EE52FD21908561001BF3DD /* Utilities */,
 				B7EE52FE219085A1001BF3DD /* UI */,
 				B72B0BAA218E619600A79C59 /* AppDelegate.h */,
 				B72B0BAB218E619600A79C59 /* AppDelegate.m */,
@@ -139,9 +141,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B7EE52FD21908561001BF3DD /* Location Utilities */ = {
+		B7EE52FD21908561001BF3DD /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				D32152A62190BC740043C5FF /* JSONFetcher.h */,
+				D32152A72190BC740043C5FF /* JSONFetcher.m */,
+				D32152A92190C4B90043C5FF /* JSONFetcherDelegate.h */,
 				B78BEC5B218F7A9F005F8EFC /* CurrentLocationUpdater.h */,
 				B78BEC5C218F7A9F005F8EFC /* CurrentLocationUpdater.m */,
 				B78BEC61218F8046005F8EFC /* CurrentLocationUpdaterDelegate.h */,
@@ -149,40 +154,32 @@
 				B7EE5303219086B5001BF3DD /* AddressGeocoder.m */,
 				B7EE5305219087AB001BF3DD /* AddressGeocoderDelegate.h */,
 			);
-			path = "Location Utilities";
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		B7EE52FE219085A1001BF3DD /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				B7384C13219895E000A278DD /* SearchResultsMapViewController.h */,
-				B7384C14219895E000A278DD /* SearchResultsMapViewController.m */,
-				B7384C102198958F00A278DD /* SearchResultsTableViewController.h */,
-				B7384C112198958F00A278DD /* SearchResultsTableViewController.m */,
-				B7D2BF4821991D140040C529 /* SearchResultTableViewCell.h */,
-				B7D2BF4921991D140040C529 /* SearchResultTableViewCell.m */,
 				B70591FB218EBCF9000A5535 /* MainNavigationViewController.h */,
 				B70591FC218EBCF9000A5535 /* MainNavigationViewController.m */,
 				B7059204218ED37E000A5535 /* SelectLocationViewController.h */,
 				B7059205218ED37E000A5535 /* SelectLocationViewController.m */,
 				B7384C0D2198955600A278DD /* SearchResultsTabBarController.h */,
 				B7384C0E2198955600A278DD /* SearchResultsTabBarController.m */,
+				B7384C102198958F00A278DD /* SearchResultsTableViewController.h */,
+				B7384C112198958F00A278DD /* SearchResultsTableViewController.m */,
+				B7D2BF4821991D140040C529 /* SearchResultTableViewCell.h */,
+				B7D2BF4921991D140040C529 /* SearchResultTableViewCell.m */,
+				B7384C13219895E000A278DD /* SearchResultsMapViewController.h */,
+				B7384C14219895E000A278DD /* SearchResultsMapViewController.m */,
+				B777E47621A590B700EF79F3 /* InspectionHistoryViewController.h */,
+				B777E47721A590B700EF79F3 /* InspectionHistoryViewController.m */,
 				B777E47021A43B0700EF79F3 /* InspectionHistoryTableViewController.h */,
 				B777E47121A43B0700EF79F3 /* InspectionHistoryTableViewController.m */,
 				B777E47321A43B7B00EF79F3 /* InspectionHistoryTableViewCell.h */,
 				B777E47421A43B7B00EF79F3 /* InspectionHistoryTableViewCell.m */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		D32152A52190BB9F0043C5FF /* API Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				D32152A62190BC740043C5FF /* JSONFetcher.h */,
-				D32152A72190BC740043C5FF /* JSONFetcher.m */,
-				D32152A92190C4B90043C5FF /* JSONFetcherDelegate.h */,
-			);
-			path = "API Utilities";
 			sourceTree = "<group>";
 		};
 		D349154E21A3117200662214 /* Models */ = {
@@ -289,6 +286,7 @@
 				B7059206218ED37E000A5535 /* SelectLocationViewController.m in Sources */,
 				B7384C15219895E000A278DD /* SearchResultsMapViewController.m in Sources */,
 				D3F0A3852191EA4F00DD4E39 /* SearchCoordinateRequest.m in Sources */,
+				B777E47821A590B700EF79F3 /* InspectionHistoryViewController.m in Sources */,
 				B78BEC5D218F7A9F005F8EFC /* CurrentLocationUpdater.m in Sources */,
 				B7EE5304219086B5001BF3DD /* AddressGeocoder.m in Sources */,
 				B7A01D7D21A4144200FEE944 /* RestaurantHistoryRequest.m in Sources */,

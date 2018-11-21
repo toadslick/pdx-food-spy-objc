@@ -31,7 +31,7 @@
 
 // Pass the search results to the next view.
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    InspectionHistoryTableViewController *destination = [segue destinationViewController];
+    InspectionHistoryViewController *destination = [segue destinationViewController];
     destination.results = (NSArray<SearchResult *> *)sender;
 }
 

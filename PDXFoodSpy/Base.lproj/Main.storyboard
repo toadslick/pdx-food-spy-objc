@@ -97,7 +97,7 @@
                     <connections>
                         <segue destination="smk-cT-ZU2" kind="relationship" relationship="viewControllers" id="w20-JC-v1o"/>
                         <segue destination="h9b-EI-tLv" kind="relationship" relationship="viewControllers" id="C4d-er-FmA"/>
-                        <segue destination="6Ig-OP-nW8" kind="show" identifier="historySegue" id="T2P-Df-W8T"/>
+                        <segue destination="bJe-0O-yyL" kind="show" identifier="historySegue" id="jM4-4K-byf"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pwP-H9-IoK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -121,12 +121,65 @@
             </objects>
             <point key="canvasLocation" x="994" y="390"/>
         </scene>
+        <!--Inspection History-->
+        <scene sceneID="Top-Yt-DFb">
+            <objects>
+                <viewController id="bJe-0O-yyL" customClass="InspectionHistoryViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DLQ-vp-w0I">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ib-Ld-0re" customClass="UIContain">
+                                <rect key="frame" x="0.0" y="59" width="320" height="445"/>
+                                <connections>
+                                    <segue destination="6Ig-OP-nW8" kind="embed" identifier="embedHistorySegue" id="sJ4-L4-l9n"/>
+                                </connections>
+                            </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Street Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qne-BL-49Q">
+                                <rect key="frame" x="10" y="31" width="300" height="18"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auH-Ph-M8q">
+                                <rect key="frame" x="10" y="10" width="300" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7ib-Ld-0re" firstAttribute="top" secondItem="Qne-BL-49Q" secondAttribute="bottom" constant="10" id="1Pz-ho-hkQ"/>
+                            <constraint firstAttribute="trailing" secondItem="7ib-Ld-0re" secondAttribute="trailing" id="Twi-3G-fBQ"/>
+                            <constraint firstItem="8o8-Yv-4ox" firstAttribute="trailing" secondItem="Qne-BL-49Q" secondAttribute="trailing" constant="10" id="VO5-fr-Z49"/>
+                            <constraint firstItem="auH-Ph-M8q" firstAttribute="top" secondItem="8o8-Yv-4ox" secondAttribute="top" constant="10" id="dSx-ye-Rck"/>
+                            <constraint firstItem="auH-Ph-M8q" firstAttribute="leading" secondItem="8o8-Yv-4ox" secondAttribute="leading" constant="10" id="g21-DP-omV"/>
+                            <constraint firstItem="Qne-BL-49Q" firstAttribute="top" secondItem="auH-Ph-M8q" secondAttribute="bottom" id="hvb-vZ-uEg"/>
+                            <constraint firstItem="8o8-Yv-4ox" firstAttribute="bottom" secondItem="7ib-Ld-0re" secondAttribute="bottom" id="jhH-2K-W1i"/>
+                            <constraint firstItem="8o8-Yv-4ox" firstAttribute="trailing" secondItem="auH-Ph-M8q" secondAttribute="trailing" constant="10" id="vea-xe-Mvs"/>
+                            <constraint firstItem="7ib-Ld-0re" firstAttribute="leading" secondItem="8o8-Yv-4ox" secondAttribute="leading" id="x6j-tm-tCB"/>
+                            <constraint firstItem="Qne-BL-49Q" firstAttribute="leading" secondItem="8o8-Yv-4ox" secondAttribute="leading" constant="10" id="xtV-Sl-zrY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8o8-Yv-4ox"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Inspection History" id="b1F-Yh-Zjs"/>
+                    <connections>
+                        <outlet property="addressLabel" destination="Qne-BL-49Q" id="npd-kC-0Ox"/>
+                        <outlet property="containerView" destination="7ib-Ld-0re" id="Fc7-CS-k8w"/>
+                        <outlet property="nameLabel" destination="auH-Ph-M8q" id="ngH-QF-uxd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h13-zS-SF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1811.25" y="-8.4507042253521121"/>
+        </scene>
         <!--Inspection History Table View Controller-->
         <scene sceneID="mlA-bc-QfU">
             <objects>
                 <tableViewController id="6Ig-OP-nW8" customClass="InspectionHistoryTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="T1B-6r-o3y">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="445"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -184,7 +237,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bw6-jX-ilw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1836" y="-8"/>
+            <point key="canvasLocation" x="1811" y="670"/>
         </scene>
         <!--List-->
         <scene sceneID="xbe-Pr-TvD">

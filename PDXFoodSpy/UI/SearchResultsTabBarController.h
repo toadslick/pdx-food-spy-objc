@@ -2,7 +2,7 @@
 #import "SearchResult.h"
 #import "RestaurantHistoryRequest.h"
 #import "RequestDelegate.h"
-#import "InspectionHistoryTableViewController.h"
+#import "InspectionHistoryViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
