@@ -31,6 +31,7 @@
 		B7EE5304219086B5001BF3DD /* AddressGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = B7EE5303219086B5001BF3DD /* AddressGeocoder.m */; };
 		D32152A82190BC740043C5FF /* JSONFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D32152A72190BC740043C5FF /* JSONFetcher.m */; };
 		D349155421A3142300662214 /* InspectionViolation.m in Sources */ = {isa = PBXBuildFile; fileRef = D349155321A3142300662214 /* InspectionViolation.m */; };
+		D373F24821A6C3970025DB5F /* Inspection.m in Sources */ = {isa = PBXBuildFile; fileRef = D373F24721A6C3970025DB5F /* Inspection.m */; };
 		D38CF70D219394320071D9F5 /* SearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D38CF70C219394320071D9F5 /* SearchResult.m */; };
 		D3F0A3852191EA4F00DD4E39 /* SearchCoordinateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F0A3842191EA4F00DD4E39 /* SearchCoordinateRequest.m */; };
 /* End PBXBuildFile section */
@@ -83,6 +84,8 @@
 		D32152A92190C4B90043C5FF /* JSONFetcherDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONFetcherDelegate.h; sourceTree = "<group>"; };
 		D349155221A3142300662214 /* InspectionViolation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InspectionViolation.h; sourceTree = "<group>"; };
 		D349155321A3142300662214 /* InspectionViolation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InspectionViolation.m; sourceTree = "<group>"; };
+		D373F24621A6C3970025DB5F /* Inspection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Inspection.h; sourceTree = "<group>"; };
+		D373F24721A6C3970025DB5F /* Inspection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Inspection.m; sourceTree = "<group>"; };
 		D38CF70B219394320071D9F5 /* SearchResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResult.h; sourceTree = "<group>"; };
 		D38CF70C219394320071D9F5 /* SearchResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResult.m; sourceTree = "<group>"; };
 		D3CDB0EA2195F6670048F0C7 /* RequestDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestDelegate.h; sourceTree = "<group>"; };
@@ -199,6 +202,8 @@
 				D38CF70C219394320071D9F5 /* SearchResult.m */,
 				D349155221A3142300662214 /* InspectionViolation.h */,
 				D349155321A3142300662214 /* InspectionViolation.m */,
+				D373F24621A6C3970025DB5F /* Inspection.h */,
+				D373F24721A6C3970025DB5F /* Inspection.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -300,6 +305,7 @@
 				B777E47E21A5A1BA00EF79F3 /* InspectionDetailTableViewController.m in Sources */,
 				B777E47B21A5A18800EF79F3 /* InspectionDetailViewController.m in Sources */,
 				B78BEC5D218F7A9F005F8EFC /* CurrentLocationUpdater.m in Sources */,
+				D373F24821A6C3970025DB5F /* Inspection.m in Sources */,
 				B7EE5304219086B5001BF3DD /* AddressGeocoder.m in Sources */,
 				B7A01D7D21A4144200FEE944 /* RestaurantHistoryRequest.m in Sources */,
 				B7384C122198958F00A278DD /* SearchResultsTableViewController.m in Sources */,

@@ -3,7 +3,6 @@
 @interface InspectionHistoryViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
-@property (weak, nonatomic) IBOutlet UIView *containerView;
 @end
 
 @implementation InspectionHistoryViewController
@@ -19,6 +18,10 @@
     if ([segue.identifier isEqualToString:@"embedHistorySegue"]) {
         InspectionHistoryTableViewController *vc = segue.destinationViewController;
         vc.results = self.results;
+    } else if ([segue.identifier isEqualToString:@"detailSegue"]) {
+        Inspection *inspection = sender;
+        InspectionDetailViewController *vc = segue.destinationViewController;
+        vc.inspection = inspection;
     }
 }
 

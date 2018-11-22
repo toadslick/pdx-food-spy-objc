@@ -129,7 +129,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ib-Ld-0re" customClass="UIContain">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ib-Ld-0re">
                                 <rect key="frame" x="0.0" y="59" width="320" height="445"/>
                                 <connections>
                                     <segue destination="6Ig-OP-nW8" kind="embed" identifier="embedHistorySegue" id="sJ4-L4-l9n"/>
@@ -156,7 +156,7 @@
                             <constraint firstItem="auH-Ph-M8q" firstAttribute="top" secondItem="8o8-Yv-4ox" secondAttribute="top" constant="10" id="dSx-ye-Rck"/>
                             <constraint firstItem="auH-Ph-M8q" firstAttribute="leading" secondItem="8o8-Yv-4ox" secondAttribute="leading" constant="10" id="g21-DP-omV"/>
                             <constraint firstItem="Qne-BL-49Q" firstAttribute="top" secondItem="auH-Ph-M8q" secondAttribute="bottom" id="hvb-vZ-uEg"/>
-                            <constraint firstItem="8o8-Yv-4ox" firstAttribute="bottom" secondItem="7ib-Ld-0re" secondAttribute="bottom" id="jhH-2K-W1i"/>
+                            <constraint firstAttribute="bottom" secondItem="7ib-Ld-0re" secondAttribute="bottom" id="jhH-2K-W1i"/>
                             <constraint firstItem="8o8-Yv-4ox" firstAttribute="trailing" secondItem="auH-Ph-M8q" secondAttribute="trailing" constant="10" id="vea-xe-Mvs"/>
                             <constraint firstItem="7ib-Ld-0re" firstAttribute="leading" secondItem="8o8-Yv-4ox" secondAttribute="leading" id="x6j-tm-tCB"/>
                             <constraint firstItem="Qne-BL-49Q" firstAttribute="leading" secondItem="8o8-Yv-4ox" secondAttribute="leading" constant="10" id="xtV-Sl-zrY"/>
@@ -166,7 +166,6 @@
                     <navigationItem key="navigationItem" title="Inspection History" id="b1F-Yh-Zjs"/>
                     <connections>
                         <outlet property="addressLabel" destination="Qne-BL-49Q" id="npd-kC-0Ox"/>
-                        <outlet property="containerView" destination="7ib-Ld-0re" id="Fc7-CS-k8w"/>
                         <outlet property="nameLabel" destination="auH-Ph-M8q" id="ngH-QF-uxd"/>
                         <segue destination="auA-z4-WgZ" kind="show" identifier="detailSegue" id="SvY-LK-FIZ"/>
                     </connections>
@@ -237,6 +236,11 @@
                         <viewLayoutGuide key="safeArea" id="OYp-8P-zur"/>
                     </view>
                     <navigationItem key="navigationItem" title="Inspection Detail" id="cEb-Hm-8GK"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="vCv-vF-3dF" id="8Tg-Mv-YjY"/>
+                        <outlet property="nameLabel" destination="erj-bA-ZBQ" id="8fe-hq-cev"/>
+                        <outlet property="scoreLabel" destination="son-1x-dNT" id="5YU-q2-JU9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F6K-Zb-4Oo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

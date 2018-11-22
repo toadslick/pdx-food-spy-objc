@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
-#import "SearchResult.h"
+#import "Inspection.h"
 #import "InspectionHistoryTableViewController.h"
+#import "InspectionDetailViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

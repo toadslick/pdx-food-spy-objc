@@ -1,13 +1,18 @@
 #import "InspectionHistoryTableViewController.h"
 
-@interface InspectionHistoryTableViewController ()
+@implementation InspectionHistoryTableViewController {
+    SearchResult *selectedResult;
+    InspectionDetailRequest *request;
+}
 
-@end
-
-@implementation InspectionHistoryTableViewController
+- (SearchResult *)selectedResult {
+    return selectedResult;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    request = [InspectionDetailRequest new];
+    request.delegate = self;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -27,6 +32,26 @@
     SearchResult *result = [self.results objectAtIndex:[indexPath row]];
     cell.searchResult = result;
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    selectedResult = [self.results objectAtIndex:[indexPath row]];
+    [request fetch:selectedResult.inspectionID];
+}
+
+- (void)requestDidSucceedWithResults:(NSArray<InspectionViolation *> *)results {
+    Inspection *inspection = [Inspection new];
+    inspection.searchResult = selectedResult;
+    inspection.violations = results;
+    [self.parentViewController performSegueWithIdentifier:@"detailSegue" sender:inspection];
+}
+
+- (void)requestDidSucceedWithEmptyResults {
+    
+}
+
+- (void)requestDidFailWithError:(NSError *)error {
+    NSLog(@"ERROR: %@", [error localizedDescription]);
 }
 
 @end

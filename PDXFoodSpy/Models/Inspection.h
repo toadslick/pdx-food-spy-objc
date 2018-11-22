@@ -1,9 +1,12 @@
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "SearchResult.h"
 #import "InspectionViolation.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface InspectionDetailTableViewController : UITableViewController
+@interface Inspection : NSObject
+
+@property SearchResult *searchResult;
 
 @property NSArray<InspectionViolation *> *violations;
 
