@@ -19,8 +19,16 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    InspectionViolation *violation = [self.violations objectAtIndex:section];
-    return 4;
+    InspectionViolation *violation = [self.violations objectAtIndex:section];
+    NSInteger rows = 1;
+    if ([self isNotBlank:violation.violationComments]) { rows += 1; }
+    // if ([self isNotBlank:violation.correctiveText]) { rows += 1; }
+    // if ([self isNotBlank:violation.correctiveComments]) { rows += 1; }
+    return rows;
+}
+
+- (Boolean)isNotBlank:(NSString *)string {
+    return string && ![string isEqualToString:@""];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {

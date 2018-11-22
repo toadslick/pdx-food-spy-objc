@@ -4,17 +4,21 @@
 
 + (InspectionViolation *)initFromJSONDictionary:(NSDictionary *)dict {
     InspectionViolation *iv = [InspectionViolation new];
-    iv.lawCode              = [dict objectForKey:@"law"];
-    iv.violationText        = [dict objectForKey:@"violation_rule"];
-    iv.violationComments    = [dict objectForKey:@"violation_comments"];
-    iv.correctiveText       = [dict objectForKey:@"corrective_text"];
-    iv.correctiveComments   = [dict objectForKey:@"corrective_comments"];
+    iv.lawCode              = [self trimmedString:@"law"                    from:dict];
+    iv.violationText        = [self trimmedString:@"violation_rule"         from:dict];
+    iv.violationComments    = [self trimmedString:@"violation_comments"     from:dict];
+    iv.correctiveText       = [self trimmedString:@"corrective_text"        from:dict];
+    iv.correctiveComments   = [self trimmedString:@"corrective_comments"    from:dict];
     return iv;
+}
+
++ (NSString *)trimmedString:(NSString *)key from:(NSDictionary *)dict {
+    NSString *string = [dict objectForKey:key];
+    return [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 }
 
 - (NSString *)description {
     return self.lawCode;
 }
-
 
 @end
