@@ -83,12 +83,12 @@
             </objects>
             <point key="canvasLocation" x="-650.625" y="-8.4507042253521121"/>
         </scene>
-        <!--Restaurants-->
+        <!--Search Results-->
         <scene sceneID="Qnd-VV-4dw">
             <objects>
                 <tabBarController id="FeW-cl-1dp" customClass="SearchResultsTabBarController" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Restaurants" id="qC7-84-HtB"/>
+                    <navigationItem key="navigationItem" title="Search Results" id="qC7-84-HtB"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ia6-U0-Kha">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -112,7 +112,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </mapView>
-                    <tabBarItem key="tabBarItem" title="Map" id="l7n-OA-Dif"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="Globe" id="l7n-OA-Dif"/>
                     <connections>
                         <outlet property="mapView" destination="MTa-Mu-QXZ" id="vuU-kb-dsv"/>
                     </connections>
@@ -414,11 +414,15 @@
                             <outlet property="delegate" destination="smk-cT-ZU2" id="o0f-2w-Bfa"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="List" id="xS6-Hw-6Xa"/>
+                    <tabBarItem key="tabBarItem" title="List" image="List" id="xS6-Hw-6Xa"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g0X-Wh-A4w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="993.75" y="-360.21126760563379"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Globe" width="30" height="30"/>
+        <image name="List" width="30" height="30"/>
+    </resources>
 </document>
