@@ -82,6 +82,7 @@
 		D32152A62190BC740043C5FF /* JSONFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONFetcher.h; sourceTree = "<group>"; };
 		D32152A72190BC740043C5FF /* JSONFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSONFetcher.m; sourceTree = "<group>"; };
 		D32152A92190C4B90043C5FF /* JSONFetcherDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONFetcherDelegate.h; sourceTree = "<group>"; };
+		D32F281C21A82AAA0054B72C /* SearchResultTabBarDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultTabBarDelegate.h; sourceTree = "<group>"; };
 		D349155221A3142300662214 /* InspectionViolation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InspectionViolation.h; sourceTree = "<group>"; };
 		D349155321A3142300662214 /* InspectionViolation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InspectionViolation.m; sourceTree = "<group>"; };
 		D373F24621A6C3970025DB5F /* Inspection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Inspection.h; sourceTree = "<group>"; };
@@ -175,6 +176,7 @@
 				B7059205218ED37E000A5535 /* SelectLocationViewController.m */,
 				B7384C0D2198955600A278DD /* SearchResultsTabBarController.h */,
 				B7384C0E2198955600A278DD /* SearchResultsTabBarController.m */,
+				D32F281C21A82AAA0054B72C /* SearchResultTabBarDelegate.h */,
 				B7384C102198958F00A278DD /* SearchResultsTableViewController.h */,
 				B7384C112198958F00A278DD /* SearchResultsTableViewController.m */,
 				B7D2BF4821991D140040C529 /* SearchResultTableViewCell.h */,

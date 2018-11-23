@@ -9,8 +9,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Get the search results from the parent controller.
     SearchResultsTabBarController *parent = (SearchResultsTabBarController *)[self parentViewController];
     results = parent.results;
+}
+
+// Become the delegate of the parent controller to know when the right nav button item is tapped.
+- (void)viewDidAppear:(BOOL)animated {
+    SearchResultsTabBarController *parent = (SearchResultsTabBarController *)[self parentViewController];
+    parent.tabBarDelegate = self;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -36,6 +44,10 @@
     SearchResultsTabBarController *parent = (SearchResultsTabBarController *)[self parentViewController];
     SearchResult *result = [results objectAtIndex:[indexPath row]];
     [parent fetchRestaurantHistory:result];
+}
+
+- (void)rightBarButtonWasTapped {
+    NSLog(@"SORT");
 }
 
 @end

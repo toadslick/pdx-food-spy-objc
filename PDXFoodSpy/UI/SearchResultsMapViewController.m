@@ -8,7 +8,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSArray<SearchResult *> *results = ((SearchResultsTabBarController *)[self parentViewController]).results;
+    SearchResultsTabBarController *parent = (SearchResultsTabBarController *)self.parentViewController;
+    
+    // Get the search results from the parent controller.
+    NSArray<SearchResult *> *results = parent.results;
     self.mapView.delegate = self;
 
     // Add pins to the map view.
@@ -17,6 +20,12 @@
     
     // Adjust the map's visible region to fit the added pins.
     [self.mapView showAnnotations:results animated:false];
+}
+
+// Become the delegate of the parent controller to know when the right nav button item is tapped.
+- (void)viewDidAppear:(BOOL)animated {
+    SearchResultsTabBarController *parent = (SearchResultsTabBarController *)[self parentViewController];
+    parent.tabBarDelegate = self;
 }
 
 // Render the map marker for each search result.
@@ -40,6 +49,10 @@
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
     SearchResultsTabBarController *parent = (SearchResultsTabBarController *)[self parentViewController];
     [parent fetchRestaurantHistory:(SearchResult *)view.annotation];
+}
+
+- (void)rightBarButtonWasTapped {
+    NSLog(@"RESET");
 }
 
 @end
