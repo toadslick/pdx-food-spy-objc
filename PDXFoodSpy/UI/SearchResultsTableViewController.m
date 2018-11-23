@@ -47,12 +47,18 @@
 }
 
 - (void)rightBarButtonWasTapped {
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:NULL message:NULL preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:NULL message:NULL preferredStyle:UIAlertControllerStyleActionSheet];
     
-    UIAlertAction* sortByProximityAction = [UIAlertAction actionWithTitle:@"Sort by Proximity" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
-    UIAlertAction* sortByNameAction = [UIAlertAction actionWithTitle:@"Sort by Name" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
-    UIAlertAction* sortByScoreAction = [UIAlertAction actionWithTitle:@"Sort by Score" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
-    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {}];
+    UIAlertAction *sortByProximityAction = [UIAlertAction actionWithTitle:@"Sort by Proximity" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        [self sortResults:[self distanceComparator]];
+    }];
+    UIAlertAction *sortByNameAction = [UIAlertAction actionWithTitle:@"Sort by Name" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        [self sortResults:[self nameComparator]];
+    }];
+    UIAlertAction *sortByScoreAction = [UIAlertAction actionWithTitle:@"Sort by Score" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        [self sortResults:[self scoreComparator]];
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {}];
 
     [alert addAction:sortByNameAction];
     [alert addAction:sortByScoreAction];
@@ -60,5 +66,32 @@
     [alert addAction:cancelAction];
 
     [self presentViewController:alert animated:YES completion:nil];}
+
+- (void)sortResults:(NSComparator)comparator {
+    results = [results sortedArrayUsingComparator:comparator];
+    [self.tableView reloadData];
+}
+
+- (NSComparator)distanceComparator {
+    return ^NSComparisonResult(SearchResult *r1, SearchResult *r2) {
+        if (r1.distance > r2.distance) { return NSOrderedDescending; }
+        if (r1.distance < r2.distance) { return NSOrderedAscending; }
+        return NSOrderedSame;
+    };
+}
+
+- (NSComparator)nameComparator {
+    return ^NSComparisonResult(SearchResult *r1, SearchResult *r2) {
+        return [r1.name compare:r2.name options:NSCaseInsensitiveSearch];
+    };
+}
+
+- (NSComparator)scoreComparator {
+    return ^NSComparisonResult(SearchResult *r1, SearchResult *r2) {
+        if (r1.score > r2.score) { return NSOrderedDescending; }
+        if (r1.score < r2.score) { return NSOrderedAscending; }
+        return NSOrderedSame;
+    };
+}
 
 @end
