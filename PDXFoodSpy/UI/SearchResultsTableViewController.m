@@ -47,7 +47,18 @@
 }
 
 - (void)rightBarButtonWasTapped {
-    NSLog(@"SORT");
-}
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:NULL message:NULL preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction* sortByProximityAction = [UIAlertAction actionWithTitle:@"Sort by Proximity" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
+    UIAlertAction* sortByNameAction = [UIAlertAction actionWithTitle:@"Sort by Name" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
+    UIAlertAction* sortByScoreAction = [UIAlertAction actionWithTitle:@"Sort by Score" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {}];
+
+    [alert addAction:sortByNameAction];
+    [alert addAction:sortByScoreAction];
+    [alert addAction:sortByProximityAction];
+    [alert addAction:cancelAction];
+
+    [self presentViewController:alert animated:YES completion:nil];}
 
 @end
