@@ -4,22 +4,23 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @end
 
-@implementation SearchResultsMapViewController
+@implementation SearchResultsMapViewController {
+    NSArray<SearchResult *> *results;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    SearchResultsTabBarController *parent = (SearchResultsTabBarController *)self.parentViewController;
     
     // Get the search results from the parent controller.
-    NSArray<SearchResult *> *results = parent.results;
-    self.mapView.delegate = self;
+    SearchResultsTabBarController *parent = (SearchResultsTabBarController *)self.parentViewController;
+    results = parent.results;
 
     // Add pins to the map view.
+    self.mapView.delegate = self;
     [self.mapView removeAnnotations:[self.mapView annotations]];
     [self.mapView addAnnotations:results];
     
-    // Adjust the map's visible region to fit the added pins.
-    [self.mapView showAnnotations:results animated:false];
+    [self resetMapBounds:NO];
 }
 
 // Become the delegate of the parent controller to know when the right nav button item is tapped.
@@ -52,7 +53,12 @@
 }
 
 - (void)rightBarButtonWasTapped {
-    NSLog(@"RESET");
+    [self resetMapBounds:YES];
+}
+
+// Adjust the map's visible region to fit the added pins.
+- (void)resetMapBounds:(Boolean)shouldAnimate {
+    [self.mapView showAnnotations:results animated:shouldAnimate];
 }
 
 @end
