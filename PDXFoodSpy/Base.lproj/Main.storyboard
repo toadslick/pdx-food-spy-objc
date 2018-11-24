@@ -437,10 +437,10 @@
                                         <constraint firstItem="feu-XN-nDu" firstAttribute="centerY" secondItem="WVI-Ag-YNW" secondAttribute="centerY" id="1XT-fr-Ign"/>
                                         <constraint firstItem="feu-XN-nDu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Cel-UI-mmy" secondAttribute="trailing" constant="10" id="Cpx-23-1HE"/>
                                         <constraint firstItem="Cel-UI-mmy" firstAttribute="top" secondItem="pQH-uc-yqA" secondAttribute="bottom" id="Ixy-xd-pSm"/>
-                                        <constraint firstItem="pQH-uc-yqA" firstAttribute="top" secondItem="WVI-Ag-YNW" secondAttribute="top" constant="3" id="KMp-R3-QBs"/>
+                                        <constraint firstItem="pQH-uc-yqA" firstAttribute="top" secondItem="WVI-Ag-YNW" secondAttribute="top" constant="5" id="KMp-R3-QBs"/>
                                         <constraint firstItem="Cel-UI-mmy" firstAttribute="leading" secondItem="WVI-Ag-YNW" secondAttribute="leadingMargin" id="OZN-cA-s7K"/>
                                         <constraint firstAttribute="trailing" secondItem="feu-XN-nDu" secondAttribute="trailing" id="bWK-Zo-ybW"/>
-                                        <constraint firstAttribute="bottom" secondItem="Cel-UI-mmy" secondAttribute="bottom" constant="3" id="vC7-mR-d9H"/>
+                                        <constraint firstAttribute="bottom" secondItem="Cel-UI-mmy" secondAttribute="bottom" constant="5" id="vC7-mR-d9H"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
