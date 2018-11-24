@@ -8,7 +8,7 @@
     NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (self.delegate) {
             if (error) {
-                // Prevent a crash when didFailWithError is called outside of the main thread.
+                // Return to the main thread before notifying any delegates.
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self.delegate jsonFetcher:self didFailWithError:error];
                 });
@@ -21,21 +21,20 @@
 }
 
 - (void)parseJSON:(NSData *)data {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSError *error = nil;
-        id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (error) {
-                [self.delegate jsonFetcher:self didFailWithError:error];
-            } else {
-                if ([json isKindOfClass:[NSDictionary class]]) {
-                    [self.delegate jsonFetcher:self didReceiveDictionary:json];
-                } else if ([json isKindOfClass:[NSArray class]]) {
-                    [self.delegate jsonFetcher:self didReceiveArray:json];
-                }
+    NSError *error = nil;
+    id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+    
+    // Return to the main thread before notifying any delegates.
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (error) {
+            [self.delegate jsonFetcher:self didFailWithError:error];
+        } else {
+            if ([json isKindOfClass:[NSDictionary class]]) {
+                [self.delegate jsonFetcher:self didReceiveDictionary:json];
+            } else if ([json isKindOfClass:[NSArray class]]) {
+                [self.delegate jsonFetcher:self didReceiveArray:json];
             }
-        });
+        }
     });
 }
 
