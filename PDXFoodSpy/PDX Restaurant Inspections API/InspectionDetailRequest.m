@@ -19,6 +19,7 @@
 
 // This should never occur for this endpoint. TODO: raise a custom error?
 - (void)jsonFetcher:(JSONFetcher *)fetcher didReceiveArray:(NSArray *)json {
+    
 }
 
 - (void)jsonFetcher:(JSONFetcher *)fetcher didReceiveDictionary:(NSDictionary *)json {

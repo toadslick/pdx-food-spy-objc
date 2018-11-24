@@ -1,11 +1,14 @@
 #import <UIKit/UIKit.h>
 #import "Inspection.h"
-#import "InspectionHistoryTableViewController.h"
 #import "InspectionDetailViewController.h"
+#import "RequestDelegate.h"
+#import "InspectionDetailRequest.h"
+#import "InspectionHistoryTableViewCell.h"
+#import "AlertPresenter.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface InspectionHistoryViewController : UIViewController
+@interface InspectionHistoryViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, RequestDelegate>
 
 @property NSArray<SearchResult *> *results;
 
