@@ -38,8 +38,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     InspectionViolation *violation = [self.violations objectAtIndex:indexPath.section];
+    
+    // For an inspection with no violations, the API returns a single violation where all the strings are empty.
+    // If this table includes only a single empty violation, display an empty set message instead.
+    if (self.violations.count == 1 && [violation.violationText isEqualToString:@""]) {
+        return [tableView dequeueReusableCellWithIdentifier:@"emptySetCell"];
+    }
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"detailCell"];
-
     switch (indexPath.row) {
         case 0:
             cell.textLabel.text = violation.violationText;
