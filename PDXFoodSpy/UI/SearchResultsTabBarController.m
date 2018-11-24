@@ -10,9 +10,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Set the controller as a request delegate.
     request = [RestaurantHistoryRequest new];
     request.delegate = self;
     
+    // Update the right nav bar button so that it pertains to the list view,
+    // which is the first view displayed by the tab bar controller.
     [self updateSortResetButton:0];
 }
 

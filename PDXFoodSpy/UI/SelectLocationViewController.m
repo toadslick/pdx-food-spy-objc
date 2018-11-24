@@ -4,6 +4,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *currentLocationButton;
 @property (weak, nonatomic) IBOutlet UISearchBar *addressSearchField;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *busySpinner;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *searchTypeControl;
 @end
 
 @implementation SelectLocationViewController {
@@ -17,7 +18,7 @@
     [super viewDidLoad];
     
     // Disable this button until the curent location is detected.
-    self.currentLocationButton.enabled = false;
+    self.currentLocationButton.enabled = NO;
     
     // Begin detecting the current location.
     clu = [CurrentLocationUpdater new];
@@ -39,6 +40,10 @@
     self.isBusy = YES;
     [search fetch:currentCoordinate];
 }
+
+- (IBAction)searchTypeSelected:(UISegmentedControl *)sender {
+}
+
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     if (self.isBusy) {
@@ -63,7 +68,7 @@
 }
 
 - (void)currentLocationUpdater:(CurrentLocationUpdater *)updater didUpdateCoordinate:(CLLocationCoordinate2D)coordinate {
-    self.currentLocationButton.enabled = true;
+    self.currentLocationButton.enabled = YES;
     currentCoordinate = coordinate;
 }
 
