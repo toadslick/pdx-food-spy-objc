@@ -13,6 +13,7 @@
     CLLocationCoordinate2D currentCoordinate;
     SearchCoordinateRequest *coordinateSearch;
     SearchNameRequest *nameSearch;
+    Boolean searchIncludesProximity;
 }
 
 - (void)viewDidLoad {
@@ -37,10 +38,14 @@
     
     // Set the initial placeholder of the search field.
     [self updateSearchPlaceholder];
+    
+    // Disable proximity searching until the user searches by address or current location.
+    searchIncludesProximity = NO;
 }
 
 - (IBAction)currentLocationButtonTapped:(id)sender {
     self.isBusy = YES;
+    searchIncludesProximity = YES;
     [coordinateSearch fetch:currentCoordinate];
 }
 
@@ -60,9 +65,11 @@
             // Perform either a name or address search depending on the selected option.
             switch (self.searchTypeControl.selectedSegmentIndex) {
                 case 0:
+                    searchIncludesProximity = YES;
                     [geocoder geocode:query];
                     break;
                 case 1:
+                    searchIncludesProximity = NO;
                     [nameSearch fetch:query];
                     break;
             }
@@ -75,7 +82,8 @@
     // Pass the search results to the next view.
     SearchResultsTabBarController *destination = [segue destinationViewController];
     destination.results = (NSArray<SearchResult *> *)sender;
-
+    destination.allowProximitySorting = searchIncludesProximity;
+    
     // Stop updating the current location.
     [clu stop];
 }

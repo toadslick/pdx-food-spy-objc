@@ -14,7 +14,7 @@
 - (void)fetch:(NSString *)restaurantName {
     NSString *format = @"http://api.civicapps.org/restaurant-inspections/?restaurant_name=%@";
     NSString *escapedName = [restaurantName stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-    NSString *url = [[NSString alloc] initWithFormat:format, restaurantName];
+    NSString *url = [[NSString alloc] initWithFormat:format, escapedName];
     [jsonFetcher fetch:url];
 }
 

@@ -5,19 +5,16 @@
 
 @implementation SearchResultsTableViewController {
     NSArray<SearchResult *> *results;
+    Boolean allowProximitySorting;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
+- (void)viewWillAppear:(BOOL)animated {
     // Get the search results from the parent controller.
     SearchResultsTabBarController *parent = (SearchResultsTabBarController *)[self parentViewController];
     results = parent.results;
-}
+    allowProximitySorting = parent.allowProximitySorting;
 
-// Become the delegate of the parent controller to know when the right nav button item is tapped.
-- (void)viewDidAppear:(BOOL)animated {
-    SearchResultsTabBarController *parent = (SearchResultsTabBarController *)[self parentViewController];
+    // Become the delegate of the parent controller to know when the right nav button item is tapped.
     parent.tabBarDelegate = self;
 }
 
@@ -49,23 +46,29 @@
 - (void)rightBarButtonWasTapped {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:NULL message:NULL preferredStyle:UIAlertControllerStyleActionSheet];
     
-    UIAlertAction *sortByProximityAction = [UIAlertAction actionWithTitle:@"Sort by Proximity" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-        [self sortResults:[self distanceComparator]];
-    }];
     UIAlertAction *sortByNameAction = [UIAlertAction actionWithTitle:@"Sort by Name" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         [self sortResults:[self nameComparator]];
     }];
+    [alert addAction:sortByNameAction];
+
     UIAlertAction *sortByScoreAction = [UIAlertAction actionWithTitle:@"Sort by Score" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         [self sortResults:[self scoreComparator]];
     }];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {}];
-
-    [alert addAction:sortByNameAction];
     [alert addAction:sortByScoreAction];
-    [alert addAction:sortByProximityAction];
+
+    // Only allow proximity sorting if search was done by coordinate.
+    if (allowProximitySorting) {
+        UIAlertAction *sortByProximityAction = [UIAlertAction actionWithTitle:@"Sort by Distance" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+            [self sortResults:[self distanceComparator]];
+        }];
+        [alert addAction:sortByProximityAction];
+    }
+
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {}];
     [alert addAction:cancelAction];
 
-    [self presentViewController:alert animated:YES completion:nil];}
+    [self presentViewController:alert animated:YES completion:nil];
+}
 
 - (void)sortResults:(NSComparator)comparator {
     results = [results sortedArrayUsingComparator:comparator];

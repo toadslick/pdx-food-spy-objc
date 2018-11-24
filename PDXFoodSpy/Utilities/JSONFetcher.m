@@ -8,7 +8,10 @@
     NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (self.delegate) {
             if (error) {
-                [self.delegate jsonFetcher:self didFailWithError:error];
+                // Prevent a crash when didFailWithError is called outside of the main thread.
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.delegate jsonFetcher:self didFailWithError:error];
+                });
             } else {
                 [self parseJSON:data];
             }

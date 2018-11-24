@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property NSArray<SearchResult *> *results;
 
+@property Boolean allowProximitySorting;
+
 @property (weak) id <SearchResultTabBarDelegate> tabBarDelegate;
 
 - (void)fetchRestaurantHistory:(SearchResult *)result;
