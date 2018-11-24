@@ -13,10 +13,8 @@
     
     // Get the search results from the parent controller.
     SearchResultsTabBarController *parent = (SearchResultsTabBarController *)self.parentViewController;
-    results = parent.results;
+    results = [self filteredResults:parent.results];
     
-    // TODO: filter results to remove any with coordinates of 0, 0.
-
     // Add pins to the map view.
     self.mapView.delegate = self;
     [self.mapView removeAnnotations:[self.mapView annotations]];
@@ -36,18 +34,17 @@
 // such as tintColor and glyphText, are determined by the score.
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
     SearchResult *result = (SearchResult *)annotation;
-    NSLog(@"COORDINATE: %@ - %f, %f", result.name, result.coordinate.latitude, result.coordinate.longitude);
-    MKAnnotationView *reuseMarker = [mapView dequeueReusableAnnotationViewWithIdentifier:[result scoreString]];
-    if (reuseMarker) {
-        return reuseMarker;
+    MKMarkerAnnotationView *marker = (MKMarkerAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:[result scoreString]];
+    if (marker) {
+        return marker;
     } else {
-        MKMarkerAnnotationView *marker = [[MKMarkerAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:[result scoreString]];
+        marker = [[MKMarkerAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:[result scoreString]];
         marker.markerTintColor = [result scoreColor];
         marker.glyphText = [result scoreString];
         marker.canShowCallout = YES;
         marker.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-        return marker;
     }
+    return marker;
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
@@ -64,4 +61,9 @@
     [self.mapView showAnnotations:results animated:shouldAnimate];
 }
 
+- (NSArray<SearchResult *> *)filteredResults:(NSArray<SearchResult *> *)allResults {
+    return [allResults filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(SearchResult *result, NSDictionary<NSString *,id> * _Nullable bindings) {
+        return (result.coordinate.latitude != 0 && result.coordinate.longitude != 0);
+    }]];
+}
 @end
