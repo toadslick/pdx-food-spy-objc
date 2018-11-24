@@ -1,5 +1,4 @@
 #import <UIKit/UIKit.h>
-#import "Inspection.h"
 #import "InspectionDetailViewController.h"
 #import "RequestDelegate.h"
 #import "InspectionDetailRequest.h"

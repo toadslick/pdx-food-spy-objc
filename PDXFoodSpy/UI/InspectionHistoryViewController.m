@@ -38,10 +38,10 @@
     }
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    Inspection *inspection = sender;
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(NSArray<InspectionViolation *> *)sender {
     InspectionDetailViewController *vc = segue.destinationViewController;
-    vc.inspection = inspection;
+    vc.searchResult = selectedResult;
+    vc.violations = sender;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -69,10 +69,7 @@
 }
 
 - (void)requestDidSucceedWithResults:(NSArray<InspectionViolation *> *)results {
-    Inspection *inspection = [Inspection new];
-    inspection.searchResult = selectedResult;
-    inspection.violations = results;
-    [self performSegueWithIdentifier:@"detailSegue" sender:inspection];
+    [self performSegueWithIdentifier:@"detailSegue" sender:results];
 }
 
 - (void)requestDidSucceedWithEmptyResults {}
