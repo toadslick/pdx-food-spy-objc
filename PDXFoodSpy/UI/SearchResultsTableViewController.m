@@ -16,6 +16,8 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
     // Become the delegate of the parent controller to know when the right nav button item is tapped.
     SearchResultsTabBarController *parent = (SearchResultsTabBarController *)[self parentViewController];
     parent.tabBarDelegate = self;

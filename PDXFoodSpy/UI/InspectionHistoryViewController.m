@@ -28,10 +28,13 @@
     request.delegate = self;
 }
 
+// Since not using a TableViewController, have to manually
+// deselect the previous selected row when the table appears.
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     NSIndexPath *path = self.tableView.indexPathForSelectedRow;
     if (path) {
-        [self.tableView deselectRowAtIndexPath:path animated:NO];
+        [self.tableView deselectRowAtIndexPath:path animated:YES];
     }
 }
 
