@@ -94,7 +94,7 @@
 }
 
 - (void)currentLocationUpdater:(CurrentLocationUpdater *)updater didFailWithError:(NSError *)error {
-    NSLog(@"ERROR: %@", [error localizedDescription]);
+    // TODO: handle location detection failures.
 }
 
 - (void)addressGeocoder:(AddressGeocoder *)geocoder foundCoordinate:(CLLocationCoordinate2D)coordinate forAddress:(NSString *)address {
@@ -103,7 +103,7 @@
 
 - (void)addressGeocoder:(AddressGeocoder *)geocoder didFailWithError:(NSError *)error forAddress:(NSString *)address {
     self.isBusy = NO;
-    NSLog(@"ERROR: %@", [error localizedDescription]);
+    [self presentErrorAlert:@"An Error Occurred" withMessage:[error localizedDescription]];
 }
 
 - (void)requestDidSucceedWithResults:(NSArray<SearchResult *> *)results {
@@ -113,12 +113,12 @@
 
 - (void)requestDidSucceedWithEmptyResults {
     self.isBusy = NO;
-    NSLog(@"RESULTS: EMPTY");
+    [self presentErrorAlert:@"No Restaurants Found" withMessage:@"No restaurant inspections matched your search query. Please try again."];
 }
 
 - (void)requestDidFailWithError:(NSError *)error {
     self.isBusy = NO;
-    NSLog(@"ERROR: %@", [error localizedDescription]);
+    [self presentErrorAlert:@"An Error Occurred" withMessage:[error localizedDescription]];
 }
 
 - (void)setIsBusy:(Boolean)isBusy {
@@ -136,6 +136,8 @@
     }
 }
 
+// Chance the placeholder text of the search field
+// based on whether the user is searching by name or address.
 - (void)updateSearchPlaceholder {
     switch (self.searchTypeControl.selectedSegmentIndex) {
         case 0:
@@ -145,6 +147,14 @@
             self.searchField.placeholder = @"Enter a Restaurant Name";
             break;
     }
+}
+
+// Render an alert with a title, message, and button to dismiss.
+- (void)presentErrorAlert:(NSString *)title withMessage:(NSString *)message {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {}];
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 @end
