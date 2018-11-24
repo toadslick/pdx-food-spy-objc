@@ -14,6 +14,8 @@
     // Get the search results from the parent controller.
     SearchResultsTabBarController *parent = (SearchResultsTabBarController *)self.parentViewController;
     results = parent.results;
+    
+    // TODO: filter results to remove any with coordinates of 0, 0.
 
     // Add pins to the map view.
     self.mapView.delegate = self;
@@ -34,6 +36,7 @@
 // such as tintColor and glyphText, are determined by the score.
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
     SearchResult *result = (SearchResult *)annotation;
+    NSLog(@"COORDINATE: %@ - %f, %f", result.name, result.coordinate.latitude, result.coordinate.longitude);
     MKAnnotationView *reuseMarker = [mapView dequeueReusableAnnotationViewWithIdentifier:[result scoreString]];
     if (reuseMarker) {
         return reuseMarker;
