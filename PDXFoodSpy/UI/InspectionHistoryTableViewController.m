@@ -46,12 +46,10 @@
     [self.parentViewController performSegueWithIdentifier:@"detailSegue" sender:inspection];
 }
 
-- (void)requestDidSucceedWithEmptyResults {
-    
-}
+- (void)requestDidSucceedWithEmptyResults {}
 
 - (void)requestDidFailWithError:(NSError *)error {
-    NSLog(@"ERROR: %@", [error localizedDescription]);
+    [AlertPresenter presentAlert:nil withMessage:[error localizedDescription] forController:(UIViewController *)self];
 }
 
 @end

@@ -22,7 +22,6 @@
 }
 
 - (void)jsonFetcher:(JSONFetcher *)fetcher didReceiveDictionary:(NSDictionary *)json {
-    NSLog(@"JSON: %@", json);
     NSArray<InspectionViolation *> *violations = [self deserializeResults:json];
     [self.delegate requestDidSucceedWithResults:violations];
 }

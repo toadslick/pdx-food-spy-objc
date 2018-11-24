@@ -28,12 +28,10 @@
     [self performSegueWithIdentifier:@"historySegue" sender:results];
 }
 
-- (void)requestDidSucceedWithEmptyResults {
-    NSLog(@"RESULTS: EMPTY");
-}
+- (void)requestDidSucceedWithEmptyResults {}
 
 - (void)requestDidFailWithError:(NSError *)error {
-    NSLog(@"ERROR: %@", [error localizedDescription]);
+    [AlertPresenter presentAlert:nil withMessage:[error localizedDescription] forController:(UIViewController *)self];
 }
 
 // Pass the search results to the next view.

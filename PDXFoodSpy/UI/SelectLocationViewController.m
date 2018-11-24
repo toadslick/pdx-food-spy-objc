@@ -103,7 +103,7 @@
 
 - (void)addressGeocoder:(AddressGeocoder *)geocoder didFailWithError:(NSError *)error forAddress:(NSString *)address {
     self.isBusy = NO;
-    [self presentErrorAlert:@"An Error Occurred" withMessage:[error localizedDescription]];
+    [AlertPresenter presentAlert:nil withMessage:[error localizedDescription] forController:(UIViewController *)self];
 }
 
 - (void)requestDidSucceedWithResults:(NSArray<SearchResult *> *)results {
@@ -113,12 +113,12 @@
 
 - (void)requestDidSucceedWithEmptyResults {
     self.isBusy = NO;
-    [self presentErrorAlert:@"No Restaurants Found" withMessage:@"No restaurant inspections matched your search query. Please try again."];
+    [AlertPresenter presentAlert:@"No Restaurants Found" withMessage:@"No restaurant inspections matched your search query. Please try again." forController:(UIViewController *)self];
 }
 
 - (void)requestDidFailWithError:(NSError *)error {
     self.isBusy = NO;
-    [self presentErrorAlert:@"An Error Occurred" withMessage:[error localizedDescription]];
+    [AlertPresenter presentAlert:nil withMessage:[error localizedDescription] forController:(UIViewController *)self];
 }
 
 - (void)setIsBusy:(Boolean)isBusy {
@@ -147,14 +147,6 @@
             self.searchField.placeholder = @"Enter a Restaurant Name";
             break;
     }
-}
-
-// Render an alert with a title, message, and button to dismiss.
-- (void)presentErrorAlert:(NSString *)title withMessage:(NSString *)message {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {}];
-    [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion:nil];
 }
 
 @end
