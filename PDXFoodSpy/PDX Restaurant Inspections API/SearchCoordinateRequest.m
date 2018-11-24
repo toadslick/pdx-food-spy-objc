@@ -14,7 +14,7 @@
 - (void)fetch:(CLLocationCoordinate2D)coordinate {
     NSString *format = @"http://api.civicapps.org/restaurant-inspections/near/%f,%f?since=%@&limit=%i&distance=%f";
     NSString *date = [self buildDateString];
-    NSString *url = [[NSString alloc] initWithFormat:format, coordinate.longitude, coordinate.latitude, date, 50, 0.5];
+    NSString *url = [[NSString alloc] initWithFormat:format, coordinate.longitude, coordinate.latitude, date, 50, 0.25];
     [jsonFetcher fetch:url];
 }
 

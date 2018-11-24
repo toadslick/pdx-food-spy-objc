@@ -39,7 +39,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4UF-sq-Hvk">
-                                <rect key="frame" x="15" y="304.5" width="290" height="41"/>
+                                <rect key="frame" x="15" y="309.5" width="290" height="41"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <inset key="contentEdgeInsets" minX="7" minY="10" maxX="0.0" maxY="10"/>
                                 <state key="normal" title="Near My Current Location"/>
@@ -48,7 +48,7 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DDm-YL-0Mv">
-                                <rect key="frame" x="10" y="174.5" width="300" height="29"/>
+                                <rect key="frame" x="10" y="179.5" width="300" height="29"/>
                                 <segments>
                                     <segment title="Street Address"/>
                                     <segment title="Restaurant Name"/>
@@ -70,17 +70,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulQ-Ww-4sS">
-                                <rect key="frame" x="15" y="273.5" width="290" height="21"/>
+                                <rect key="frame" x="15" y="278.5" width="290" height="21"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ByD-TQ-1dK">
-                                <rect key="frame" x="141.5" y="365.5" width="37" height="37"/>
+                                <rect key="frame" x="141.5" y="370.5" width="37" height="37"/>
                                 <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="Enter a Street Address" translatesAutoresizingMaskIntoConstraints="NO" id="rT3-ZW-zNZ">
-                                <rect key="frame" x="0.0" y="202.5" width="320" height="56"/>
+                                <rect key="frame" x="0.0" y="207.5" width="320" height="56"/>
                                 <color key="barTintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search" textContentType="address-line1"/>
                                 <scopeButtonTitles>
@@ -101,7 +101,7 @@
                             <constraint firstItem="Jsl-Om-O4d" firstAttribute="trailing" secondItem="i6F-5S-ptF" secondAttribute="trailing" constant="-15" id="Vti-MP-8KX"/>
                             <constraint firstItem="ulQ-Ww-4sS" firstAttribute="leading" secondItem="i6F-5S-ptF" secondAttribute="leading" constant="15" id="byT-9t-o8y"/>
                             <constraint firstItem="DDm-YL-0Mv" firstAttribute="leading" secondItem="i6F-5S-ptF" secondAttribute="leading" constant="10" id="cZ7-8f-IH4"/>
-                            <constraint firstItem="DDm-YL-0Mv" firstAttribute="top" secondItem="jGe-nN-RUf" secondAttribute="bottom" constant="20" id="cbh-o8-ZIA"/>
+                            <constraint firstItem="DDm-YL-0Mv" firstAttribute="top" secondItem="jGe-nN-RUf" secondAttribute="bottom" constant="25" id="cbh-o8-ZIA"/>
                             <constraint firstItem="Jsl-Om-O4d" firstAttribute="leading" secondItem="i6F-5S-ptF" secondAttribute="leading" constant="15" id="fkZ-Hh-b6o"/>
                             <constraint firstItem="i6F-5S-ptF" firstAttribute="trailing" secondItem="ulQ-Ww-4sS" secondAttribute="trailing" constant="15" id="gln-9b-cE2"/>
                             <constraint firstItem="rT3-ZW-zNZ" firstAttribute="leading" secondItem="i6F-5S-ptF" secondAttribute="leading" id="lSM-Pq-gXx"/>

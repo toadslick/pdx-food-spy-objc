@@ -34,6 +34,9 @@
     
     // Style the current location button.
     self.currentLocationButton.layer.cornerRadius = self.currentLocationButton.layer.frame.size.height / 3;
+    
+    // Set the initial placeholder of the search field.
+    [self updateSearchPlaceholder];
 }
 
 - (IBAction)currentLocationButtonTapped:(id)sender {
@@ -42,6 +45,7 @@
 }
 
 - (IBAction)searchTypeSelected:(UISegmentedControl *)sender {
+    [self updateSearchPlaceholder];
 }
 
 
@@ -110,6 +114,17 @@
         [self.busySpinner startAnimating];
     } else {
         [self.busySpinner stopAnimating];
+    }
+}
+
+- (void)updateSearchPlaceholder {
+    switch (self.searchTypeControl.selectedSegmentIndex) {
+        case 0:
+            self.addressSearchField.placeholder = @"Enter a Street Address";
+            break;
+        case 1:
+            self.addressSearchField.placeholder = @"Enter a Restaurant Name";
+            break;
     }
 }
 
