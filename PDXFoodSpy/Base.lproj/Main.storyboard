@@ -14,6 +14,7 @@
         <scene sceneID="7xk-kE-SB7">
             <objects>
                 <navigationController id="5Rx-j6-zdB" customClass="MainNavigationViewController" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="e3f-M7-FCE">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
@@ -35,43 +36,83 @@
             <objects>
                 <viewController id="jMs-EQ-8Lb" customClass="SelectLocationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GOZ-EO-fBD">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4UF-sq-Hvk">
-                                <rect key="frame" x="10" y="76" width="300" height="44"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <rect key="frame" x="15" y="299.5" width="290" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <inset key="contentEdgeInsets" minX="7" minY="10" maxX="0.0" maxY="10"/>
-                                <state key="normal" title="Search Current Location"/>
+                                <state key="normal" title="Near My Current Location"/>
                                 <connections>
                                     <action selector="currentLocationButtonTapped:" destination="jMs-EQ-8Lb" eventType="primaryActionTriggered" id="OJJ-Zm-D9D"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DDm-YL-0Mv">
+                                <rect key="frame" x="10" y="169.5" width="300" height="29"/>
+                                <segments>
+                                    <segment title="Street Address"/>
+                                    <segment title="Restaurant Name"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Inspections for Portland Restaurants" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jsl-Om-O4d">
+                                <rect key="frame" x="15" y="35" width="290" height="63.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search by:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGe-nN-RUf">
+                                <rect key="frame" x="15" y="128.5" width="290" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulQ-Ww-4sS">
+                                <rect key="frame" x="15" y="268.5" width="290" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ByD-TQ-1dK">
-                                <rect key="frame" x="141.5" y="140" width="37" height="37"/>
+                                <rect key="frame" x="141.5" y="360.5" width="37" height="37"/>
                                 <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
-                            <searchBar contentMode="redraw" text="" placeholder="Search a Street Address" translatesAutoresizingMaskIntoConstraints="NO" id="rT3-ZW-zNZ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="Enter a Street Address" translatesAutoresizingMaskIntoConstraints="NO" id="rT3-ZW-zNZ">
+                                <rect key="frame" x="0.0" y="197.5" width="320" height="56"/>
+                                <color key="barTintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search" textContentType="address-line1"/>
                             </searchBar>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="rT3-ZW-zNZ" firstAttribute="leading" secondItem="i6F-5S-ptF" secondAttribute="leading" id="6as-Om-buv"/>
-                            <constraint firstItem="4UF-sq-Hvk" firstAttribute="leading" secondItem="i6F-5S-ptF" secondAttribute="leading" constant="10" id="7jf-am-Dut"/>
-                            <constraint firstItem="4UF-sq-Hvk" firstAttribute="top" secondItem="rT3-ZW-zNZ" secondAttribute="bottom" constant="20" id="FzH-VU-n9b"/>
-                            <constraint firstItem="ByD-TQ-1dK" firstAttribute="top" secondItem="4UF-sq-Hvk" secondAttribute="bottom" constant="20" id="LBP-b9-Qy5"/>
-                            <constraint firstItem="rT3-ZW-zNZ" firstAttribute="top" secondItem="i6F-5S-ptF" secondAttribute="top" id="Wo2-Jq-rrO"/>
-                            <constraint firstItem="i6F-5S-ptF" firstAttribute="trailing" secondItem="rT3-ZW-zNZ" secondAttribute="trailing" id="fUi-cg-tNv"/>
-                            <constraint firstItem="i6F-5S-ptF" firstAttribute="trailing" secondItem="4UF-sq-Hvk" secondAttribute="trailing" constant="10" id="ugk-C1-LNf"/>
-                            <constraint firstItem="ByD-TQ-1dK" firstAttribute="centerX" secondItem="i6F-5S-ptF" secondAttribute="centerX" id="v94-qe-C3q"/>
+                            <constraint firstItem="4UF-sq-Hvk" firstAttribute="top" secondItem="ulQ-Ww-4sS" secondAttribute="bottom" constant="10" id="9mc-fu-lHV"/>
+                            <constraint firstItem="rT3-ZW-zNZ" firstAttribute="top" secondItem="DDm-YL-0Mv" secondAttribute="bottom" id="CJB-L3-Ruf"/>
+                            <constraint firstItem="4UF-sq-Hvk" firstAttribute="leading" secondItem="i6F-5S-ptF" secondAttribute="leading" constant="15" id="H4D-A8-Cp2"/>
+                            <constraint firstItem="i6F-5S-ptF" firstAttribute="trailing" secondItem="DDm-YL-0Mv" secondAttribute="trailing" constant="10" id="IwT-CM-24J"/>
+                            <constraint firstItem="jGe-nN-RUf" firstAttribute="top" secondItem="Jsl-Om-O4d" secondAttribute="bottom" constant="30" id="KY2-DD-uKO"/>
+                            <constraint firstItem="i6F-5S-ptF" firstAttribute="trailing" secondItem="jGe-nN-RUf" secondAttribute="trailing" constant="15" id="SIm-t7-Wzx"/>
+                            <constraint firstItem="ByD-TQ-1dK" firstAttribute="top" secondItem="4UF-sq-Hvk" secondAttribute="bottom" constant="20" id="UjY-wx-ItB"/>
+                            <constraint firstItem="Jsl-Om-O4d" firstAttribute="trailing" secondItem="i6F-5S-ptF" secondAttribute="trailing" constant="-15" id="Vti-MP-8KX"/>
+                            <constraint firstItem="ulQ-Ww-4sS" firstAttribute="leading" secondItem="i6F-5S-ptF" secondAttribute="leading" constant="15" id="byT-9t-o8y"/>
+                            <constraint firstItem="DDm-YL-0Mv" firstAttribute="leading" secondItem="i6F-5S-ptF" secondAttribute="leading" constant="10" id="cZ7-8f-IH4"/>
+                            <constraint firstItem="DDm-YL-0Mv" firstAttribute="top" secondItem="jGe-nN-RUf" secondAttribute="bottom" constant="20" id="cbh-o8-ZIA"/>
+                            <constraint firstItem="Jsl-Om-O4d" firstAttribute="leading" secondItem="i6F-5S-ptF" secondAttribute="leading" constant="15" id="fkZ-Hh-b6o"/>
+                            <constraint firstItem="i6F-5S-ptF" firstAttribute="trailing" secondItem="ulQ-Ww-4sS" secondAttribute="trailing" constant="15" id="gln-9b-cE2"/>
+                            <constraint firstItem="rT3-ZW-zNZ" firstAttribute="leading" secondItem="i6F-5S-ptF" secondAttribute="leading" id="lSM-Pq-gXx"/>
+                            <constraint firstItem="ByD-TQ-1dK" firstAttribute="centerX" secondItem="i6F-5S-ptF" secondAttribute="centerX" id="lbm-P5-wAp"/>
+                            <constraint firstItem="ulQ-Ww-4sS" firstAttribute="top" secondItem="rT3-ZW-zNZ" secondAttribute="bottom" constant="15" id="oqD-sF-qg0"/>
+                            <constraint firstItem="jGe-nN-RUf" firstAttribute="leading" secondItem="i6F-5S-ptF" secondAttribute="leading" constant="15" id="sDx-I9-fK0"/>
+                            <constraint firstItem="i6F-5S-ptF" firstAttribute="trailing" secondItem="4UF-sq-Hvk" secondAttribute="trailing" constant="15" id="stQ-PR-WQE"/>
+                            <constraint firstItem="i6F-5S-ptF" firstAttribute="trailing" secondItem="rT3-ZW-zNZ" secondAttribute="trailing" id="upT-bV-Kcx"/>
+                            <constraint firstItem="Jsl-Om-O4d" firstAttribute="top" secondItem="i6F-5S-ptF" secondAttribute="top" constant="15" id="ye9-rc-MFf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="i6F-5S-ptF"/>
                     </view>
                     <navigationItem key="navigationItem" title="PDX Restaurant Inspections" id="ATA-IM-rid">
                         <barButtonItem key="backBarButtonItem" title="Search" id="Est-n5-FDf"/>
                     </navigationItem>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addressSearchField" destination="rT3-ZW-zNZ" id="ssu-jk-o8m"/>
                         <outlet property="busySpinner" destination="ByD-TQ-1dK" id="4JH-zz-UKp"/>
@@ -81,7 +122,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLz-2k-be2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-650.625" y="-8.4507042253521121"/>
+            <point key="canvasLocation" x="-623" y="-8"/>
         </scene>
         <!--Search Results-->
         <scene sceneID="Qnd-VV-4dw">
@@ -89,12 +130,14 @@
                 <tabBarController id="FeW-cl-1dp" customClass="SearchResultsTabBarController" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Search Results" id="qC7-84-HtB">
+                        <barButtonItem key="backBarButtonItem" title="Results" id="XnZ-4Y-4FU"/>
                         <barButtonItem key="rightBarButtonItem" id="mJ3-Hy-Qlu">
                             <connections>
                                 <action selector="sortResetButtonTapped:" destination="FeW-cl-1dp" id="Otf-je-FtQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ia6-U0-Kha">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -171,7 +214,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8o8-Yv-4ox"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Inspection History" id="b1F-Yh-Zjs"/>
+                    <navigationItem key="navigationItem" title="Inspection History" id="b1F-Yh-Zjs">
+                        <barButtonItem key="backBarButtonItem" title="History" id="JKF-JG-TPO"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="addressLabel" destination="Qne-BL-49Q" id="npd-kC-0Ox"/>
                         <outlet property="nameLabel" destination="auH-Ph-M8q" id="ngH-QF-uxd"/>
@@ -244,6 +290,7 @@
                         <viewLayoutGuide key="safeArea" id="OYp-8P-zur"/>
                     </view>
                     <navigationItem key="navigationItem" title="Inspection Detail" id="cEb-Hm-8GK"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="dateLabel" destination="vCv-vF-3dF" id="8Tg-Mv-YjY"/>
                         <outlet property="nameLabel" destination="erj-bA-ZBQ" id="8fe-hq-cev"/>
