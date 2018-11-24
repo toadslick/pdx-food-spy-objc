@@ -9,6 +9,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"HISTORY: %@", self.results);
     SearchResult *firstResult = [self.results objectAtIndex:0];
     self.nameLabel.text = firstResult.name;
     self.addressLabel.text = firstResult.address;

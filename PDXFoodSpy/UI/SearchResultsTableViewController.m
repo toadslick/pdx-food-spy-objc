@@ -8,13 +8,16 @@
     Boolean allowProximitySorting;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewDidLoad {
     // Get the search results from the parent controller.
     SearchResultsTabBarController *parent = (SearchResultsTabBarController *)[self parentViewController];
     results = parent.results;
     allowProximitySorting = parent.allowProximitySorting;
+}
 
+- (void)viewWillAppear:(BOOL)animated {
     // Become the delegate of the parent controller to know when the right nav button item is tapped.
+    SearchResultsTabBarController *parent = (SearchResultsTabBarController *)[self parentViewController];
     parent.tabBarDelegate = self;
 }
 
