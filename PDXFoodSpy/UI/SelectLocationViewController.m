@@ -107,6 +107,8 @@
 - (void)setIsBusy:(Boolean)isBusy {
     _isBusy = isBusy;
     self.currentLocationButton.enabled = !isBusy;
+    self.searchTypeControl.enabled = !isBusy;
+    self.addressSearchField.userInteractionEnabled = !isBusy;
  
     // "Hides when stopped" property is set on the spinner in the storyboard,
     // so there is no need to show and hide the spinner from the code.
