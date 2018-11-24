@@ -4,6 +4,7 @@
 #import "AddressGeocoderDelegate.h"
 #import "RequestDelegate.h"
 #import "SearchCoordinateRequest.h"
+#import "SearchNameRequest.h"
 #import "SearchResultsTabBarController.h"
 
 NS_ASSUME_NONNULL_BEGIN

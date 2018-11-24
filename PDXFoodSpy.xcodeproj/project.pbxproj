@@ -30,6 +30,7 @@
 		B7D45DD021A3C0B6002BCD7A /* InspectionDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B7D45DCE21A3C0B6002BCD7A /* InspectionDetailRequest.m */; };
 		B7EE5304219086B5001BF3DD /* AddressGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = B7EE5303219086B5001BF3DD /* AddressGeocoder.m */; };
 		D32152A82190BC740043C5FF /* JSONFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D32152A72190BC740043C5FF /* JSONFetcher.m */; };
+		D3438D5C21A8F6FE003A0505 /* SearchNameRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D3438D5B21A8F6FE003A0505 /* SearchNameRequest.m */; };
 		D349155421A3142300662214 /* InspectionViolation.m in Sources */ = {isa = PBXBuildFile; fileRef = D349155321A3142300662214 /* InspectionViolation.m */; };
 		D373F24821A6C3970025DB5F /* Inspection.m in Sources */ = {isa = PBXBuildFile; fileRef = D373F24721A6C3970025DB5F /* Inspection.m */; };
 		D38CF70D219394320071D9F5 /* SearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D38CF70C219394320071D9F5 /* SearchResult.m */; };
@@ -83,6 +84,8 @@
 		D32152A72190BC740043C5FF /* JSONFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSONFetcher.m; sourceTree = "<group>"; };
 		D32152A92190C4B90043C5FF /* JSONFetcherDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONFetcherDelegate.h; sourceTree = "<group>"; };
 		D32F281C21A82AAA0054B72C /* SearchResultTabBarDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultTabBarDelegate.h; sourceTree = "<group>"; };
+		D3438D5A21A8F6FE003A0505 /* SearchNameRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchNameRequest.h; sourceTree = "<group>"; };
+		D3438D5B21A8F6FE003A0505 /* SearchNameRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchNameRequest.m; sourceTree = "<group>"; };
 		D349155221A3142300662214 /* InspectionViolation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InspectionViolation.h; sourceTree = "<group>"; };
 		D349155321A3142300662214 /* InspectionViolation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InspectionViolation.m; sourceTree = "<group>"; };
 		D373F24621A6C3970025DB5F /* Inspection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Inspection.h; sourceTree = "<group>"; };
@@ -214,12 +217,14 @@
 			isa = PBXGroup;
 			children = (
 				D3CDB0EA2195F6670048F0C7 /* RequestDelegate.h */,
-				B7D45DCF21A3C0B6002BCD7A /* InspectionDetailRequest.h */,
-				B7D45DCE21A3C0B6002BCD7A /* InspectionDetailRequest.m */,
 				D3F0A3832191EA4F00DD4E39 /* SearchCoordinateRequest.h */,
 				D3F0A3842191EA4F00DD4E39 /* SearchCoordinateRequest.m */,
+				D3438D5A21A8F6FE003A0505 /* SearchNameRequest.h */,
+				D3438D5B21A8F6FE003A0505 /* SearchNameRequest.m */,
 				B7A01D7B21A4144200FEE944 /* RestaurantHistoryRequest.h */,
 				B7A01D7C21A4144200FEE944 /* RestaurantHistoryRequest.m */,
+				B7D45DCF21A3C0B6002BCD7A /* InspectionDetailRequest.h */,
+				B7D45DCE21A3C0B6002BCD7A /* InspectionDetailRequest.m */,
 			);
 			path = "PDX Restaurant Inspections API";
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 			files = (
 				D38CF70D219394320071D9F5 /* SearchResult.m in Sources */,
 				B777E47221A43B0700EF79F3 /* InspectionHistoryTableViewController.m in Sources */,
+				D3438D5C21A8F6FE003A0505 /* SearchNameRequest.m in Sources */,
 				B72B0BBA218E619700A79C59 /* main.m in Sources */,
 				B7384C0F2198955600A278DD /* SearchResultsTabBarController.m in Sources */,
 				B777E47521A43B7B00EF79F3 /* InspectionHistoryTableViewCell.m in Sources */,

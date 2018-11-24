@@ -2,7 +2,7 @@
 
 @interface SelectLocationViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *currentLocationButton;
-@property (weak, nonatomic) IBOutlet UISearchBar *addressSearchField;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchField;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *busySpinner;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *searchTypeControl;
 @end
@@ -11,7 +11,8 @@
     CurrentLocationUpdater *clu;
     AddressGeocoder *geocoder;
     CLLocationCoordinate2D currentCoordinate;
-    SearchCoordinateRequest *search;
+    SearchCoordinateRequest *coordinateSearch;
+    SearchNameRequest *nameSearch;
 }
 
 - (void)viewDidLoad {
@@ -20,20 +21,19 @@
     // Disable this button until the curent location is detected.
     self.currentLocationButton.enabled = NO;
     
-    // Begin detecting the current location.
-    clu = [CurrentLocationUpdater new];
-    clu.delegate = self;
-    [clu start];
-    
-    // Initialize the address search classes and their delegates.
+    // Initialize all the things with delegates.
     geocoder = [AddressGeocoder new];
     geocoder.delegate = self;
-    search = [SearchCoordinateRequest new];
-    search.delegate = self;
-    self.addressSearchField.delegate = self;
-    
-    // Style the current location button.
-    self.currentLocationButton.layer.cornerRadius = self.currentLocationButton.layer.frame.size.height / 3;
+    clu = [CurrentLocationUpdater new];
+    clu.delegate = self;
+    coordinateSearch = [SearchCoordinateRequest new];
+    coordinateSearch.delegate = self;
+    nameSearch = [SearchNameRequest new];
+    nameSearch.delegate = self;
+    self.searchField.delegate = self;
+
+    // Begin detecting the current location.
+    [clu start];
     
     // Set the initial placeholder of the search field.
     [self updateSearchPlaceholder];
@@ -41,7 +41,7 @@
 
 - (IBAction)currentLocationButtonTapped:(id)sender {
     self.isBusy = YES;
-    [search fetch:currentCoordinate];
+    [coordinateSearch fetch:currentCoordinate];
 }
 
 - (IBAction)searchTypeSelected:(UISegmentedControl *)sender {
@@ -54,9 +54,18 @@
         return;
     } else {
         self.isBusy = YES;
-        NSString *address = searchBar.text;
-        if (address) {
-            [geocoder geocode:address];
+        if (searchBar.text) {
+            // Trim excess whitespace from the search query.
+            NSString *query = [searchBar.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+            // Perform either a name or address search depending on the selected option.
+            switch (self.searchTypeControl.selectedSegmentIndex) {
+                case 0:
+                    [geocoder geocode:query];
+                    break;
+                case 1:
+                    [nameSearch fetch:query];
+                    break;
+            }
         }
     }
 }
@@ -81,7 +90,7 @@
 }
 
 - (void)addressGeocoder:(AddressGeocoder *)geocoder foundCoordinate:(CLLocationCoordinate2D)coordinate forAddress:(NSString *)address {
-    [search fetch:coordinate];
+    [coordinateSearch fetch:coordinate];
 }
 
 - (void)addressGeocoder:(AddressGeocoder *)geocoder didFailWithError:(NSError *)error forAddress:(NSString *)address {
@@ -108,7 +117,7 @@
     _isBusy = isBusy;
     self.currentLocationButton.enabled = !isBusy;
     self.searchTypeControl.enabled = !isBusy;
-    self.addressSearchField.userInteractionEnabled = !isBusy;
+    self.searchField.userInteractionEnabled = !isBusy;
  
     // "Hides when stopped" property is set on the spinner in the storyboard,
     // so there is no need to show and hide the spinner from the code.
@@ -122,10 +131,10 @@
 - (void)updateSearchPlaceholder {
     switch (self.searchTypeControl.selectedSegmentIndex) {
         case 0:
-            self.addressSearchField.placeholder = @"Enter a Street Address";
+            self.searchField.placeholder = @"Enter a Street Address";
             break;
         case 1:
-            self.addressSearchField.placeholder = @"Enter a Restaurant Name";
+            self.searchField.placeholder = @"Enter a Restaurant Name";
             break;
     }
 }
